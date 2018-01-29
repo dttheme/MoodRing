@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: LucJDWvTXr0PLpioYpUb/6bgel+opMct2ze8opvd4QTYipHokdXTHqe2zoJ2KcSUW+ow9SwEpdoQH84asEN3mAbeMKNf7hEaI0fmORGYHeHDZ+2RiBoxWujy3TGZbW2Qo1u/9QizYTkbhNTdxt9RvSvDeFbQH3f0/H3wjTUjUtw0U9+hbLeAuzbKAcNe6PuAoZsihgFoqivODhqj2MLI3DwdhYmA4xE7JEwihHiXCw8ob2PpDDc0prT4eqieWmg0wnGzVIRXux3e5Ehw3SYINaZnybbvtCCbjrRBLM9A+oFDrAy5ijWr88Wm2OVBjja/o8+EruNZpC59rVzk85P5m/QJn0hTFE6OcBn1bc1xhi6EAQGB+6Z3BfDQJzBlLUcN/Dve7MhaSws6j6jAP75/EWEwYAaexdbfGvJ97uVTDEUDCONhJRmokv3NZUkbjCmf4VeRXE8VZsZzAbgS3yQ3PjFk7vtRH+0Lrx9oqVeS7exyCMVSf4lHOBRTBHHwnGTuCvSOH7nSnVtO9tajfB6pEMq0jJuwgEO1SSRcUhuNzH1OiEcjzNhuePerpG8wTo0RjDqib56GyICOyTE9PHxxZ+eglGiP/GAVRTtbVckvq4OJsAmuhaJYFN0p0454QlXsZL/UrdvxADwRp4J9OTReUC95wONkqHQT/Eh7oZHVbq0=
+  app: https://vast-everglades-57515.herokuapp.com/
+  on:
+    repo: dttheme/Self-Care-App
