@@ -17,11 +17,13 @@ describe('/', function() {
   });
 
   it('should return 200 status and HTML when root url is hit', function(done) {
-    return chai.request(app)
+    let res;
+    chai.request(app)
     .get('/')
     .then(function(res) {
       expect(res).to.have.status(200);
       expect(res).to.be.html;
     });
+    done();
   });
 });
