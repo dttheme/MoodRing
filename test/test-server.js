@@ -1,29 +1,28 @@
+'use strict';
+
 const chai = require('chai');
 const chaiHttp = require('chai-http');
+const app = require('../server.js');
+// const { app , runServer, closeServer } = require('../server.js');
 
-const { app , runServer, closeServer } = require('../server.js');
-
-const expect = chai.expect;
+chai.should();
 
 chai.use(chaiHttp);
 
 describe('/', function() {
-  before(function() {
-    return runServer();
-  });
+  // before(function() {
+  //   return runServer();
+  // });
+  //
+  // after(function() {
+  //   return closeServer();;
+  // });
 
-  after(function() {
-    return closeServer();;
-  });
-
-  it('should return 200 status and HTML when root url is hit', function(done) {
-    let res;
-    chai.request(app)
+  it('should return 200 status when root url is hit', function() {
+     return chai.request(app)
     .get('/')
     .then(function(res) {
-      expect(res).to.have.status(200);
-      expect(res).to.be.html;
+      res.should.have.status(200);
     });
-    done();
   });
 });
