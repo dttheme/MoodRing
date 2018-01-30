@@ -21,7 +21,7 @@ if (require.main === module) {
 module.exports = app;
 
 
-MOCK_POSTS = {
+let MOCK_POSTS = {
   "posts": [
     {
       "id": "111",
