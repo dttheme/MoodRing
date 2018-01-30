@@ -40,9 +40,8 @@ MOCK_POSTS = {
     {
       "id": "333",
       "mood": "productive",
-      "activity":
+      "activity": ["walk"]
     }
-
   ]
 }
 
