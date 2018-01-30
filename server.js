@@ -20,6 +20,29 @@ if (require.main === module) {
 
 module.exports = app;
 
+
+MOCK_POSTS = {
+  "posts": [
+    {
+      "id": "111",
+      "mood": "happy",
+      "activity": ["walk", "yoga", "brush teeth"],
+      "note": "Today was great!",
+      "publishedAt": 1517271600
+    },
+    {
+      "id": "222",
+      "mood": "sad",
+      "activity": ["clean kitchen", ""]
+      "note": "Tomorrow I will take a walk and do yoga!",
+      "publishedAt": 1517272183
+    },
+      "id": "333",
+      "mood": "productive",
+      "activity":
+  ]
+}
+
 // let server;
 //
 // function runServer(databaseUrl, port = PORT) {
