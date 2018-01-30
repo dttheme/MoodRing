@@ -33,7 +33,7 @@ MOCK_POSTS = {
     {
       "id": "222",
       "mood": "sad",
-      "activity": ["clean kitchen", ""]
+      "activity": ["clean kitchen", ""],
       "note": "Tomorrow I will take a walk and do yoga!",
       "publishedAt": 1517272183
     },
