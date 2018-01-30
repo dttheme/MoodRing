@@ -37,9 +37,12 @@ MOCK_POSTS = {
       "note": "Tomorrow I will take a walk and do yoga!",
       "publishedAt": 1517272183
     },
+    {
       "id": "333",
       "mood": "productive",
       "activity":
+    }
+
   ]
 }
 
