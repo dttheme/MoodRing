@@ -15,10 +15,16 @@ postSchema.methods.serialize = function() {
     mood: this.mood,
     activity: this.activity,
     note: this.note,
-    publishedAt: this.publishedAt
+    publishedAt: this.publishedAt || new Date()
   };
 }
 
 const Post = mongoose.model('Post', postSchema);
+
+
+
+
+
+
 
 module.exports = {Post};

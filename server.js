@@ -3,15 +3,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
 
 // const postRouter = require('./postRouter');
 
 mongoose.Promise = global.Promise;
 
 const { PORT, DATABASE_URL } = require('./config');
+const { Post } = require('./models');
 
 const app = express();
+app.use(bodyParser.json());
 
+<<<<<<< HEAD
 app.use(express.static('public'));
 // app.use('posts', postRouter);
 
@@ -19,6 +23,9 @@ module.exports = app;
 
 
 let MOCK_POSTS = {
+=======
+const MOCK_POSTS = {
+>>>>>>> feature-GET-test-and-request
   "posts": [
     {
       "id": "111",
@@ -44,9 +51,27 @@ let MOCK_POSTS = {
   ]
 }
 
+app.get('/', (req, res) => {
+  res.send('index.html')
+})
+
 app.get('/dashboard', (req, res) => {
   res.send('dashboard.html')
 })
+
+app.get('/posts', (req, res) => {
+  res.json(MOCK_POSTS);
+})
+
+// app.post('/posts', jsonParser ,(req,res) => {
+//   const item = {
+//     mood: 'happy',
+//     activity: ['drink tea', 'make bed', 'pet cat'],
+//     note: 'A good day!'
+//   };
+//   res.status(201).json(item);
+// })
+
 
 let server;
 
