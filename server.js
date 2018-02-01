@@ -14,18 +14,12 @@ const { Post } = require('./models');
 
 const app = express();
 app.use(bodyParser.json());
-
-<<<<<<< HEAD
 app.use(express.static('public'));
 // app.use('posts', postRouter);
 
 module.exports = app;
 
-
-let MOCK_POSTS = {
-=======
 const MOCK_POSTS = {
->>>>>>> feature-GET-test-and-request
   "posts": [
     {
       "id": "111",
