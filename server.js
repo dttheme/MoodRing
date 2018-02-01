@@ -3,6 +3,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
 
 mongoose.Promise = global.Promise;
 
@@ -12,7 +13,7 @@ const { Post } = require('./models');
 const app = express();
 app.use(bodyParser.json());
 
-let MOCK_POSTS = {
+const MOCK_POSTS = {
   "posts": [
     {
       "id": "111",
@@ -37,6 +38,28 @@ let MOCK_POSTS = {
     }
   ]
 }
+
+app.get('/', (req, res) => {
+  res.send('index.html')
+})
+
+app.get('/dashboard', (req, res) => {
+  res.send('dashboard.html')
+})
+
+app.get('/posts', (req, res) => {
+  res.json(MOCK_POSTS);
+})
+
+// app.post('/posts', jsonParser ,(req,res) => {
+//   const item = {
+//     mood: 'happy',
+//     activity: ['drink tea', 'make bed', 'pet cat'],
+//     note: 'A good day!'
+//   };
+//   res.status(201).json(item);
+// })
+
 
 let server;
 
