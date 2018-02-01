@@ -67,7 +67,7 @@ describe('Posts', function() {
     });
   });
 
-  it('should add a post on POST'), function() {
+  it('should add a post on POST', function() {
     const newPost = {
       mood: 'happy',
       activity: ['drink tea', 'make bed', 'pet cat'],
@@ -88,8 +88,34 @@ describe('Posts', function() {
     });
   });
 
-  it('should delete a post on DELETE')
+  it('should update a post on PUT', function() {
+    return chai.request(app)
+    .get('/posts')
+    .then(function(res) {
+      const updatedPost = Object.assign(res.body[0], {
+        mood: 'sad',
+        activity: ['watch tv', 'eat chips'],
+        note: 'Could have been better!'
+      });
+      return chai.request(app)
+      .put('/posts/${res.body[0].id}')
+      .send(updatedPost)
+      .then(function(res) {
+        expect(res).to.have.status(204);
+      });
+    });
+  });
 
-  it('should update a post on PUT')
+  it('should delete a post on DELETE', function() {
+    return chai.request(app)
+    .get('/posts')
+    .then(function(res) {
+      return chai.request(app)
+      .delete('/posts/${res.body[0].id}')
+      .then(function(res) {
+        expect(res).to.have.status(204);
+      })
+    })
+  })
 
 })
