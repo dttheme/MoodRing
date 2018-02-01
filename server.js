@@ -44,6 +44,10 @@ let MOCK_POSTS = {
   ]
 }
 
+app.get('/dashboard', (req, res) => {
+  res.send('dashboard.html')
+})
+
 let server;
 
 function runServer(databaseUrl = DATABASE_URL, port = PORT) {

@@ -35,6 +35,7 @@ describe('Dashboard', function() {
   after(function() {
     return closeServer();
   });
+  
   it('should return 200 status and HTML', function() {
     return chai.request(app)
     .get('/dashboard')
