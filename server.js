@@ -69,7 +69,7 @@ app.get('/posts', (req, res) => {
 
 let server;
 
-function runServer(databaseUrl = DATABASE_URL, port = PORT) {
+function runServer(databaseUrl = DATABASE_URL, port = process.env.PORT || 8080) {
 
   return new Promise ((resolve, reject) => {
     mongoose.connect(databaseUrl, err => {
