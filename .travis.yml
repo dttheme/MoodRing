@@ -1,7 +1,6 @@
 language: node_js
 node_js: node
-services:
-  -mongodb
+services: mongodb
 deploy:
   provider: heroku
   api_key:
@@ -9,3 +8,5 @@ deploy:
   app: vast-everglades-57515
   on:
     repo: dttheme/Self-Care-App
+  before_script:
+    - sleep 15
