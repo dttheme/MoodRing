@@ -7,19 +7,10 @@ const bodyParser = require('body-parser');
 mongoose.Promise = global.Promise;
 
 const { PORT, DATABASE_URL } = require('./config');
+const { Post } = require('./models');
 
 const app = express();
-
-app.use(express.static('public'));
-
-if (require.main === module) {
-  app.listen(process.env.PORT || 8080, function() {
-    console.info(`App listening on ${this.address().port}`);
-  });
-}
-
-module.exports = app;
-
+app.use(bodyParser.json());
 
 let MOCK_POSTS = {
   "posts": [
@@ -49,7 +40,7 @@ let MOCK_POSTS = {
 
 let server;
 
-function runServer(databaseUrl, port = PORT) {
+function runServer(databaseUrl = DATABASE_URL, port = PORT) {
 
   return new Promise ((resolve, reject) => {
     mongoose.connect(databaseUrl, err => {
@@ -70,7 +61,7 @@ function runServer(databaseUrl, port = PORT) {
 
 function closeServer() {
   return mongoose.disconnect().then(() => {
-    new Promise(function(resolve, reject) {
+    return new Promise(function(resolve, reject) {
       console.log(`Closing server`);
       server.close(err => {
         if(err) {
