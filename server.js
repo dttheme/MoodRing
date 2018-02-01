@@ -4,6 +4,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+// const postRouter = require('./postRouter');
+
 mongoose.Promise = global.Promise;
 
 const { PORT, DATABASE_URL } = require('./config');
@@ -11,12 +13,7 @@ const { PORT, DATABASE_URL } = require('./config');
 const app = express();
 
 app.use(express.static('public'));
-
-if (require.main === module) {
-  app.listen(process.env.PORT || 8080, function() {
-    console.info(`App listening on ${this.address().port}`);
-  });
-}
+// app.use('posts', postRouter);
 
 module.exports = app;
 
@@ -49,7 +46,7 @@ let MOCK_POSTS = {
 
 let server;
 
-function runServer(databaseUrl, port = PORT) {
+function runServer(databaseUrl = DATABASE_URL, port = PORT) {
 
   return new Promise ((resolve, reject) => {
     mongoose.connect(databaseUrl, err => {
@@ -70,7 +67,7 @@ function runServer(databaseUrl, port = PORT) {
 
 function closeServer() {
   return mongoose.disconnect().then(() => {
-    new Promise(function(resolve, reject) {
+    return new Promise(function(resolve, reject) {
       console.log(`Closing server`);
       server.close(err => {
         if(err) {

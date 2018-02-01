@@ -37,7 +37,7 @@ describe('Dashboard', function() {
   });
   it('should return 200 status and HTML', function() {
     return chai.request(app)
-    .get('../public/dashboard')
+    .get('/dashboard')
     .then(function(res) {
       res.should.have.status(200);
       res.should.be.html;
