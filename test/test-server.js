@@ -2,13 +2,33 @@
 
 const chai = require('chai');
 const chaiHttp = require('chai-http');
+const faker = require('faker');
+const mongoose = require('mongoose');
+
+const { Post } = require('../models')
 const { app , runServer, closeServer } = require('../server.js');
-const { TEST_DATABASE_URL } = require('../config')
+
 
 chai.should();
 const expect = chai.expect;
 
 chai.use(chaiHttp);
+
+function sendTestData() {
+  console.info('Sending test data');
+  const testData = [];
+
+  for (let i=1; 1<=10; i++) {
+    testData.push(generateTestData());
+  }
+  return Post.insertMany(testData);
+}
+
+
+
+
+
+
 
 describe('/', function() {
   before(function() {
