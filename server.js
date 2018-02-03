@@ -5,19 +5,17 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
-// const postRouter = require('./postRouter');
-
-mongoose.Promise = global.Promise;
+const postRouter = require('./postRouter');
 
 const { PORT, DATABASE_URL } = require('./config');
 const { Post } = require('./models');
 
 const app = express();
+
 app.use(bodyParser.json());
 app.use(express.static('public'));
-// app.use('posts', postRouter);
 
-module.exports = app;
+mongoose.Promise = global.Promise;
 
 const MOCK_POSTS = {
   "posts": [
@@ -46,26 +44,24 @@ const MOCK_POSTS = {
 }
 
 app.get('/', (req, res) => {
-  res.send('index.html')
+  res.sendFile('index.html')
 })
 
 app.get('/dashboard', (req, res) => {
-  res.send('dashboard.html')
+  //will need login authentification
+  res.sendFile('dashboard.html')
 })
 
 app.get('/posts', (req, res) => {
-  res.json(MOCK_POSTS);
+  //will need login authentification
+  res.sendFile('posts.html');
 })
 
-// app.post('/posts', jsonParser ,(req,res) => {
-//   const item = {
-//     mood: 'happy',
-//     activity: ['drink tea', 'make bed', 'pet cat'],
-//     note: 'A good day!'
-//   };
-//   res.status(201).json(item);
-// })
+app.use('/posts', postRouter);
 
+app.use('*', function(resq, res) {
+  res.status(404).json({message: 'Not found'});
+});
 
 let server;
 

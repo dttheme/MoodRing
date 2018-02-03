@@ -1,6 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
 const postSchema = mongoose.Schema({
   mood: {type: String, require: true},
