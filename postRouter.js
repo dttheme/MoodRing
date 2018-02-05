@@ -55,7 +55,7 @@ router.put('/posts/:id', (req, res) => {
 router.delete('/posts:id', (req, res) => {
   Post
     .findByIdAndRemove(req.params.id)
-    .then(() => {res.status(204).end())
+    .then(post => res.status(204).end())
     .catch(err => {
       console.error(err);
       res.status(500).json({ error: 'Internal server error' });
