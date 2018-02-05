@@ -9,4 +9,4 @@ deploy:
   on:
     repo: dttheme/Self-Care-App
   before_script:
-    - sleep 15
+    - sleep 10
