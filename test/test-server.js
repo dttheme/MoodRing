@@ -6,8 +6,7 @@ const faker = require('faker');
 const mongoose = require('mongoose');
 
 const { Post } = require('../models')
-const { app , runServer, closeServer } = require('../server.js');
-const { TEST_DATABASE_URL } = require('../config');
+const { app , runServer, closeServer } = require('../server');
 
 
 chai.should();
@@ -137,35 +136,47 @@ describe('API Resource', function() {
     });
   });
 
-  //
-  // it('should update a post on PUT', function() {
-  //   return chai.request(app)
-  //   .get('/posts')
-  //   .then(function(res) {
-  //     const updatedPost = Object.assign(res.body[0], {
-  //       mood: 'sad',
-  //       activity: ['watch tv', 'eat chips'],
-  //       note: 'Could have been better!'
-  //     });
-  //     return chai.request(app)
-  //     .put('/posts/${res.body[0].id}')
-  //     .send(updatedPost)
-  //     .then(function(res) {
-  //       expect(res).to.have.status(204);
-  //     });
-  //   });
-  // });
-  //
-  // it('should delete a post on DELETE', function() {
-  //   return chai.request(app)
-  //   .get('/posts')
-  //   .then(function(res) {
-  //     return chai.request(app)
-  //     .delete('/posts/${res.body[0].id}')
-  //     .then(function(res) {
-  //       expect(res).to.have.status(204);
-  //     })
-  //   })
-  // })
+  describe('PUT endpoint', function() {
+    it('should update fields you send', function() {
+      const updateData = {
+        mood: 'weird',
+        activity: ['walk', 'talk'],
+        note: 'La la la la!'
+      };
 
-})
+      return Post
+        .findOne()
+        .then(function(post) {
+          updateData.id = post.id;
+
+          return chai.request(app)
+          .put(`/posts/${post.id}`)
+          .send(updateData)
+        })
+        .then(function(res) {
+          expect(res).to.have.status(204);
+          return Post.findById(updateData.id);
+        });
+    });
+  });
+
+  describe('DELETE endpoint', function() {
+    it('deletes a post by id', function() {
+      let post;
+
+      return Post
+        .findOne()
+        .then(function(_post) {
+          post = _post;
+          return chai.request(app).delete(`/posts/${post.id}`);
+        })
+        .then(function(res) {
+          expect(res).to.have.status(204);
+          return Post.findById(post.id);
+        })
+        .then(function(_post) {
+          expect(_post).to.be.null;
+        });
+    });
+  });
+});
