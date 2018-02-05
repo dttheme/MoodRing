@@ -48,7 +48,6 @@ router.put('/posts/:id', (req, res) => {
 
   Post
   .findByIdAndUpdate(req.params.id, {$set: toUpdate})
-  .exec()
   then(updatedPost => res.status(204).end())
     .catch(err => res.status(500).json({ message: 'Internal server error' }));
 });
@@ -56,10 +55,7 @@ router.put('/posts/:id', (req, res) => {
 router.delete('/posts:id', (req, res) => {
   Post
     .findByIdAndRemove(req.params.id)
-    .exec()
-    .then(() => {
-      res.status(204).json({ message: 'Success' });
-    })
+    .then(() => {res.status(204).end())
     .catch(err => {
       console.error(err);
       res.status(500).json({ error: 'Internal server error' });
