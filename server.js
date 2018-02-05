@@ -54,20 +54,20 @@ app.get('/dashboard', (req, res) => {
 
 app.use('/posts', postRouter);
 
-app.use('*', function(resq, res) {
-  res.status(404).json({message: 'Not found'});
+app.use('*', function(req, res) {
+  res.status(404).json({ message: 'Not found' });
 });
 
 let server;
 
-function runServer(databaseUrl, port) {
+function runServer(databaseUrl = DATABASE_URL, port = process.env.PORT || 8080) {
 
   return new Promise ((resolve, reject) => {
-    mongoose.connect(DATABASE_URL, err => {
+    mongoose.connect(databaseUrl, err => {
       if (err) {
         return reject(err);
       }
-      server = app.listen(PORT, () => {
+      server = app.listen(port, () => {
         console.log(`Your app is listening on port ${port}`);
         resolve();
       })
