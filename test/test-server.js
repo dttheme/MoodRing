@@ -19,7 +19,7 @@ function sendTestData() {
   const testData = [];
 
   for (let i=1; i<=10; i++) {
-    console.log(generateTestData());
+    // console.log(generateTestData());
     testData.push(generateTestData());
   }
   return Post.insertMany(testData);
@@ -83,7 +83,7 @@ describe('/dashboard', function() {
 
 describe('API Resource', function() {
   before(function() {
-    return runServer(TEST_DATABASE_URL);
+    return runServer();
   });
 
   beforeEach(function() {
@@ -137,7 +137,7 @@ describe('API Resource', function() {
   });
 
   describe('PUT endpoint', function() {
-    it('should update fields you send', function() {
+    it('should update fields sent', function() {
       const updateData = {
         mood: 'weird',
         activity: ['walk', 'talk'],
@@ -161,7 +161,7 @@ describe('API Resource', function() {
   });
 
   describe('DELETE endpoint', function() {
-    it('deletes a post by id', function() {
+    it('should delete a post by id', function() {
       let post;
 
       return Post
