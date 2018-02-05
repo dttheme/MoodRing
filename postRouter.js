@@ -11,15 +11,30 @@ const { Post } = require('./models');
 router.get('/posts', (req, res) => {
   Post
     .find()
-    .then(results => {
-      return results.map(result => {
-        return result.serialize();
+    .then(posts => {
+      res.json({
+        posts: posts.map(
+          (post) => post.serialize())
       });
-    })
-    .then(results => {
-      res.json(results);
     })
     .catch(err => {
       console.error(err);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+
+router.post('/posts', (req, res) => {
+  Post
+    .create({
+      mood: req.body.mood,
+      activity: req.body.activity,
+      note: req.body.note,
+    })
+    .then(post => res.status(201).json(restaurant.serialize()))
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ message: 'Internal server error' })
     })
 })
+
+module.exports = router;

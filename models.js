@@ -1,7 +1,6 @@
 'use strict';
 
 const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
 
 const postSchema = mongoose.Schema({
   mood: {type: String, require: true},
@@ -18,14 +17,8 @@ postSchema.methods.serialize = function() {
     note: this.note,
     publishedAt: this.publishedAt || new Date()
   };
-}
+};
 
 const Post = mongoose.model('Post', postSchema);
-
-
-
-
-
-
 
 module.exports = {Post};

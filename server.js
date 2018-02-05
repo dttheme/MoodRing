@@ -44,17 +44,12 @@ const MOCK_POSTS = {
 }
 
 app.get('/', (req, res) => {
-  res.sendFile('index.html')
+  res.send('index.html')
 })
 
 app.get('/dashboard', (req, res) => {
   //will need login authentification
-  res.sendFile('dashboard.html')
-})
-
-app.get('/posts', (req, res) => {
-  //will need login authentification
-  res.sendFile('posts.html');
+  res.send('dashboard.html')
 })
 
 app.use('/posts', postRouter);
@@ -65,14 +60,14 @@ app.use('*', function(resq, res) {
 
 let server;
 
-function runServer(databaseUrl = DATABASE_URL, port = process.env.PORT || 8080) {
+function runServer(databaseUrl, port) {
 
   return new Promise ((resolve, reject) => {
-    mongoose.connect(databaseUrl, err => {
+    mongoose.connect(DATABASE_URL, err => {
       if (err) {
         return reject(err);
       }
-      server = app.listen(port, () => {
+      server = app.listen(PORT, () => {
         console.log(`Your app is listening on port ${port}`);
         resolve();
       })
