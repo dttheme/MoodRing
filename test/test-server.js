@@ -107,9 +107,7 @@ describe('API Resource', function() {
         res = _res;
         res.should.have.status(200);
         res.should.be.json;
-        // res.body.should.have.length.of.at.least(1);
         return Post.count();
-        console.log(res.body);
       })
       // .then(function(count) {
       //   res.body.should.have.length.of(count);

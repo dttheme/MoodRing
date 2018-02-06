@@ -17,32 +17,6 @@ app.use(express.static('public'));
 
 mongoose.Promise = global.Promise;
 
-const MOCK_POSTS = {
-  "posts": [
-    {
-      "id": "111",
-      "mood": "happy",
-      "activity": ["walk", "yoga", "brush teeth"],
-      "note": "Today was great!",
-      "publishedAt": 1517271600
-    },
-    {
-      "id": "222",
-      "mood": "sad",
-      "activity": ["clean kitchen", "pet cat", "drink water"],
-      "note": "Tomorrow I will take a walk and do yoga!",
-      "publishedAt": 1517272183
-    },
-    {
-      "id": "333",
-      "mood": "productive",
-      "activity": ["walk", "drink tea"],
-      "note": "Got a lot done today!",
-      "publishedAt": 1517322248
-    }
-  ]
-}
-
 app.get('/', (req, res) => {
   res.send('index.html')
 })
@@ -60,14 +34,16 @@ app.use('*', function(req, res) {
 
 let server;
 
-function runServer(databaseUrl = DATABASE_URL, port = process.env.PORT || 8080) {
+// Heroku won't deploy: https://stackoverflow.com/questions/14322989/first-heroku-deploy-failed-error-code-h10
+
+function runServer(databaseUrl = DATABASE_URL, port) {
 
   return new Promise ((resolve, reject) => {
     mongoose.connect(databaseUrl, err => {
       if (err) {
         return reject(err);
       }
-      server = app.listen(port, () => {
+      server = app.listen(process.env.PORT || 8080, () => {
         console.log(`Your app is listening on port ${port}`);
         resolve();
       })
