@@ -27,7 +27,7 @@ const MOCK_POSTS = {
 function getPreviousEntries(callbackFn) {
   setTimeout(function() {
     callbackFn(MOCK_POSTS)
-  }, 1);
+  }, 3000);
 }
 
 
