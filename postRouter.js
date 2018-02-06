@@ -8,7 +8,7 @@ mongoose.Promise = global.Promise;
 
 const { Post } = require('./models');
 
-router.get('/posts', (req, res) => {
+router.get('/', (req, res) => {
   Post
     .find()
     .then(posts => {
@@ -23,21 +23,21 @@ router.get('/posts', (req, res) => {
     });
 });
 
-router.post('/posts', (req, res) => {
+router.post('/', (req, res) => {
   Post
     .create({
       mood: req.body.mood,
       activity: req.body.activity,
       note: req.body.note,
     })
-    .then(post => res.status(201).json(restaurant.serialize()))
+    .then(post => res.status(201).json(post.serialize()))
     .catch(err => {
       console.error(err);
       res.status(500).json({ message: 'Internal server error' })
     })
 })
 
-router.put('/posts/:id', (req, res) => {
+router.put('/:id', (req, res) => {
   const toUpdate = {};
   const updateableFields = ['mood', 'activity', 'note'];
   updateableFields.forEach(field => {
@@ -48,11 +48,11 @@ router.put('/posts/:id', (req, res) => {
 
   Post
   .findByIdAndUpdate(req.params.id, {$set: toUpdate})
-  then(updatedPost => res.status(204).end())
+  .then(updatedPost => res.status(204).end())
     .catch(err => res.status(500).json({ message: 'Internal server error' }));
 });
 
-router.delete('/posts:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   Post
     .findByIdAndRemove(req.params.id)
     .then(post => res.status(204).end())
