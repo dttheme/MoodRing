@@ -2,8 +2,10 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
+const path = require('path');
 
 const postRouter = require('./postRouter');
 
@@ -13,17 +15,22 @@ const { Post } = require('./models');
 const app = express();
 
 app.use(bodyParser.json());
+app.use(morgan('common'));
 app.use(express.static('public'));
 
 mongoose.Promise = global.Promise;
 
 app.get('/', (req, res) => {
-  res.send('index.html')
+  res.sendFile(__dirname + `/public/index.html`)
 })
 
 app.get('/dashboard', (req, res) => {
   //will need login authentification
-  res.send('dashboard.html')
+  res.sendFile(__dirname + `/public/dashboard.html`)
+})
+
+app.get('/archive', (req, res) => {
+  res.sendFile(__dirname + `/public/archive.html`)
 })
 
 app.use('/posts', postRouter);
