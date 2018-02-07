@@ -24,34 +24,42 @@ const MOCK_POSTS = {
   ]
 }
 
+// function getPreviousEntries(callbackFn) {
+//   setTimeout(function() {
+//     callbackFn(MOCK_POSTS)
+//   }, 3000);
+// }
+
 function getPreviousEntries(callbackFn) {
-  setTimeout(function() {
-    callbackFn(MOCK_POSTS)
-  }, 3000);
+  $.ajax({
+    url: '/posts',
+    type: 'GET',
+    dataType: 'json',
+
+    success: function(data) {
+      if(data) {
+        var results = data;
+        callbackFn(results);
+      }
+    }
+  });
 }
 
 
-
-// function getPreviousEntries(callbackFn) {
-//   $.ajax({
-//     url: '/posts',
-//     type: 'GET',
-//     dataType: 'json',
-//
-//     success: function(data) {
-//       if(data) {
-//         var results = data;
-//         callbackFn(results);
-//       }
-//     }
-//   });
-// }
-
+//object literal looks better!
 function displayPreviousEntries(data) {
   for (index in data.posts) {
-    $('body').append(
-      '<p>' + data.posts[index].text + '</p>'
+    $('.post-group').append(
+      `<div class='post'>
+      <p>${data.posts[index].publishedAt}</p>
+        <p>On this day:</p>
+          <p>I felt: ${data.posts[index].mood} </p>
+          <p>I accomplished: ${data.posts[index].activity} </p>
+          <p> What else?: ${data.posts[index].note}</p>
+        </div>
+      `
     );
+    console.log(data.posts[index]);
   }
 }
 

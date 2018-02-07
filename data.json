@@ -1,0 +1,23 @@
+[
+  {
+    "id": "111",
+    "mood": "happy",
+    "activity": ["walk", "yoga", "brush teeth"],
+    "note": "Today was great!",
+    "publishedAt": 1517271600
+  },
+  {
+    "id": "222",
+    "mood": "sad",
+    "activity": ["clean kitchen", "pet cat", "drink water"],
+    "note": "Tomorrow I will take a walk and do yoga!",
+    "publishedAt": 1517272183
+  },
+  {
+    "id": "333",
+    "mood": "productive",
+    "activity": ["walk", "drink tea"],
+    "note": "Got a lot done today!",
+    "publishedAt": 1517322248
+  }
+]

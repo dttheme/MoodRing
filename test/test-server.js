@@ -83,7 +83,7 @@ describe('/dashboard', function() {
 
 describe('API Resource', function() {
   before(function() {
-    return runServer();
+    return runServer(TEST_DATABASE_URL);
   });
 
   beforeEach(function() {

@@ -15,7 +15,7 @@ postSchema.methods.serialize = function() {
     mood: this.mood,
     activity: this.activity,
     note: this.note,
-    publishedAt: this.publishedAt || new Date()
+    publishedAt: this.publishedAt || new Date(0)
   };
 };
 
