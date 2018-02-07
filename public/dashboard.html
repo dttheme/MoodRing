@@ -4,18 +4,22 @@
     <meta charset="utf-8">
     <title>Self-Care App</title>
     <script src="https://use.fontawesome.com/7f641b72ff.js"></script>
+    <link rel="stylesheet" type="text/css" href="global_style.css">
+    <link rel="stylesheet" type="text/css" href="dashboard.css">
   </head>
   <body>
     <header>
-        <h1>Self-Care App</h1>
+        <h1>Self-Care App: Your Dashboard</h1>
     </header>
-    <form>
-      <label>How was your day today?</label><br>
-      <i class="far fa-smile"></i><i class="far fa-meh"></i><i class="far fa-frown"></i>
-      <label>What did you do for yourself today?</label><br>
-      <input type="text"><br><br>
-      <label>Notes:</label><br>
-      <input type="text">
+    <form method="post" id="new_post_form">
+      <label for="mood_input">How did you feel today?</label><br>
+      <input type="text" id="mood_input"><br>
+      <!-- <i class="far fa-smile"></i><i class="far fa-meh"></i><i class="far fa-frown"></i> -->
+      <label for="activity_input">What did you do for yourself today?</label><br>
+      <input type="text" id="activity_input"><br><br>
+      <label for notes_input>Notes:</label><br>
+      <input type="text" id="notes_input">
     </form>
+    <a class="button" href="/archive">Archive</a>
   </body>
 </html>

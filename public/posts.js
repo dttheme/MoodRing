@@ -40,6 +40,7 @@ function getPreviousEntries(callbackFn) {
       if(data) {
         var results = data;
         callbackFn(results);
+        console.log(data);
       }
     }
   });
