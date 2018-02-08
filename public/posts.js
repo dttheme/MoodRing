@@ -24,11 +24,7 @@ const MOCK_POSTS = {
   ]
 }
 
-// function getPreviousEntries(callbackFn) {
-//   setTimeout(function() {
-//     callbackFn(MOCK_POSTS)
-//   }, 3000);
-// }
+
 
 function getPreviousEntries(callbackFn) {
   $.ajax({
@@ -42,6 +38,10 @@ function getPreviousEntries(callbackFn) {
         callbackFn(results);
         console.log(data);
       }
+    },
+    error: function(jqXHR, exception) {
+      console.log(jqXHR);
+      console.log(exception);
     }
   });
 }

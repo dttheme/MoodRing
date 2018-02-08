@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 
 const { Post } = require('../models')
 const { app , runServer, closeServer } = require('../server');
-
+const { TEST_DATABASE_URL } = require('../config.js');
 
 chai.should();
 const expect = chai.expect;
