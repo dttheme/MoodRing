@@ -11,23 +11,14 @@
 //function for correctly submitting form "Success! Great work!"
 
 
-
-
-
-
-$('#new_post_submit').click(function(event) {
+$('#new_post_form').submit(function(event) {
   event.preventDefault();
-  // let form = $('#new_post_form').serialize();
-
-  console.log(mood, activity, note);
-  // $.post(WHERETOSEND, form, function(data) {
-  //   alert(data);
-  // });
+  addNewPost();
 });
 
 function addNewPostRequest(mood, activity, note) {
   $.ajax({
-    url: '?',
+    url: '/posts',
     type: 'POST',
     dataType: 'json',
     contentType: 'application/json',
@@ -35,8 +26,7 @@ function addNewPostRequest(mood, activity, note) {
       {
         mood: mood,
         activity: activity,
-        note: note,
-        publishedAt: publishedAt
+        note: note
       }
     ),
     // success: function(data) {},

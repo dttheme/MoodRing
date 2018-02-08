@@ -23,9 +23,7 @@ const MOCK_POSTS = {
     }
   ]
 }
-
-
-
+//create callback function that parses data, returns HTML etc etc
 function getPreviousEntries(callbackFn) {
   $.ajax({
     url: '/posts',
