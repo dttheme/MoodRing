@@ -1,5 +1,37 @@
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #7FE8BC;
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 100px;
+  width: 100vw;
+  overflow: hidden;
+}
+h1 {
+   font-family: 'Bungee Shade', sans-serif;
+   font-size: 60px;
+   font-weight: 100;
+   float: left;
+   padding-left: 50px;
+   padding-top: 20px;
+}
+nav {
+  position: absolute;
+  top: 50px;
+  right: 70px;
+}
+nav ul {
+  list-style-type: none;
+  float: right;
+}
+nav li {
+  display: inline;
+  padding-right:
 }

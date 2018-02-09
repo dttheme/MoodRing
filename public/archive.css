@@ -1,4 +1,13 @@
+#previous_post_section {
+  margin-top: 200px;
+  position: relative;
+}
+.post-group {
+  position: relative;
+  margin: auto 0;
+}
 .post {
+  width: 50%;
   border: 1px solid black;
   margin: 5px;
   padding: 5px;
