@@ -6,21 +6,31 @@
     <script src="https://use.fontawesome.com/7f641b72ff.js"></script>
     <link rel="stylesheet" type="text/css" href="global_style.css">
     <link rel="stylesheet" type="text/css" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Roboto" rel="stylesheet">
   </head>
   <body>
-    <header>
-        <h1>Self-Care App: Your Dashboard</h1>
-    </header>
-    <form method="post" id="new_post_form">
-      <label for="mood_input">How did you feel today?</label><br>
-      <input type="text" id="mood_input"><br>
-      <!-- <i class="far fa-smile"></i><i class="far fa-meh"></i><i class="far fa-frown"></i> -->
-      <label for="activity_input">What did you do for yourself today?</label><br>
-      <input type="text" id="activity_input"><br>
-      <label for notes_input>Notes:</label><br>
-      <input type="text" id="note_input"><br><br>
-      <button form="new_post_form" id="new_post_submit">Submit</button>
-    </form>
+      <header>
+          <h1>Mood Ring</h1>
+          <nav>
+            <ul>
+              <li><a href="#">Sign up</a></li>
+              <li><a href="#">Login</a></li>
+              <li><a href="/dashboard">Dashboard</a></li>
+            </ul>
+          </nav>
+      </header>
+    <section id="new_post_section">
+      <form method="post" id="new_post_form">
+        <label for="mood_input">How did you feel today?</label><br>
+        <input type="text" id="mood_input"><br>
+        <!-- <i class="far fa-smile"></i><i class="far fa-meh"></i><i class="far fa-frown"></i> -->
+        <label for="activity_input">What did you do for yourself today?</label><br>
+        <input type="text" id="activity_input"><br>
+        <label for notes_input>Notes:</label><br>
+        <input type="text" id="note_input"><br><br>
+        <button form="new_post_form" id="new_post_submit">Submit</button>
+      </form>
+    </section>
     <a class="button" href="/archive">Archive</a>
     <a class="button" href="/">Home</a>
     <script
