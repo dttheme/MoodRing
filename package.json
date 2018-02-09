@@ -4,12 +4,9 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-<<<<<<< HEAD
     "chart.js": "^2.7.1",
-=======
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
->>>>>>> feature-userRouter
     "express": "^4.16.2",
     "faker": "^4.1.0",
     "jsonwebtoken": "^8.1.1",

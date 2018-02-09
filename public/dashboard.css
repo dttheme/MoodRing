@@ -6,3 +6,26 @@
   border: 1px black solid;
   padding: 10px;
 }
+
+.emoticons {
+  height: 100px;
+  width: 100px;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+input[type="radio"] {
+  visibility: hidden;
+  position: absolute;
+}
+
+.emoticon_label > input[type="radio"] + img {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+
+.emoticon_label > input[type="radio"]:checked + img {
+  border: 2px solid #7FE8BC;
+  color: #7FE8BC;
+}
