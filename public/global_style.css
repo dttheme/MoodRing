@@ -1,3 +1,9 @@
+/* #7FE8BC
+#65C2C9
+#5583B0
+#5256B0
+#5D398F */
+
 * {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
@@ -6,13 +12,13 @@
   padding: 0;
 }
 header {
-  background-color: #7FE8BC;
   display: block;
   position: absolute;
   top: 0;
   height: 100px;
   width: 100vw;
   overflow: hidden;
+  background-image: linear-gradient(to right, #7fe8bc, #5d398f);
 }
 h1 {
    font-family: 'Bungee Shade', sans-serif;

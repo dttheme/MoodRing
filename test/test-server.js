@@ -27,6 +27,7 @@ function sendTestData() {
 
 function generateTestData() {
   return {
+    rating: faker.random.number(),
     mood: faker.random.word(),
     activity: [faker.random.word()],
     note: faker.lorem.sentence(),
@@ -138,6 +139,7 @@ describe('API Resource', function() {
   describe('PUT endpoint', function() {
     it('should update fields sent', function() {
       const updateData = {
+        rating: 2,
         mood: 'weird',
         activity: ['walk', 'talk'],
         note: 'La la la la!'

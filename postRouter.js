@@ -26,6 +26,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   Post
     .create({
+      rating: req.body.rating,
       mood: req.body.mood,
       activity: req.body.activity,
       note: req.body.note,
@@ -39,7 +40,7 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   const toUpdate = {};
-  const updateableFields = ['mood', 'activity', 'note'];
+  const updateableFields = ['rating', 'mood', 'activity', 'note'];
   updateableFields.forEach(field => {
     if (field in req.body) {
       toUpdate[field] = req.body[field];

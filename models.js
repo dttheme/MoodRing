@@ -3,6 +3,7 @@
 const mongoose = require('mongoose');
 
 const postSchema = mongoose.Schema({
+  rating: Number,
   mood: {type: [String], require: true},
   activity: [String],
   note: String,
@@ -12,6 +13,7 @@ const postSchema = mongoose.Schema({
 postSchema.methods.serialize = function() {
   return {
     id: this._id,
+    rating: this.rating,
     mood: this.mood,
     activity: this.activity,
     note: this.note,

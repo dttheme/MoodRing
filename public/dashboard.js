@@ -25,7 +25,7 @@ $('#new_post_form').submit(function(event) {
   addNewPost();
 });
 
-function addNewPostRequest(moodArray, activityArray, note) {
+function addNewPostRequest(rating, moodArray, activityArray, note) {
   $.ajax({
     url: '/posts',
     type: 'POST',
@@ -33,6 +33,7 @@ function addNewPostRequest(moodArray, activityArray, note) {
     contentType: 'application/json',
     data: JSON.stringify(
       {
+        rating: rating,
         mood: moodArray,
         activity: activityArray,
         note: note
@@ -47,15 +48,14 @@ function addNewPostRequest(moodArray, activityArray, note) {
 }
 
 function addNewPost() {
+  let rating = $("input[type='radio'][name='emoticons']:checked").val();
   let moodArray = $('input[class="mood_input"]').map(function() {return $(this).val();}).get();
   let activityArray = $('input[class="activity_input"]').map(function() {return $(this).val();}).get();
   let note = $('#note_input').val().trim();
-  addNewPostRequest(moodArray, activityArray, note);
+  addNewPostRequest(rating, moodArray, activityArray, note);
 }
 
 //Add additional inputs, remove on click
-
-
 function addMoodInput() {
   const max_fields = 5;
   $('#add_mood_button').click(function(event) {
@@ -64,7 +64,7 @@ function addMoodInput() {
       fieldCount++;
       $('#mood_input_wrap').append(
         `
-        <div><input type="text" class="mood_input"><a href="#" class="remove_field">Remove</a><div><br>
+        <div><input type="text" class="mood_input"><a href="#" class="remove_field" role="button" title="Remove">x</a><div>
         `
       );
     }
@@ -79,7 +79,7 @@ function addActivityInput() {
       fieldCount++;
       $('#activity_input_wrap').append(
         `
-        <div><input type="text" class="activity_input"><a href="#" class="remove_field">Remove</a><div><br>
+        <div><input type="text" class="activity_input"><a href="#" class="remove_field" role="button" title="Remove">x</i></a><div>
         `
       );
     }

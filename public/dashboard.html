@@ -16,6 +16,7 @@
               <li><a href="#">Sign up</a></li>
               <li><a href="#">Login</a></li>
               <li><a href="/dashboard">Dashboard</a></li>
+              <li><a href="/archive">Archive</a></li>
             </ul>
           </nav>
       </header>
@@ -43,17 +44,23 @@
             <img src="/images/emoticons/terrible.svg" class="emoticons">
           </label>
           <br><br>
-        <label for="mood_input">What did you feel today?</label><br>
-        <input type="text" id="mood_input"><br>
-        <label for="activity_input">What did you do for yourself today?</label><br>
-        <input type="text" id="activity_input"><br>
-        <label for notes_input>Notes:</label><br>
-        <input type="text" id="note_input"><br><br>
+        <div id="mood_input_wrap">
+          <label for="mood_input">What did you feel today?</label><br>
+          <input type="text" class="mood_input"><br>
+        </div>
+        <button type="button" id="add_mood_button">Feel something else?</button><br>
+        <div id="activity_input_wrap">
+          <label for="activity_input">What did you do for yourself today?</label><br>
+          <input type="text" class="activity_input"><br>
+        </div>
+        <button type="button" id="add_activity_button">Do something else?</button><br>
+        <div id="notes_input_wrapper">
+          <label for="notes_input">Notes:</label><br>
+          <input type="text" id="note_input"><br><br>
+        </div>
         <button form="new_post_form" id="new_post_submit">Submit</button>
       </form>
     </section>
-    <a class="button" href="/archive">Archive</a>
-    <a class="button" href="/">Home</a>
     <script
   src="http://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

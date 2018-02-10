@@ -1,28 +1,5 @@
-const MOCK_POSTS = {
-  "posts": [
-    {
-      "id": "111",
-      "mood": "happy",
-      "activity": ["walk", "yoga", "brush teeth"],
-      "note": "Today was great!",
-      "publishedAt": 1517271600
-    },
-    {
-      "id": "222",
-      "mood": "sad",
-      "activity": ["clean kitchen", "pet cat", "drink water"],
-      "note": "Tomorrow I will take a walk and do yoga!",
-      "publishedAt": 1517272183
-    },
-    {
-      "id": "333",
-      "mood": "productive",
-      "activity": ["walk", "drink tea"],
-      "note": "Got a lot done today!",
-      "publishedAt": 1517322248
-    }
-  ]
-}
+'use strict';
+
 //create callback function that parses data, returns HTML etc etc
 function getPreviousEntries(callbackFn) {
   $.ajax({
@@ -44,8 +21,6 @@ function getPreviousEntries(callbackFn) {
   });
 }
 
-
-
 //object literal looks better!
 function displayPreviousEntries(data) {
   if (data.length === 0) {
@@ -55,6 +30,7 @@ function displayPreviousEntries(data) {
       $('.post_group').append(
         `<div class='post' id=${data.posts[index].id}>
             <p>${data.posts[index].publishedAt}</p>
+            <p>Rating: ${data.posts[index].rating}
             <p>On this day:</p>
             <p>I felt: ${data.posts[index].mood} </p>
             <p>I accomplished: ${data.posts[index].activity} </p>
@@ -64,7 +40,7 @@ function displayPreviousEntries(data) {
           </div>
         `
       );
-      // console.log(data.posts[index]);
+      console.log(data.posts[index]);
       deletePreviousEntries();
     }
   }
@@ -97,3 +73,15 @@ function getAndDisplayPreviousEntries() {
 $(function() {
   getAndDisplayPreviousEntries();
 })
+
+//change post background color based on rating
+
+
+//add emoticon face based on Rating
+// function decideEmoticon(data) {
+//   let rating = data.posts[index].rating;
+//
+//   if (rating === 1) {
+//     $('div').css('background-color', '')
+//   }
+// }

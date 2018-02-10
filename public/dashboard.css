@@ -29,3 +29,17 @@ input[type="radio"] {
   border: 2px solid #7FE8BC;
   color: #7FE8BC;
 }
+
+#mood_input_wrap,
+#activity_input_wrap,
+#notes_input_wrapper {
+  padding-top: 40px;
+}
+
+.remove_field {
+ position: absolute;
+ padding-left: 5px;
+}
+.remove_field a {
+  text-decoration: none;
+}
