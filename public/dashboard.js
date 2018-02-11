@@ -40,7 +40,8 @@ function addNewPostRequest(rating, moodArray, activityArray, note) {
       }
     ),
     success: function(data) {
-      console.log(moodArray);
+      console.log(`Successfully created post ${data.id}`)
+      console.log(rating);
       console.log(activityArray);
     }
     // error: function(jqXHR, exception) {}
@@ -49,8 +50,8 @@ function addNewPostRequest(rating, moodArray, activityArray, note) {
 
 function addNewPost() {
   let rating = $("input[type='radio'][name='emoticons']:checked").val();
-  let moodArray = $('input[class="mood_input"]').map(function() {return $(this).val();}).get();
-  let activityArray = $('input[class="activity_input"]').map(function() {return $(this).val();}).get();
+  let moodArray = $('input[class="mood_input input"]').map(function() {return $(this).val();}).get();
+  let activityArray = $('input[class="activity_input input"]').map(function() {return $(this).val();}).get();
   let note = $('#note_input').val().trim();
   addNewPostRequest(rating, moodArray, activityArray, note);
 }
@@ -64,7 +65,7 @@ function addMoodInput() {
       fieldCount++;
       $('#mood_input_wrap').append(
         `
-        <div><input type="text" class="mood_input"><a href="#" class="remove_field" role="button" title="Remove">x</a><div>
+        <div><input type="text" class="mood_input input"><a href="#" class="remove_field" role="button" title="Remove"><i class="fa fa-times-circle"></i></a><div>
         `
       );
     }
@@ -79,7 +80,7 @@ function addActivityInput() {
       fieldCount++;
       $('#activity_input_wrap').append(
         `
-        <div><input type="text" class="activity_input"><a href="#" class="remove_field" role="button" title="Remove">x</i></a><div>
+        <div><input type="text" class="activity_input input"><a href="#" class="remove_field" role="button" title="Remove"><i class="fa fa-times-circle"></i></a><div>
         `
       );
     }

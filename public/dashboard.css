@@ -1,10 +1,15 @@
 #new_post_section {
-  margin-top: 10%;
+  margin-top: 150px;
 }
 
 #new_post_form {
-  border: 1px black solid;
+  border: 10px solid transparent;
+  border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
+  border-image-slice: 2;
+  margin: 0 auto;
+  width: 70%;
   padding: 10px;
+  box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
 }
 
 .emoticons {
@@ -12,6 +17,7 @@
   width: 100px;
   padding: 10px;
   padding-top: 20px;
+  margin: 10px;
 }
 
 input[type="radio"] {
@@ -19,43 +25,114 @@ input[type="radio"] {
   position: absolute;
 }
 
-.emoticon_label > input[type="radio"] + img {
-  cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 50%;
-}
-.emoticon_label > input[id="great"]:checked + img {
-  border: 1px solid #7FE8BC;
-  background-color: rgba(127, 232, 188, 0.3);
-}
-.emoticon_label > input[id="good"]:checked + img {
-  border: 1px solid #65C2C9;
-  background-color: rgba(101, 194, 201, 0.3);
-}
-.emoticon_label > input[id="okay"]:checked + img {
-  border: 1px solid #5583B0;
-  background-color: rgba(85, 131, 176, 0.3);
-}
-.emoticon_label > input[id="bad"]:checked + img {
-  border: 1px solid #5256B0;
-  background-color: rgba(82, 86, 176, 0.3);
-}
-.emoticon_label > input[id="terrible"]:checked + img {
-  border: 1px solid #5D398F;
-  background-color: rgba(93, 57, 143, 0.3);
-}
-
 #mood_input_wrap,
 #activity_input_wrap,
 #notes_input_wrapper {
-  padding-top: 40px;
+  margin-top: 20px;
+}
+
+.input {
+  font-size: 15px;
+  margin: 2px;
+  height: 30px;
+  width: 150px;
+  border: 2px solid rgba(25, 38, 51, 0.4);
+  outline: solid 2px transparent;
+}
+
+.input:focus {
+  outline: #7FE8BC solid 2px;
+}
+
+.add_button {
+  margin-top: 10px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+#note_input {
+  height: 200px;
+  width: 40%;
+  font-size: 15px;
+  text-align: left;
+}
+
+legend {
+  font-size: 40px;
+  font-family: 'Bungee', sans-serif;
 }
 
 .remove_field {
  position: absolute;
+ padding-top: 10px;
  padding-left: 5px;
 }
 .remove_field {
   text-decoration: none;
   color: red;
+}
+
+#new_post_submit {
+  height: 50px;
+  width: 200px;
+  border: none;
+  font-family: 'Bungee', sans-serif;
+  font-size: 20px;
+  opacity: 0.8;
+  color: white;
+  background-color: #5D398F;
+  transition: background-color 1s;
+}
+
+#new_post_submit:hover {
+  background-color: #7FE8BC;
+}
+
+/* EMOTICON RADIO BUTTONS */
+
+.emoticon_label > input[type="radio"] + img {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+.emoticon_label > input[id="great"]:hover + img,
+.emoticon_label > input[id="great"]:focus + img,{
+  border: 2px solid #7FE8BC;
+}
+.emoticon_label > input[id="good"]:hover + img,
+.emoticon_label > input[id="good"]:focus + img {
+  border: 2px solid #65C2C9;
+}
+.emoticon_label > input[id="okay"]:hover + img,
+.emoticon_label > input[id="okay"]:focus + img {
+  border: 2px solid #5583B0;
+}
+.emoticon_label > input[id="bad"]:hover + img,
+.emoticon_label > input[id="bad"]:focus + img {
+  border: 2px solid #5256B0;
+}
+.emoticon_label > input[id="terrible"]:hover + img,
+.emoticon_label > input[id="terrible"]:focus + img {
+  border: 2px solid #5D398F;
+}
+.emoticon_label > input[id="great"]:checked + img {
+  border: 2px solid #7FE8BC;
+  background-color: rgba(127, 232, 188, 0.3);
+}
+.emoticon_label > input[id="good"]:checked + img {
+  border: 2px solid #65C2C9;
+  background-color: rgba(101, 194, 201, 0.3);
+}
+.emoticon_label > input[id="okay"]:checked + img {
+  border: 2px solid #5583B0;
+  background-color: rgba(85, 131, 176, 0.3);
+}
+.emoticon_label > input[id="bad"]:checked + img {
+  border: 2px solid #5256B0;
+  background-color: rgba(82, 86, 176, 0.3);
+}
+.emoticon_label > input[id="terrible"]:checked + img {
+  border: 2px solid #5D398F;
+  background-color: rgba(93, 57, 143, 0.3);
 }

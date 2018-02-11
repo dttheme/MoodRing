@@ -2,13 +2,24 @@
   margin-top: 200px;
   position: relative;
 }
-.post-group {
-  position: relative;
-  margin: auto 0;
-}
+
 .post {
+  padding: 0;
+  margin-top: 20px;;
+}
+.post_wrapper {
   width: 50%;
-  border: 1px solid black;
-  margin: 5px;
-  padding: 5px;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
+  border-image-slice: 2;
+  padding: 20px;
+  margin: 0 auto;
+}
+.post_wrapper p {
+  text-align: left;
+}
+
+.post_date {
+  font-family: 'Bungee', sans-serif;
+  font-size: 20px;
 }

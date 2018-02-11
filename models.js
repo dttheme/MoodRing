@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 
 const postSchema = mongoose.Schema({
   rating: Number,
-  mood: {type: [String], require: true},
+  mood: { type: [String], require: true },
   activity: [String],
   note: String,
-  publishedAt: Date,
+  publishedAt: { type: Date, default: new Date() }
 })
 
 postSchema.methods.serialize = function() {
@@ -17,7 +17,7 @@ postSchema.methods.serialize = function() {
     mood: this.mood,
     activity: this.activity,
     note: this.note,
-    publishedAt: this.publishedAt || new Date(0)
+    publishedAt: this.publishedAt
   };
 };
 

@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Self-Care App</title>
+    <title>Mood Ring</title>
     <script src="https://use.fontawesome.com/7f641b72ff.js"></script>
     <link rel="stylesheet" type="text/css" href="global_style.css">
     <link rel="stylesheet" type="text/css" href="dashboard.css">
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Roboto" rel="stylesheet">
-  </head>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Bungee|Roboto" rel="stylesheet">  </head>
   <body>
       <header>
           <h1>Mood Ring</h1>
@@ -23,7 +22,8 @@
       </header>
     <section id="new_post_section">
       <form method="post" id="new_post_form">
-        <legend>How did you feel today?</legend><br><br>
+        <legend>How are you?</legend><br><br>
+        <radiogroup>
           <label for="great" class="emoticon_label">
             <input type="radio" id="great" name="emoticons" value="1" title="great">
             <img src="/images/emoticons/great.svg" class="emoticons">
@@ -44,20 +44,25 @@
             <input type="radio" id="terrible" name="emoticons" value="5" title="terrible">
             <img src="/images/emoticons/terrible.svg" class="emoticons">
           </label>
+        </radiogroup>
           <br><br>
-        <div id="mood_input_wrap">
-          <label for="mood_input">What did you feel today?</label><br>
-          <input type="text" class="mood_input"><br>
+        <div id="mood_wrap">
+          <div id="mood_input_wrap">
+            <label for="mood_input">What did you feel today?</label><br>
+            <input type="text" class="mood_input input" placeholder="Enter mood here"><br>
+          </div>
+          <button type="button" id="add_mood_button" class="add_button"><i class="fa fa-plus-circle"></i> Another mood?</button><br>
         </div>
-        <button type="button" id="add_mood_button">Feel something else?</button><br>
-        <div id="activity_input_wrap">
-          <label for="activity_input">What did you do for yourself today?</label><br>
-          <input type="text" class="activity_input"><br>
+        <div id="activity_wrap">
+          <div id="activity_input_wrap">
+            <label for="activity_input">What did you do for yourself today?</label><br>
+            <input type="text" class="activity_input input" placeholder="Enter activity here"><br>
+          </div>
+          <button type="button" id="add_activity_button" class="add_button"><i class="fa fa-plus-circle"></i> Another activity?</button><br>
         </div>
-        <button type="button" id="add_activity_button">Do something else?</button><br>
         <div id="notes_input_wrapper">
-          <label for="notes_input">Notes:</label><br>
-          <input type="text" id="note_input"><br><br>
+          <label for="note_input">Notes:</label><br>
+          <textarea type="text" id="note_input" class="input" placeholder="Enter any additional thoughts here"></textarea><br><br>
         </div>
         <button form="new_post_form" id="new_post_submit">Submit</button>
       </form>
