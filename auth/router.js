@@ -16,7 +16,7 @@ const createAuthToken = function(user) {
   });
 };
 
-const localAuth = passport.authenticate('locl', {session: false});
+const localAuth = passport.authenticate('local', {session: false});
 router.use(bodyParser.json());
 router.pos('/login', localAuth, (req,res) => {
   const authToken = createAuthToken(req.user.serialize());

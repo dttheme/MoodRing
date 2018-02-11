@@ -26,23 +26,26 @@ function displayPreviousEntries(data) {
   if (data.length === 0) {
     $('post_group').html(`<h2 class='no results'> You don't have any posts yet! Click 'Add New Post' to get started.`)
   } else {
-    for (index in data.posts) {
+    data.posts.forEach(function(post) {
       $('.post_group').append(
-        `<div class='post' id=${data.posts[index].id}>
-            <p>${data.posts[index].publishedAt}</p>
-            <p>Rating: ${data.posts[index].rating}
+        `<div class='post' id=${post.id}>
+            <div class='emoticon_wrapper'>
+            <p>${post.publishedAt}</p>
+            <p>Rating: ${post.rating}</p>
             <p>On this day:</p>
-            <p>I felt: ${data.posts[index].mood} </p>
-            <p>I accomplished: ${data.posts[index].activity} </p>
-            <p> What else?: ${data.posts[index].note}</p>
+            <p>I felt: ${post.mood}</p>
+            <p>I accomplished: ${post.activity}</p>
+            <p> What else?: ${post.note}</p>
             <button type='button' class='delete_post_button'>Delete</button>
             <button type='button' class='edit_post_button'>Edit</button>
+            </div>
           </div>
         `
       );
-      console.log(data.posts[index]);
+      console.log(post);
       deletePreviousEntries();
-    }
+      decideEmoticon(post);
+    })
   }
 }
 
@@ -77,11 +80,22 @@ $(function() {
 //change post background color based on rating
 
 
-//add emoticon face based on Rating
-// function decideEmoticon(data) {
-//   let rating = data.posts[index].rating;
-//
-//   if (rating === 1) {
-//     $('div').css('background-color', '')
-//   }
-// }
+// add emoticon face based on Rating
+
+
+
+function decideEmoticon(post) {
+  let rating = post.rating;
+  if (rating === 1) {
+    $('').css('background-color', 'rgba(127, 232, 188, 0.3)')
+    // $('.emoticon_wrapper')
+  } else if (rating === 2) {
+    $('.post_group').css('background-color', 'rgba(101, 194, 201, 0.3)')
+  } else if (rating === 3) {
+    $('.post_group').css('background-color', 'rgba(85, 131, 176, 0.3)')
+  } else if (rating === 4) {
+    $('.post_group').css('background-color', 'rgba(82, 86, 176, 0.3)')
+  } else if (rating === 5) {
+    $('.post_group').css('background-color', 'rgba(93, 57, 143, 0.3)')
+  }
+}

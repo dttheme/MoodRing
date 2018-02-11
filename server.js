@@ -11,6 +11,8 @@ const postRouter = require('./postRouter');
 
 const { PORT, DATABASE_URL } = require('./config');
 const { Post } = require('./models');
+const { User } = require('./users/models');
+const { userRouter } = require('./users/userRouter');
 
 const app = express();
 
@@ -34,6 +36,8 @@ app.get('/archive', (req, res) => {
 })
 
 app.use('/posts', postRouter);
+
+// app.use('/users', userRouter);
 
 app.use('*', function(req, res) {
   res.status(404).json({ message: 'Not found' });

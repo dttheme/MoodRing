@@ -21,13 +21,28 @@ input[type="radio"] {
 
 .emoticon_label > input[type="radio"] + img {
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-radius: 50%;
 }
-
-.emoticon_label > input[type="radio"]:checked + img {
-  border: 2px solid #7FE8BC;
-  color: #7FE8BC;
+.emoticon_label > input[id="great"]:checked + img {
+  border: 1px solid #7FE8BC;
+  background-color: rgba(127, 232, 188, 0.3);
+}
+.emoticon_label > input[id="good"]:checked + img {
+  border: 1px solid #65C2C9;
+  background-color: rgba(101, 194, 201, 0.3);
+}
+.emoticon_label > input[id="okay"]:checked + img {
+  border: 1px solid #5583B0;
+  background-color: rgba(85, 131, 176, 0.3);
+}
+.emoticon_label > input[id="bad"]:checked + img {
+  border: 1px solid #5256B0;
+  background-color: rgba(82, 86, 176, 0.3);
+}
+.emoticon_label > input[id="terrible"]:checked + img {
+  border: 1px solid #5D398F;
+  background-color: rgba(93, 57, 143, 0.3);
 }
 
 #mood_input_wrap,
@@ -40,6 +55,7 @@ input[type="radio"] {
  position: absolute;
  padding-left: 5px;
 }
-.remove_field a {
+.remove_field {
   text-decoration: none;
+  color: red;
 }
