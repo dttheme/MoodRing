@@ -26,7 +26,7 @@ h1 {
    font-weight: 100;
    float: left;
    padding-left: 50px;
-   padding-top: 20px;
+   /* padding-top: 20px; */
 }
 nav {
   position: absolute;
@@ -51,4 +51,34 @@ nav a {
 
 nav a:hover {
    color: #7fe8bc;
+}
+
+.input {
+  font-size: 15px;
+  margin: 2px;
+  height: 30px;
+  width: 150px;
+  border: 2px solid rgba(25, 38, 51, 0.4);
+  outline: solid 2px transparent;
+}
+
+.input:focus {
+  outline: #7FE8BC solid 2px;
+}
+
+.submit {
+  height: 50px;
+  width: 200px;
+  margin: 30px;
+  border: none;
+  font-family: 'Bungee', sans-serif;
+  font-size: 20px;
+  opacity: 0.8;
+  color: white;
+  background-color: #5D398F;
+  transition: background-color 600ms;
+}
+
+.submit:hover {
+  background-color: #7FE8BC;
 }

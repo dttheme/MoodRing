@@ -13,11 +13,11 @@
 }
 
 .emoticons {
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
   padding: 10px;
-  padding-top: 20px;
-  margin: 10px;
+  padding-top: 20px;;
+  margin: 1%;
 }
 
 input[type="radio"] {
@@ -31,18 +31,6 @@ input[type="radio"] {
   margin-top: 20px;
 }
 
-.input {
-  font-size: 15px;
-  margin: 2px;
-  height: 30px;
-  width: 150px;
-  border: 2px solid rgba(25, 38, 51, 0.4);
-  outline: solid 2px transparent;
-}
-
-.input:focus {
-  outline: #7FE8BC solid 2px;
-}
 
 .add_button {
   margin-top: 10px;
@@ -59,7 +47,8 @@ input[type="radio"] {
 }
 
 legend {
-  font-size: 40px;
+  <
+  font-size: 20px;
   font-family: 'Bungee', sans-serif;
 }
 
@@ -73,28 +62,13 @@ legend {
   color: red;
 }
 
-#new_post_submit {
-  height: 50px;
-  width: 200px;
-  border: none;
-  font-family: 'Bungee', sans-serif;
-  font-size: 20px;
-  opacity: 0.8;
-  color: white;
-  background-color: #5D398F;
-  transition: background-color 1s;
-}
-
-#new_post_submit:hover {
-  background-color: #7FE8BC;
-}
-
 /* EMOTICON RADIO BUTTONS */
 
 .emoticon_label > input[type="radio"] + img {
   cursor: pointer;
   border: 2px solid transparent;
   border-radius: 50%;
+  transition: border-color 600ms;
 }
 .emoticon_label > input[id="great"]:hover + img,
 .emoticon_label > input[id="great"]:focus + img,{
