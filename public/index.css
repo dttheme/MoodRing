@@ -1,3 +1,66 @@
 #landing_section {
-  margin-top: 200px;
+  position: relative;
+  z-index: -2;
+}
+
+.background {
+  position: relative;
+  background: url('/images/landing_photo.jpg') no-repeat top center;
+  background-size: cover;
+  height: 70vh;
+  z-index: -99999;
+}
+.intro_div {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(25, 38, 51, 0.4);
+  top: 15%;
+  left: 35%;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 500px;;
+  width: 500px;;
+  padding: 30px;
+}
+
+.intro_text {
+  font-size: 32px;
+  font-weight: 200;
+  color: black;
+  padding-top: 30%
+}
+
+#sign_up_wrap {
+  margin: 0 auto;
+  margin-top: 2vh;
+  padding-top: 10px;
+  width: 90%;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
+  border-image-slice: 2;
+}
+
+#sign_up_title {
+  display: inline-block;
+  width: 40%;
+  margin-right: 20%;
+}
+#sign_up_title h2 {
+  font-family: 'Bungee', sans-serif;
+  font-size: 30px;
+}
+
+#sign_up_form {
+  display: inline-block;
+}
+
+#sign_up_form input {
+  width: 100%;
+}
+#sign_up_form label {
+  font-size: 15px;
+  font-weight: 500;
+}
+.sign_up_submit {
+  margin-top: 10px;
 }

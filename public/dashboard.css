@@ -31,6 +31,12 @@ input[type="radio"] {
   margin-top: 20px;
 }
 
+.left_input {
+  display: inline-block;
+}
+.right_input {
+  display: inline-block;
+}
 
 .add_button {
   margin-top: 10px;

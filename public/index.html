@@ -5,38 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Self-Care App</title>
     <link rel="stylesheet" type="text/css" href="global_style.css">
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Bungee|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Bungee|Nunito:300" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
-
-    <script src="https://use.fontawesome.com/7f641b72ff.js"></script>
   </head>
   <body>
       <header>
-          <h1>Mood Ring</h1>
+          <h1>MoodRing</h1>
           <nav>
             <ul>
-              <li><a href="#">Sign up</a></li>
               <li><a href="#">Login</a></li>
               <li><a href="/dashboard">Dashboard</a></li>
             </ul>
           </nav>
       </header>
         <section id="landing_section">
-            <h2>"What we think, we become"</h2>
+          <div class="background">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+            <div class="bar bar4"></div>
+            <div class="bar bar5"></div>
+            <div class="bar bar6"></div>
+            <div class="bar bar7"></div>
+            <div class="bar bar8"></div>
+          </div>
+
+          <div class="intro_div">
+            <div class="intro_text">
+            <p>There's a whole world inside of you...</p>
+            <p>Check in. Reflect. Keep track.</p>
+          </div>
+        </div>
+
+            <!-- <h2>"What we think, we become"</h2>
             <p>“The greatest thing in the world is to know how to belong to oneself.”
-      ― Michel de Montaigne</p>
+      ― Michel de Montaigne</p> -->
         </section>
         <section></section>
-
-    <p>Sign up</p>
+<section id="sign_up_section">
+  <div id="sign_up_wrap">
+    <div id="sign_up_title">
+      <h2>Sign up</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus feugiat felis sit amet dictum. Quisque ut ultrices diam. Sed eget hendrerit elit, vitae venenatis ante. Mauris nec nibh magna. Pellentesque vitae tortor commodo, pulvinar magna quis, malesuada dolor. Etiam ut hendrerit nibh. Aliquam gravida, libero sit amet semper vehicula, metus odio ornare felis, eu viverra elit quam vitae justo. Morbi tortor purus, cursus vitae enim eu, tristique volutpat arcu. </p>
+    </div>
+    <div id="sign_up_form">
     <form>
+      <label for="first_name">First name:<br>
+        <input name="first_name" placeholder="First name" class="input">
+      </label><br>
       <label for="email">Enter email address:<br>
         <input type="email" name="email" placeholder="Email address" class="input email_input"><br>
         </label>
       <label for="password">Enter password:<br>
         <input type="password" name="password" placeholder="Secure password" class="input password_input">
       </label><br>
-      <button type="submit" class="submit">Submit</button>
+      <button type="submit" class="submit sign_up_submit">Submit</button>
     </form>
+  </div>
+  </div>
+  </section>
   </body>
 </html>
