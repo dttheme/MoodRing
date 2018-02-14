@@ -92,28 +92,6 @@ nav a:focus {
   outline: #5D398F 3px dotted;
 }
 
-@media only screen and (max-width: 480px) {
-  h1 {
-    font-size: 50px;
-    padding-left: 5px;
-  }
-  li a {
-    font-size: 12px;
-    padding-top: 5px;;
-  }
-  .intro_div {
-    width: 100%;
-    height: 100px;
-  }
-  .intro_text {
-    font-size: 12px;
-  }
-  /* header nav ul li::after {
-    content: "\f2f6"
-    font-family: FontAwesome;
-  } */
-}
-
 
 /* Color bars */
 .bar {
@@ -153,4 +131,31 @@ nav a:focus {
 .bar8 {
   height: 1px;
   margin-top: 70vh;
+}
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 60px;
+    padding-left: 5px;
+  }
+  nav {
+    margin-top: 10px;
+  }
+  nav li {
+    padding-right: 250px;
+  }
+  li a {
+    font-size: 15px;
+  }
+  .intro_div {
+    width: 100%;
+    height: 100px;
+  }
+  .intro_text {
+    font-size: 12px;
+  }
+  /* header nav ul li::after {
+    content: "\f2f6"
+    font-family: FontAwesome;
+  } */
 }

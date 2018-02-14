@@ -31,8 +31,7 @@
 }
 
 #sign_up_wrap {
-  margin: 0 auto;
-  margin-top: 2vh;
+  margin: 2vh auto;
   padding-top: 10px;
   width: 90%;
   border: 2px solid transparent;
@@ -48,6 +47,7 @@
 #sign_up_title h2 {
   font-family: 'Bungee', sans-serif;
   font-size: 30px;
+  padding-bottom: 10px;
 }
 
 #sign_up_form {
@@ -63,4 +63,29 @@
 }
 .sign_up_submit {
   margin-top: 10px;
+}
+
+@media screen and (max-width: 480px) {
+.background {
+  background-size: cover;
+  background-position: 35% 65%;
+  height: 100vh;
+}
+.intro_div {
+  height: 275px;
+  width: 275px;
+  top: 20%;
+  left: 15%;
+}
+.intro_text {
+  font-size: 20px;
+}
+#sign_up_title {
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+#sign_up_form {
+  padding: 10px;
+}
 }
