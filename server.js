@@ -6,13 +6,14 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const path = require('path');
-
-const postRouter = require('./postRouter');
+const passport = require('passport');
 
 const { PORT, DATABASE_URL } = require('./config');
 const { Post } = require('./models');
 const { User } = require('./users/models');
-const { userRouter } = require('./users/userRouter');
+const {router: userRouter} = require('./users/userRouter');
+const postRouter = require('./postRouter');
+const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 
 const app = express();
 
@@ -21,6 +22,20 @@ app.use(morgan('common'));
 app.use(express.static('public'));
 
 mongoose.Promise = global.Promise;
+
+passport.use(localStrategy);
+passport.use(jwtStrategy);
+
+app.use('/posts', postRouter);
+app.use('/users', userRouter);
+
+const jwtAuth = passport.authenticate('jwt', {session: false});
+
+app.get('/protected', jwtAuth, (req, res) => {
+    return res.json({
+        data: 'secret data'
+    });
+});
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + `/public/index.html`)
@@ -31,13 +46,11 @@ app.get('/dashboard', (req, res) => {
   res.sendFile(__dirname + `/public/dashboard.html`)
 })
 
-app.get('/archive', (req, res) => {
+app.get('/archive', jwtAuth, (req, res) => {
   res.sendFile(__dirname + `/public/archive.html`)
 })
 
-app.use('/posts', postRouter);
 
-// app.use('/users', userRouter);
 
 app.use('*', function(req, res) {
   res.status(404).json({ message: 'Not found' });

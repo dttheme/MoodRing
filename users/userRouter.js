@@ -62,7 +62,7 @@ router.post('/', jsonParser, (req, res) => {
   };
 
   const tooSmallField = Object.keys(sizeFields).find(
-    field => 'min' in sizeFields[field] && req.body[field].trim().length < sizeFields[field].om
+    field => 'min' in sizeFields[field] && req.body[field].trim().length < sizeFields[field].min
   );
 
   const tooLargeField = Object.keys(sizeFields).find(
@@ -120,7 +120,7 @@ router.get('/', (req, res) => {
     .catch(err => res.status(500).json({message: 'Internal server error'}));
 });
 
-module.exports = router;
+module.exports = {router};
 
 
 
