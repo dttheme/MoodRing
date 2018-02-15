@@ -28,6 +28,7 @@ passport.use(jwtStrategy);
 
 app.use('/posts', postRouter);
 app.use('/users', userRouter);
+app.use('/auth', authRouter);
 
 const jwtAuth = passport.authenticate('jwt', {session: false});
 
