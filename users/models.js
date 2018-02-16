@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const userSchema = mongoose.Schema({
-  username: {
+  email: {
     type: String,
     required: true,
     unique: true
@@ -20,7 +20,7 @@ const userSchema = mongoose.Schema({
 
 userSchema.methods.serialize = function() {
   return {
-    username: this.username || '',
+    email: this.email || '',
     firstName: this.firstName || ''
   };
 };
@@ -29,7 +29,7 @@ userSchema.methods.validatePassword = function(password) {
   return bcrypt.compare(password, this.password);
 };
 
-userSchema.statics.hasPassword = function(password) {
+userSchema.statics.hashPassword = function(password) {
   return bcrypt.hash(password, 10);
 };
 

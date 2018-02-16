@@ -13,11 +13,11 @@
 .intro_div {
   position: absolute;
   border-radius: 50%;
-  border: 2px solid rgba(25, 38, 51, 0.4);
+  border: 2px solid rgba(127, 232, 188, 0.4);
   top: 15%;
   left: 35%;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   height: 500px;;
   width: 500px;;
   padding: 30px;
@@ -31,7 +31,7 @@
 }
 
 #sign_up_wrap {
-  margin: 2vh auto;
+  margin: 1vh auto;
   padding-top: 10px;
   width: 90%;
   border: 2px solid transparent;
@@ -56,11 +56,9 @@
 
 #sign_up_form input {
   width: 100%;
+  margin-bottom: 10px;
 }
-#sign_up_form label {
-  font-size: 15px;
-  font-weight: 500;
-}
+
 .sign_up_submit {
   margin-top: 10px;
 }

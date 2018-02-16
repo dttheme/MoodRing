@@ -6,13 +6,14 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const path = require('path');
-
-const postRouter = require('./postRouter');
+const passport = require('passport');
 
 const { PORT, DATABASE_URL } = require('./config');
 const { Post } = require('./models');
 const { User } = require('./users/models');
-const { userRouter } = require('./users/userRouter');
+const {router: userRouter} = require('./users/userRouter');
+const postRouter = require('./postRouter');
+const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 
 const app = express();
 
@@ -22,22 +23,36 @@ app.use(express.static('public'));
 
 mongoose.Promise = global.Promise;
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + `/public/index.html`)
-})
-
-app.get('/dashboard', (req, res) => {
-  //will need login authentification
-  res.sendFile(__dirname + `/public/dashboard.html`)
-})
-
-app.get('/archive', (req, res) => {
-  res.sendFile(__dirname + `/public/archive.html`)
-})
+passport.use(localStrategy);
+passport.use(jwtStrategy);
 
 app.use('/posts', postRouter);
+app.use('/users', userRouter);
+app.use('/auth', authRouter);
 
-// app.use('/users', userRouter);
+const jwtAuth = passport.authenticate('jwt', {session: false});
+
+// app.get('/protected', jwtAuth, (req, res) => {
+//     return res.json({
+//         data: 'secret data'
+//     });
+// });
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + `/public/index.html`)
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + `/public/login.html`)
+});
+
+app.get('/dashboard', jwtAuth, (req, res) => {
+  res.sendFile(__dirname + `/public/dashboard.html`)
+});
+
+app.get('/archive', jwtAuth, (req, res) => {
+  res.sendFile(__dirname + `/public/archive.html`)
+});
 
 app.use('*', function(req, res) {
   res.status(404).json({ message: 'Not found' });
