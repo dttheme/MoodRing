@@ -49,7 +49,7 @@ function addNewPostRequest(rating, moodArray, activityArray, note) {
 }
 
 function addNewPost() {
-  let rating = $("input[type='radio'][name='emoticons']:checked").val();
+  let rating = $('input[type="radio"][name="emoticons"]:checked').val();
   let moodArray = $('input[class="mood_input input"]').map(function() {return $(this).val();}).get();
   let activityArray = $('input[class="activity_input input"]').map(function() {return $(this).val();}).get();
   let note = $('#note_input').val().trim();
