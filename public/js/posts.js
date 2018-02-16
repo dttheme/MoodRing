@@ -1,7 +1,7 @@
 'use strict';
 
 //create callback function that parses data, returns HTML etc etc
-function getPreviousEntries(callbackFn) {
+function getPreviousEntries(callback) {
   $.ajax({
     url: '/posts',
     type: 'GET',
@@ -9,8 +9,6 @@ function getPreviousEntries(callbackFn) {
 
     success: function(data) {
       if(data) {
-        var results = data;
-        callbackFn(results);
         console.log(data);
       }
     },
