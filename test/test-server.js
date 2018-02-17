@@ -63,24 +63,24 @@ describe('/', function() {
   });
 });
 
-describe('/dashboard', function() {
-  before(function() {
-    return runServer();
-  });
-
-  after(function() {
-    return closeServer();
-  });
-
-  it('should return 200 status and HTML', function() {
-    return chai.request(app)
-    .get('/dashboard')
-    .then(function(res) {
-      expect(res).to.have.status(200);
-      expect(res).to.be.html;
-    });
-  });
-});
+// describe('/dashboard', function() {
+//   before(function() {
+//     return runServer();
+//   });
+//
+//   after(function() {
+//     return closeServer();
+//   });
+//
+//   it('should return 200 status and HTML', function() {
+//     return chai.request(app)
+//     .get('/dashboard')
+//     .then(function(res) {
+//       expect(res).to.have.status(200);
+//       expect(res).to.be.html;
+//     });
+//   });
+// });
 
 describe('API Resource', function() {
   before(function() {
