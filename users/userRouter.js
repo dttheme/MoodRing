@@ -13,8 +13,6 @@ const jsonParser = bodyParser.json();
 router.post('/', jsonParser, (req, res) => {
   const requiredFields = ['email', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
-  console.log(req);
-  console.log(res);
   if(missingField) {
     return res.status(422).json({
       code: 422,
@@ -83,7 +81,7 @@ router.post('/', jsonParser, (req, res) => {
 
   let {email, password, firstName = ''} = req.body;
   firstName = firstName.trim();
-
+  console.log(email, password, firstName);
   return User.find({email})
   .count()
   .then(count => {
@@ -98,25 +96,50 @@ router.post('/', jsonParser, (req, res) => {
     return User.hashPassword(password);
   })
   .then(hash => {
+    console.log(hash);
     return User.create({
       email,
       password: hash,
       firstName
+    })
+    .then(user => {
+      console.log(user);
+      return res.status(201).json(user.serialize());
+    })
+    .catch(err => {
+      console.log(err);
+      if (err.reason === 'ValidationError') {
+        return res.status(err.code).json(err);
+      }
+      res.status(500).json({code: 500, message: 'Internal server error!'});
     });
   })
-  .then(user => {
-    return res.status(201).json(user.serialize());
-  })
-  .catch(err => {
-    if (err.reason === 'ValidationError') {
-      return res.status(err.code).json(err);
-    }
-    res.status(500).json({code: 500, message: 'Internal server error'});
-  });
 });
 
+router.post('/auth/login', (req, res) => {
+  let {email, password} = req.body;
+  return User.find({email})
+    .then(user => {
+      if(user.email != req.body.email) {
+        return res.status(403).json({message: 'Invalid email'})
+      }
+    })
+    .catch(err => res.status(500).json({message: 'Internal server error'}))
+
+  return User.find({password})
+    .then(user => {
+      if(res.password.validatePassword() != true) {
+        console.log("B00!");
+        return res.status(403).json({message: "Invalid password"})
+      }
+    })
+    // res.json(users.map(user => user.serialize())))
+    .catch(err => res.status(500).json({message: 'Internal server error'}))
+})
+
 router.get('/', (req, res) => {
-  return User.find()
+  return User
+    .find()
     .then(users => res.json(users.map(user => user.serialize())))
     .catch(err => res.status(500).json({message: 'Internal server error'}));
 });
