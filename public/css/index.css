@@ -23,6 +23,10 @@
   padding: 30px;
 }
 
+#sign_up_section {
+  height: 30vh;
+}
+
 .intro_text {
   font-size: 32px;
   font-weight: 200;
@@ -63,27 +67,56 @@
   margin-top: 10px;
 }
 
-@media screen and (max-width: 480px) {
-.background {
-  background-size: cover;
-  background-position: 35% 65%;
-  height: 100vh;
+/* MEDIA QUERIES */
+
+/* Tablet Landscape */
+@media screen and (max-width: 1200px) {
+
+
 }
-.intro_div {
-  height: 275px;
-  width: 275px;
-  top: 20%;
-  left: 15%;
+
+/* Tablet Portrait */
+@media screen and (max-width: 900px) {
+  #landing_section {
+    width: 100%;
+    overflow: hidden;
+  }
+  .background {
+    background-position: 30% 60%;
+    height: 100vh;
+  }
+  .intro_div {
+    height: 330px;
+    width: 330px;
+    top: 25%;
+    left: 40%;
+  }
+  .intro_text {
+    font-size: 25px;
+  }
 }
-.intro_text {
-  font-size: 20px;
-}
-#sign_up_title {
-  display: block;
-  width: 100%;
-  padding: 10px;
-}
-#sign_up_form {
-  padding: 10px;
-}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .background {
+    background-size: cover;
+    background-position: 35% 65%;
+  }
+  .intro_div {
+    height: 275px;
+    width: 275px;
+    top: 20%;
+    left: 28%;
+  }
+  .intro_text {
+    font-size: 20px;
+  }
+  #sign_up_title {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+  #sign_up_form {
+    padding: 10px;
+  }
 }
