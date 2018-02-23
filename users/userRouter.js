@@ -8,9 +8,9 @@ const { User } = require('./models');
 
 const router = express.Router();
 
-const jsonParser = bodyParser.json();
+// const jsonParser = bodyParser.json();
 
-router.post('/', jsonParser, (req, res) => {
+router.post('/', (req, res) => {
   const requiredFields = ['email', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
   if(missingField) {
@@ -116,7 +116,7 @@ router.post('/', jsonParser, (req, res) => {
   })
 });
 
-router.post('/auth/login', (req, res) => {
+router.post('/login', (req, res) => {
   let {email, password} = req.body;
   return User.find({email})
     .then(user => {

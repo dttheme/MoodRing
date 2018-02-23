@@ -6,6 +6,7 @@
 $('.sign_up_submit').click(function(event) {
   event.preventDefault();
   newUser();
+  console.log("Heard!");
 })
 
 function postNewUser(firstName, email, password) {
@@ -38,9 +39,14 @@ function newUser() {
   let email = $('input[id="email"]').val();
   let password = $('input[id="password"]').val();
   postNewUser(firstName, email, password);
-  authUser(email, password);
 }
 
+
+function loginUser() {
+  let email = $('input[id="email"]').val();
+  let password = $('input[id="password"]').val();
+  authUser(email, password);
+}
 
 // LOGIN
 
@@ -52,7 +58,7 @@ function authUser(email, password) {
   }
   let stringData = JSON.stringify(data);
 
-  xhr.open('POST', '/auth/login', true);
+  xhr.open('POST', '/login', true);
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
       let response = xhr.responseText;
@@ -66,5 +72,5 @@ function authUser(email, password) {
 
 $('.login_submit').click(function(event) {
   event.preventDefault();
-  newUser();
+  loginUser();
 })

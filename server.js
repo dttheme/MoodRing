@@ -69,7 +69,7 @@ function runServer(databaseUrl = DATABASE_URL, port) {
       if (err) {
         return reject(err);
       }
-      server = app.listen(process.env.PORT || 8080, () => {
+      server = app.listen(port = (process.env.PORT || 8080), () => {
         console.log(`Your app is listening on port ${port}`);
         resolve();
       })
