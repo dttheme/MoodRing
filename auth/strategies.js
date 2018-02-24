@@ -10,6 +10,7 @@ const localStrategy = new LocalStrategy((username, password, callback) => {
   let user;
   User.findOne({username: username})
     .then(_user => {
+      console.log('_user is ', _user)
       user = _user;
       if (!user) {
         return Promise.reject({
@@ -37,9 +38,10 @@ const localStrategy = new LocalStrategy((username, password, callback) => {
 });
 
 const jwtStrategy = new JwtStrategy(
+
   {
     secretOrKey: JWT_SECRET,
-    jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('Bearer'),
+    jwtFromRequest: ExtractJwt.fromHeader('authorization'),
     algorithms: ['HS256']
   },
   (payload, done) => {

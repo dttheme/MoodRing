@@ -117,40 +117,6 @@ router.post('/', (req, res) => {
   })
 });
 
-router.post('/login', (req, res) => {
-  return localStrategy(res.body.username, res.body.password);
-
-});
-
-
-//   let {username, password} = req.body;
-//   User.findOne ({username: req.body.username})
-//     .then((result) => {
-//       if(!result) {
-//         return res.status(400).json({message: 'username or password is incorrect'});
-//       }
-//       return result;
-//     })
-//     .then((foundUser) => {
-//       let validateUser = foundUser.validatePassword();
-//     })
-//     // .then(user => {
-//     //   if(user.username != req.body.username) {
-//     //     return res.status(403).json({message: 'Invalid username'})
-//     .catch(err => res.status(500).json({message: 'Internal server error'}))
-//     })
-//
-// //
-// //   return User.find({password})
-// //     .then(user => {
-// //       if(res.password.validatePassword() != true) {
-// //         console.log("B00!");
-// //         return res.status(403).json({message: "Invalid password"})
-// //       }
-// //     })
-// //     // res.json(users.map(user => user.serialize())))
-//     .catch(err => res.status(500).json({message: 'Internal server error'}))
-// // })
 
 router.get('/', (req, res) => {
   return User
