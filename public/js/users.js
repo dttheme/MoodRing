@@ -29,18 +29,12 @@ function postNewUser(firstName, username, password) {
       password: password
     }
   ),
-    success: function(data) {
+    success: (data) => {
       if(data) {
         console.log(data);
       }
     },
-    error: function(jqXHR, exception) {
-      // console.log(jqXHR);
-      // console.log(exception);
-    }
-  })
-  .catch((err) => {
-    done();
+    error: (jqXHR, exception) => {}
   })
 }
 
@@ -59,21 +53,26 @@ function returningUser() {
 }
 
 function postReturningUser(username, password) {
-  let xhr = new XMLHttpRequest();
-  let data = {
-    username: username,
-    password: password
-  }
-  let stringData = JSON.stringify(data);
+  $.ajax({
+    url: '/auth/login',
+    type: 'POST',
+    dataType: 'json',
+    contentType: 'application/json',
+    data: JSON.stringify(
+      {
+        username: username,
+        password: password
+      }
+    ),
+    success: (token) => {
+      successToken(token);
+    },
+    error: (jqXHR, exception) => {}
+  })
+}
 
-  xhr.open('POST', '/auth/login', true);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4) {
-      let response = xhr.responseText;
-      console.log(response);
-    }
-  };
-  xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
-  console.log(stringData);
-  xhr.send(stringData);
+function successToken(token) {
+  if(token) {
+    localStorage.setItem('authToken', JSON.stringify(token))
+  }
 }
