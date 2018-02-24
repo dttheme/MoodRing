@@ -30,13 +30,7 @@ app.use('/posts', postRouter);
 app.use('/users', userRouter);
 app.use('/auth', authRouter);
 
-const jwtAuth = passport.authenticate('jwt', {session: false});
-
-// app.get('/protected', jwtAuth, (req, res) => {
-//     return res.json({
-//         data: 'secret data'
-//     });
-// });
+const authSession = passport.authenticate('jwt', {session: false});
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + `/public/index.html`)
@@ -46,11 +40,11 @@ app.get('/login', (req, res) => {
   res.sendFile(__dirname + `/public/login.html`)
 });
 
-app.get('/dashboard', jwtAuth, (req, res) => {
+app.get('/dashboard', authSession, (req, res) => {
   res.sendFile(__dirname + `/public/dashboard.html`)
 });
 
-app.get('/archive', jwtAuth, (req, res) => {
+app.get('/archive', authSession, (req, res) => {
   res.sendFile(__dirname + `/public/archive.html`)
 });
 

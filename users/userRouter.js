@@ -5,13 +5,14 @@ const bodyParser = require('body-parser');
 
 
 const { User } = require('./models');
+const localStrategy = require('../auth/strategies');
 
 const router = express.Router();
 
 // const jsonParser = bodyParser.json();
 
 router.post('/', (req, res) => {
-  const requiredFields = ['email', 'password'];
+  const requiredFields = ['username', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
   if(missingField) {
     return res.status(422).json({
@@ -22,7 +23,7 @@ router.post('/', (req, res) => {
     });
   }
 
-  const stringFields = ['email', 'password', 'firstName'];
+  const stringFields = ['username', 'password', 'firstName'];
   const nonStringField = stringFields.find(
     field => field in req.body && typeof req.body[field] !== 'string'
   );
@@ -36,7 +37,7 @@ router.post('/', (req, res) => {
     });
   }
 
-  const trimmedFields = ['email', 'password'];
+  const trimmedFields = ['username', 'password'];
   const nonTrimmedField = trimmedFields.find(
     field => req.body[field].trim() !== req.body[field]
   );
@@ -51,7 +52,7 @@ router.post('/', (req, res) => {
   }
 
   const sizeFields = {
-    email: {
+    username: {
       min: 1
     },
     password: {
@@ -79,18 +80,18 @@ router.post('/', (req, res) => {
     });
   }
 
-  let {email, password, firstName = ''} = req.body;
+  let {username, password, firstName = ''} = req.body;
   firstName = firstName.trim();
-  console.log(email, password, firstName);
-  return User.find({email})
+  console.log(username, password, firstName);
+  return User.find({username})
   .count()
   .then(count => {
     if (count > 0) {
       return Promise.reject({
         code: 422,
         reason: 'ValidationError',
-        message: 'Email already taken',
-        location: 'email'
+        message: 'username already taken',
+        location: 'username'
       });
     }
     return User.hashPassword(password);
@@ -98,7 +99,7 @@ router.post('/', (req, res) => {
   .then(hash => {
     console.log(hash);
     return User.create({
-      email,
+      username,
       password: hash,
       firstName
     })
@@ -117,25 +118,39 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-  let {email, password} = req.body;
-  return User.find({email})
-    .then(user => {
-      if(user.email != req.body.email) {
-        return res.status(403).json({message: 'Invalid email'})
-      }
-    })
-    .catch(err => res.status(500).json({message: 'Internal server error'}))
+  return localStrategy(res.body.username, res.body.password);
 
-  return User.find({password})
-    .then(user => {
-      if(res.password.validatePassword() != true) {
-        console.log("B00!");
-        return res.status(403).json({message: "Invalid password"})
-      }
-    })
-    // res.json(users.map(user => user.serialize())))
-    .catch(err => res.status(500).json({message: 'Internal server error'}))
-})
+});
+
+
+//   let {username, password} = req.body;
+//   User.findOne ({username: req.body.username})
+//     .then((result) => {
+//       if(!result) {
+//         return res.status(400).json({message: 'username or password is incorrect'});
+//       }
+//       return result;
+//     })
+//     .then((foundUser) => {
+//       let validateUser = foundUser.validatePassword();
+//     })
+//     // .then(user => {
+//     //   if(user.username != req.body.username) {
+//     //     return res.status(403).json({message: 'Invalid username'})
+//     .catch(err => res.status(500).json({message: 'Internal server error'}))
+//     })
+//
+// //
+// //   return User.find({password})
+// //     .then(user => {
+// //       if(res.password.validatePassword() != true) {
+// //         console.log("B00!");
+// //         return res.status(403).json({message: "Invalid password"})
+// //       }
+// //     })
+// //     // res.json(users.map(user => user.serialize())))
+//     .catch(err => res.status(500).json({message: 'Internal server error'}))
+// // })
 
 router.get('/', (req, res) => {
   return User

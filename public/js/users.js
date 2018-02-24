@@ -9,7 +9,14 @@ $('.sign_up_submit').click(function(event) {
   console.log("Heard!");
 })
 
-function postNewUser(firstName, email, password) {
+function newUser() {
+  let firstName = $('input[id="firstName"]').val();
+  let username = $('input[id="username"]').val();
+  let password = $('input[id="password"]').val();
+  postNewUser(firstName, username, password);
+}
+
+function postNewUser(firstName, username, password) {
   $.ajax({
     url: '/users',
     type: 'POST',
@@ -18,7 +25,7 @@ function postNewUser(firstName, email, password) {
     data: JSON.stringify(
       {
       firstName: firstName,
-      email: email,
+      username: username,
       password: password
     }
   ),
@@ -32,33 +39,34 @@ function postNewUser(firstName, email, password) {
       // console.log(exception);
     }
   })
+  .catch((err) => {
+    done();
+  })
 }
 
-function newUser() {
-  let firstName = $('input[id="firstName"]').val();
-  let email = $('input[id="email"]').val();
-  let password = $('input[id="password"]').val();
-  postNewUser(firstName, email, password);
-}
-
-
-function loginUser() {
-  let email = $('input[id="email"]').val();
-  let password = $('input[id="password"]').val();
-  authUser(email, password);
-}
 
 // LOGIN
 
-function authUser(email, password) {
+$('.login_submit').click(function(event) {
+  event.preventDefault();
+  returningUser();
+})
+
+function returningUser() {
+  let username = $('input[id="username"]').val();
+  let password = $('input[id="password"]').val();
+  postReturningUser(username, password);
+}
+
+function postReturningUser(username, password) {
   let xhr = new XMLHttpRequest();
   let data = {
-    email: email,
+    username: username,
     password: password
   }
   let stringData = JSON.stringify(data);
 
-  xhr.open('POST', '/login', true);
+  xhr.open('POST', '/auth/login', true);
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
       let response = xhr.responseText;
@@ -69,8 +77,3 @@ function authUser(email, password) {
   console.log(stringData);
   xhr.send(stringData);
 }
-
-$('.login_submit').click(function(event) {
-  event.preventDefault();
-  loginUser();
-})
