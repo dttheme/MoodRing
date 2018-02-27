@@ -13,8 +13,6 @@ removeInput('#activity_input_wrap');
 
 
 //function for correctly submitting form "Success! Great work!"
-//add rating scale with emojis
-//function for turning submitted inputs into an arrays
 
 $(function() {
   const token = localStorage.getItem('authToken');

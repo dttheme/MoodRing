@@ -6,7 +6,6 @@
 $('.sign_up_submit').click(function(event) {
   event.preventDefault();
   newUser();
-  console.log("Heard!");
 })
 
 function newUser() {
@@ -76,4 +75,17 @@ function successToken(token) {
     localStorage.setItem('authToken', token.authToken);
     window.location.href = '/dashboard.html';
   }
+}
+
+// LOGOUT
+
+$('.logout_button').click(function(event) {
+  event.preventDefault();
+  console.log('HEAR YE HEAR YE');
+  logoutUser();
+})
+
+function logoutUser() {
+  localStorage.removeItem('authToken');
+  window.location.href = '/';
 }

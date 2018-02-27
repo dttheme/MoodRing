@@ -20,7 +20,7 @@
       <nav>
         <ul>
           <li><a href="/archive.html">Archive</a></li>
-          <li><a href="/logout">Logout</a></li>
+          <li><button class="logout_button">Logout</a></li>
         </ul>
       </nav>
     </header>
@@ -39,23 +39,23 @@
       <form method="post" id="new_post_form">
         <legend>How are you?</legend><br><br>
         <radiogroup>
-          <label for="great" class="emoticon_label">
+          <label for="great" class="emoticon_label tooltip"><span class="tooltiptext">Great</span>
             <input type="radio" id="great" name="emoticons" value="1" title="great">
             <img src="/images/emoticons/great.svg" class="emoticons">
           </label>
-          <label for="good" class="emoticon_label">
+          <label for="good" class="emoticon_label tooltip"><span class="tooltiptext">Good</span>
             <input type="radio" id="good" name="emoticons" value="2" title="good">
             <img src="/images/emoticons/good.svg" class="emoticons">
           </label>
-          <label for="okay" class="emoticon_label">
+          <label for="okay" class="emoticon_label tooltip"><span class="tooltiptext">Okay</span>
             <input type="radio" id="okay" name="emoticons" value="3" title="okay">
             <img src="/images/emoticons/okay.svg" class="emoticons">
           </label>
-          <label for="bad" class="emoticon_label">
+          <label for="bad" class="emoticon_label tooltip"><span class="tooltiptext">Bad</span>
             <input type="radio" id="bad" name="emoticons" value="4" title="bad">
             <img src="/images/emoticons/bad.svg" class="emoticons">
           </label>
-          <label for="terrible" class="emoticon_label">
+          <label for="terrible" class="emoticon_label tooltip"><span class="tooltiptext">Terrible</span>
             <input type="radio" id="terrible" name="emoticons" value="5" title="terrible">
             <img src="/images/emoticons/terrible.svg" class="emoticons">
           </label>
@@ -90,5 +90,6 @@
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
     <script src="js/dashboard.js" type="text/javascript"></script>
+    <script src="js/users.js" type="text/javascript"></script>
   </body>
   </html>

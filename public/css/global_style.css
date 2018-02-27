@@ -47,14 +47,21 @@ nav li {
   display: inline;
   padding-right: 40px;
 }
-nav a {
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+nav a,
+nav button {
   font-size: 20px;
   text-decoration: none;
   color: white;
   font-family: 'Bungee', sans-serif;
   transition: color 600ms;
 }
-nav a:hover {
+nav a:hover,
+nav button:hover {
    color: #7fe8bc;
    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
