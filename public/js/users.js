@@ -73,6 +73,7 @@ function postReturningUser(username, password) {
 
 function successToken(token) {
   if(token) {
-    localStorage.setItem('authToken', JSON.stringify(token))
+    localStorage.setItem('authToken', token.authToken);
+    window.location.href = '/dashboard.html';
   }
 }

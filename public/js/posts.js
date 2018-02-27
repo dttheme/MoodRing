@@ -1,6 +1,5 @@
 'use strict';
 
-//create callback function that parses data, returns HTML etc etc
 function getPreviousEntries(callback) {
   $.ajax({
     url: '/posts',
@@ -9,7 +8,7 @@ function getPreviousEntries(callback) {
 
     success: function(data) {
       if(data) {
-        console.log(data);
+        // console.log(data);
       }
     },
     error: function(jqXHR, exception) {
@@ -19,12 +18,12 @@ function getPreviousEntries(callback) {
   });
 }
 
-//object literal looks better!
 function displayPreviousEntries(data) {
   if (data.length === 0) {
-    $('post_group').append(`<h2 class='no results'> You don't have any posts yet! Click 'Add New Post' to get started.`)
+    $('.post_group').append(`<h2 class='no results'> You don't have any posts yet! Click 'Dashboard' to get started.`)
   } else {
     data.posts.forEach(function(post) {
+      console.log(post);
       let postDate = convertDate(post);
       $('.post_group').append(
         `<div class='post'>

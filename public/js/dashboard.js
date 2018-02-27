@@ -16,7 +16,28 @@ removeInput('#activity_input_wrap');
 //add rating scale with emojis
 //function for turning submitted inputs into an arrays
 
-
+$(function() {
+  const token = localStorage.getItem('authToken');
+  if (!token) {
+    window.location.href = '/login.html';
+  }
+  $.ajax({
+    url: '/auth/basicinfo',
+    type: 'GET',
+    dataType: 'json',
+    headers: {
+      Authorization: `Bearer ${token}`
+    },
+    success: function() {
+      $('.loader').remove();
+    },
+    error: function() {
+      localStorage.removeItem('authToken');
+      window.location.href = '/login.html';
+      $('.alert').html('<p>Email or password is incorrect.</p>');
+    }
+  })
+})
 
 
 //Post the form with sumbitted inputs

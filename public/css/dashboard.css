@@ -1,3 +1,8 @@
+#landing_section {
+  position: relative;
+  z-index: -2;
+}
+
 #new_post_section {
   margin-top: 150px;
 }
@@ -8,6 +13,7 @@
   border-image-slice: 2;
   margin: 0 auto;
   width: 70%;
+  background: rgba(255, 255, 255, 0.8);
   padding: 10px;
   box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
 }
@@ -28,14 +34,7 @@ input[type="radio"] {
 #mood_input_wrap,
 #activity_input_wrap,
 #notes_input_wrapper {
-  margin-top: 20px;
-}
-
-.left_input {
-  display: inline-block;
-}
-.right_input {
-  display: inline-block;
+  margin-top: 40px;
 }
 
 .add_button {
@@ -47,20 +46,24 @@ input[type="radio"] {
 
 #note_input {
   height: 200px;
-  width: 40%;
+  width: 70%;
   font-size: 15px;
   text-align: left;
 }
 
 legend {
-  <
-  font-size: 20px;
+  font-size: 25px;
   font-family: 'Bungee', sans-serif;
+  margin-top: 30px;
+}
+.input {
+  margin-top: 20px;
+  width: 70%;
 }
 
 .remove_field {
  position: absolute;
- padding-top: 10px;
+ padding-top: 27px;
  padding-left: 5px;
 }
 .remove_field {
@@ -115,4 +118,28 @@ legend {
 .emoticon_label > input[id="terrible"]:checked + img {
   border: 2px solid #5D398F;
   background-color: rgba(93, 57, 143, 0.3);
+}
+
+@media screen and (max-width: 1200px) {}
+
+
+@media screen and (max-width: 900px) {
+  .emoticons {
+    height: 90px;
+    width: 90px;
+    padding: 5px;
+    padding-top: 15px;;
+    margin: .5%;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+  .emoticons {
+    height: 60px;
+    width: 60px;
+    /* padding: 5px; */
+    padding-top: 15px;;
+    margin: .5%;
+  }
 }

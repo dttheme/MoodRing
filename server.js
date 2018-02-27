@@ -32,21 +32,21 @@ app.use('/auth', authRouter);
 
 const authSession = passport.authenticate('jwt', {session: false});
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + `/public/index.html`)
-});
-
-app.get('/login', (req, res) => {
-  res.sendFile(__dirname + `/public/login.html`)
-});
-
-app.get('/dashboard', authSession, (req, res) => {
-  res.sendFile(__dirname + `/public/dashboard.html`)
-});
-
-app.get('/archive', authSession, (req, res) => {
-  res.sendFile(__dirname + `/public/archive.html`)
-});
+// app.get('/', (req, res) => {
+//   res.sendFile(__dirname + `/public/index.html`)
+// });
+//
+// app.get('/login', (req, res) => {
+//   res.sendFile(__dirname + `/public/login.html`)
+// });
+// 
+// app.get('/dashboard', authSession, (req, res) => {
+//   res.sendFile(__dirname + `/public/dashboard.html`)
+// });
+//
+// app.get('/archive', authSession, (req, res) => {
+//   res.sendFile(__dirname + `/public/archive.html`)
+// });
 
 app.use('*', function(req, res) {
   res.status(404).json({ message: 'Not found' });

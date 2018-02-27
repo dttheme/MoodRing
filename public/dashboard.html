@@ -7,24 +7,34 @@
   <!-- FontAwesome -->
   <script src="https://use.fontawesome.com/7f641b72ff.js"></script>
   <!-- CSS/Styling -->
-  <link rel="stylesheet" type="text/css" href="global_style.css">
-  <link rel="stylesheet" type="text/css" href="dashboard.css">
+  <link rel="stylesheet" type="text/css" href="/css/global_style.css">
+  <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Bungee|Roboto" rel="stylesheet">
   <title>MoodRing | Dashboard</title>
 </head>
   <body>
+    <div class="loader">Loading...</div>
     <header>
-      <h1>MoodRing</h1>
+      <a href="/"><h1>MoodRing</h1></a>
       <nav>
         <ul>
-          <li><a href="#">Sign up</a></li>
-          <li><a href="#">Login</a></li>
-          <li><a href="/dashboard">Dashboard</a></li>
-          <li><a href="/archive">Archive</a></li>
+          <li><a href="/archive.html">Archive</a></li>
+          <li><a href="/logout">Logout</a></li>
         </ul>
       </nav>
     </header>
+    <section id="landing_section">
+      <div class="background">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+        <div class="bar bar4"></div>
+        <div class="bar bar5"></div>
+        <div class="bar bar6"></div>
+        <div class="bar bar7"></div>
+      </div>
+    </section>
     <section id="new_post_section">
       <form method="post" id="new_post_form">
         <legend>How are you?</legend><br><br>
@@ -68,7 +78,7 @@
           </div>
         </div>
         <br>
-        <div id="notes_input_wrapper right_input">
+        <div id="notes_input_wrapper">
           <label for="note_input">Notes:</label><br>
           <textarea type="text" id="note_input" class="input" placeholder="Enter any additional thoughts here"></textarea><br><br>
         </div>

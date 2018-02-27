@@ -41,10 +41,11 @@ const jwtStrategy = new JwtStrategy(
 
   {
     secretOrKey: JWT_SECRET,
-    jwtFromRequest: ExtractJwt.fromHeader('authorization'),
+    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     algorithms: ['HS256']
   },
   (payload, done) => {
+    console.log('TESTING');
     done(null, payload.user);
   }
 );
