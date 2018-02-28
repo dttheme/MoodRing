@@ -14,7 +14,9 @@
   <title>MoodRing | Dashboard</title>
 </head>
   <body>
-    <div class="loader">Loading...</div>
+    <div class="loader">
+      <p class="loader_text">Loading... <i class="fa fa-circle-notch fa-spin"></i></p>
+    </div>
     <header>
       <a href="/"><h1>MoodRing</h1></a>
       <nav>
@@ -24,7 +26,7 @@
         </ul>
       </nav>
     </header>
-    <section id="landing_section">
+    <!-- <section id="landing_section">
       <div class="background">
         <div class="bar bar1"></div>
         <div class="bar bar2"></div>
@@ -33,9 +35,10 @@
         <div class="bar bar5"></div>
         <div class="bar bar6"></div>
         <div class="bar bar7"></div>
-      </div>
+      </div> -->
     </section>
     <section id="new_post_section">
+      <h2>Dashboard</h2>
       <form method="post" id="new_post_form">
         <legend>How are you?</legend><br><br>
         <radiogroup>
@@ -51,7 +54,7 @@
             <input type="radio" id="okay" name="emoticons" value="3" title="okay">
             <img src="/images/emoticons/okay.svg" class="emoticons">
           </label>
-          <label for="bad" class="emoticon_label tooltip"><span class="tooltiptext">Bad</span>
+          <label for="bad" class="emoticon_label tooltip"><span class="tooltiptext">&nbspBad</span>
             <input type="radio" id="bad" name="emoticons" value="4" title="bad">
             <img src="/images/emoticons/bad.svg" class="emoticons">
           </label>
@@ -64,14 +67,14 @@
         <div class="left_input">
           <div id="mood_wrap">
             <div id="mood_input_wrap">
-              <label for="mood_input">What did you feel today?</label><br>
+              <label for="mood_input">What did you feel?</label><br>
               <input type="text" class="mood_input input" placeholder="Enter mood here"><br>
             </div>
             <button type="button" id="add_mood_button" class="add_button"><i class="fa fa-plus-circle"></i> Another mood?</button><br>
           </div>
           <div id="activity_wrap">
             <div id="activity_input_wrap">
-              <label for="activity_input">What did you do for yourself today?</label><br>
+              <label for="activity_input">What did you do?</label><br>
               <input type="text" class="activity_input input" placeholder="Enter activity here"><br>
             </div>
             <button type="button" id="add_activity_button" class="add_button"><i class="fa fa-plus-circle"></i> Another activity?</button><br>

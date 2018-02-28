@@ -41,6 +41,7 @@
   border: 2px solid transparent;
   border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
   border-image-slice: 2;
+  box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
 }
 
 #sign_up_title {

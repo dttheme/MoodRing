@@ -3,24 +3,20 @@
 //Global variables
 let fieldCount = 1;
 
-
-
 //Call functions
 addMoodInput();
 addActivityInput();
 removeInput('#mood_input_wrap');
 removeInput('#activity_input_wrap');
 
-
-//function for correctly submitting form "Success! Great work!"
-
-$(function() {
+//On page load, check for auth token
+$(() => {
   const token = localStorage.getItem('authToken');
   if (!token) {
     window.location.href = '/login.html';
   }
   $.ajax({
-    url: '/auth/basicinfo',
+    url: '/auth/info',
     type: 'GET',
     dataType: 'json',
     headers: {
@@ -32,11 +28,9 @@ $(function() {
     error: function() {
       localStorage.removeItem('authToken');
       window.location.href = '/login.html';
-      $('.alert').html('<p>Email or password is incorrect.</p>');
     }
   })
 })
-
 
 //Post the form with sumbitted inputs
 $('#new_post_form').submit(function(event) {
@@ -44,12 +38,17 @@ $('#new_post_form').submit(function(event) {
   addNewPost();
 });
 
+//
 function addNewPostRequest(rating, moodArray, activityArray, note) {
+  const token = localStorage.getItem('authToken');
   $.ajax({
     url: '/posts',
     type: 'POST',
     dataType: 'json',
     contentType: 'application/json',
+    headers: {
+      Authorization: `Bearer ${token}`
+    },
     data: JSON.stringify(
       {
         rating: rating,
@@ -59,9 +58,9 @@ function addNewPostRequest(rating, moodArray, activityArray, note) {
       }
     ),
     success: function(data) {
-      console.log(`Successfully created post ${data.id}`)
-      console.log(rating);
+      console.log(`Successfully created post ${data._id}`)
       console.log(activityArray);
+      successfulPostMessage();
     }
     // error: function(jqXHR, exception) {}
   });
@@ -111,4 +110,16 @@ function removeInput(wrapper) {
        event.preventDefault();
        $(this).parent('div').remove(); fieldCount--;
    })
+}
+
+//Remove form, add new HTML and a link to submit again
+function successfulPostMessage() {
+  $('#new_post_form').remove();
+  $('#new_post_section').html(
+    `
+    <div id="success_box">
+    <p>Success! <br><br>
+    <a href='/dashboard.html'>Post again?</a></p>
+    </div>
+    `);
 }

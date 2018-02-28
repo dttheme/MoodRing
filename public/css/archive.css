@@ -1,25 +1,149 @@
+#landing_section {
+  height: auto;
+}
+
 #previous_post_section {
   margin-top: 200px;
   position: relative;
+  z-index: 1;
+  margin-bottom: 40px;
 }
-
 .post {
   padding: 0;
-  margin-top: 20px;;
+  margin-top: 40px;
+
 }
 .post_wrapper {
+  position: relative;
   width: 50%;
   border: 2px solid transparent;
   border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
   border-image-slice: 2;
-  padding: 20px;
+  padding: 40px;
   margin: 0 auto;
+  box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
 }
 .post_wrapper p {
   text-align: left;
 }
-
 .post_date {
   font-family: 'Bungee', sans-serif;
   font-size: 20px;
+}
+.delete_post_button,
+.edit_post_button {
+  font-family: 'Bungee', sans-serif;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  position: absolute;
+  bottom: 10px;
+}
+.delete_post_button {
+  left: 90%;
+}
+.edit_post_button {
+  left: 80%;
+}
+
+.emoticon {
+  height: 120px;
+  width: 120px;
+  float: right;
+}
+
+.rating1 {
+  background-color: rgba(127, 232, 188, 0.5);
+}
+.rating1 .emoticon {
+  content: url('../images/emoticons/great.svg')
+}
+.rating2 {
+  background-color: rgba(101, 194, 201, 0.5);
+}
+.rating2 .emoticon {
+  content: url('../images/emoticons/good.svg')
+}
+.rating3 {
+  background-color: rgba(85, 131, 176, 0.5);
+}
+.rating3 .emoticon {
+  content: url('../images/emoticons/okay.svg')
+}
+.rating4 {
+  background-color: rgba(82, 86, 176, 0.5);
+}
+.rating4 .emoticon {
+  content: url('../images/emoticons/bad.svg')
+}
+.rating5 {
+  background-color: rgba(93, 57, 143, 0.5);
+}
+.rating5 .emoticon {
+  content: url('../images/emoticons/terrible.svg')
+}
+
+
+@media screen and (max-width: 1200px) {
+  #previous_post_section {
+    margin-top: 160px;
+  }
+  .post_wrapper {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #previous_post_section {
+    margin-top: 140px;
+  }
+  .post_wrapper {
+    font-size: 15px;
+  }
+  .edit_post_button {
+    left: 60%;
+  }
+  .delete_post_button {
+    left: 80%;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  #previous_post_section {
+    margin-top: 120px;
+  }
+  .post_wrapper {
+    width: 90%;
+    font-size: 15px;
+  }
+  .edit_post_button {
+    left: 50%;
+  }
+  .delete_post_button {
+    left: 70%;
+  }
+  .emoticon {
+    float: none;
+    margin-top: 15px;
+    height: 110px;
+    width: 110px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .post_date {
+    font-size: 17px;
+  }
+  .edit_post_button {
+    left: 30%;
+  }
+  .delete_post_button {
+    left: 50%;
+  }
+  .emoticon {
+    margin-top: 20px;
+    height: 100px;
+    width: 100px;
+  }
 }

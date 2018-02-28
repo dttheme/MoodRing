@@ -66,7 +66,9 @@ function postReturningUser(username, password) {
     success: (token) => {
       successToken(token);
     },
-    error: (jqXHR, exception) => {}
+    error: (jqXHR, exception) => {
+      loginFailure();
+    }
   })
 }
 
@@ -77,11 +79,14 @@ function successToken(token) {
   }
 }
 
+function loginFailure() {
+  $('.alert').attr('aria-hidden','false').removeClass('hidden');
+}
+
 // LOGOUT
 
 $('.logout_button').click(function(event) {
   event.preventDefault();
-  console.log('HEAR YE HEAR YE');
   logoutUser();
 })
 

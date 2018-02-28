@@ -34,6 +34,14 @@ h1 {
 a h1:hover {
   color: #2F5746;
 }
+
+h2 {
+  font-family: 'Bungee', sans-serif;
+  font-size: 30px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
 nav {
   position: absolute;
   top: 60px;
@@ -143,14 +151,19 @@ label {
 }
 
 .loader {
-  position: fixed;
+  position: absolute;
   background-color: white;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   text-align: center;
+  margin: auto;
   z-index: 1000;
+}
+.loader_text {
+  margin-top: 20%;
+  font-family: FontAwesome;
 }
 
 
@@ -190,17 +203,23 @@ label {
     padding-left: 5px;
   }
   nav {
-    margin-top: 10px;
+    margin-top: 15px;
     right: 5px;
     top: 60px;
   }
   nav li {
 
   }
+}
 
-
-  /* header nav ul li::after {
-    content: "\f2f6"
-    font-family: FontAwesome;
-  } */
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 45px;;
+    padding-left: 12px;
+  }
+  nav {
+    margin-top: 10px;
+    right: 5px;
+    top: 60px;
+  }
 }
