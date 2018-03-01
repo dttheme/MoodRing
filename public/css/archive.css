@@ -86,7 +86,7 @@
 
 @media screen and (max-width: 1200px) {
   #previous_post_section {
-    margin-top: 160px;
+    margin-top: 180px;
   }
   .post_wrapper {
     width: 70%;
@@ -95,7 +95,7 @@
 
 @media screen and (max-width: 900px) {
   #previous_post_section {
-    margin-top: 140px;
+    margin-top: 160px;
   }
   .post_wrapper {
     font-size: 15px;
@@ -111,7 +111,7 @@
 
 @media only screen and (max-width: 600px) {
   #previous_post_section {
-    margin-top: 120px;
+    margin-top: 140px;
   }
   .post_wrapper {
     width: 90%;
@@ -125,7 +125,7 @@
   }
   .emoticon {
     float: none;
-    margin-top: 15px;
+    margin-top: 20px;
     height: 110px;
     width: 110px;
   }

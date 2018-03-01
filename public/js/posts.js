@@ -43,12 +43,12 @@ function getPreviousEntries(callback) {
 
 function displayPreviousEntries(data) {
   if (data.length === 0) {
-    $('.post_group').append(`<h2 class='no results'> You don't have any posts yet! Click 'Dashboard' to get started.`)
+    $('.post_group').append(`<p class='no results'> You don't have any posts yet! Click 'Dashboard' to get started.</p>`)
   } else {
     data.forEach(function(post) {
       let postDate = convertDate(post);
-      let moodAsAString = (post.mood).join(', ');
-      let activityAsAString = (post.activity).join(', ')
+      let moodAsAString = (post.mood).join(', ').toLowerCase();
+      let activityAsAString = (post.activity).join(', ').toLowerCase();
       $('.post_group').append(
         `<div class='post'>
             <div class='post_wrapper rating${post.rating}' id=${post._id}>

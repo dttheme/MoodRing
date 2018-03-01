@@ -47,7 +47,7 @@ input[type="radio"] {
 }
 
 #note_input {
-  height: 200px;
+  height: 100px;
   width: 70%;
   max-width: 400px;
   font-size: 15px;
@@ -82,16 +82,14 @@ legend {
 .tooltip .tooltiptext {
   font-family: 'Bungee', sans-serif;
   visibility: hidden;
-  width: 120px;
+  width: 100%;
   color: rgba(25, 38, 51, 0.7);;
   text-align: center;
   padding: 5px;
-  border-radius: 2px;
-  width: auto;
   position: absolute;
   bottom: 100%;
-   left: 50%;
-   margin-left: -30px;
+  left: 50%;
+  margin-left: -50%;
   z-index: 10;
 }
 .tooltip:hover .tooltiptext {
@@ -176,10 +174,20 @@ legend {
   background-color: rgba(93, 57, 143, 0.3);
 }
 
-@media screen and (max-width: 1200px) {}
-
+@media screen and (max-width: 1200px) {
+  #new_post_section {
+    margin-top: 180px;
+  }
+  #new_post_form {
+    width: 70%;
+    margin-top: 15px;
+  }
+}
 
 @media screen and (max-width: 900px) {
+  #new_post_section {
+    margin-top: 160px;
+  }
   .emoticons {
     height: 90px;
     width: 90px;
@@ -187,25 +195,47 @@ legend {
     padding-top: 15px;;
     margin: .5%;
   }
+  #new_post_form {
+    width: 80%;
+    margin-top: 15px;
+  }
 }
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
+  #new_post_section {
+    margin-top: 140px;
+  }
   .emoticons {
-    height: 60px;
-    width: 60px;
-    /* padding: 5px; */
-    padding-top: 15px;;
+    height: 50px;
+    width: 50px;
     margin: .5%;
+    padding: 0;
+    padding-top: 7px;
+  }
+  #new_post_form {
+    width: 90%;
+    margin-top: 15px;
+  }
+  .tooltip .tooltiptext {
+    font-size: 12px;
+  }
+  #mood_input_wrap,
+  #activity_input_wrap,
+  #notes_input_wrapper {
+    margin-top: 25px;
+  }
+  .input {
+    margin-top: 7px;
+  }
+  .remove_field {
+   padding-top: 15px;
+   padding-left: 5px;
   }
 }
 
 @media only screen and (max-width: 400px) {
   #new_post_section {
     margin-top: 120px;
-  }
-  #new_post_form {
-    width: 90%;
-    margin-top: 15px;
   }
 }

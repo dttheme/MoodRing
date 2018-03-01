@@ -160,14 +160,13 @@ label {
   text-align: center;
   margin: auto;
   z-index: 1000;
+  font-family: FontAwesome;
 }
 .loader_text {
   margin-top: 20%;
-  font-family: FontAwesome;
+  font-family: 'Bungee', sans-serif;
+  font-size: 25px;
 }
-
-
-
 
 /* MEDIA QUERIES */
 
