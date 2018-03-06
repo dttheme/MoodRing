@@ -44,7 +44,7 @@ h2 {
 }
 nav {
   position: absolute;
-  top: 60px;
+  top: 70px;
   right: 50px;
 }
 nav ul {
@@ -75,6 +75,11 @@ nav button:hover {
 }
 nav a:focus {
   outline: #7fe8bc 2px dotted;
+}
+.dashboard_link,
+.logout_button,
+.login_link {
+  display: inline;
 }
 .input {
   font-size: 15px;
@@ -188,11 +193,6 @@ label {
     font-size: 65px;
     padding-left: 5px;
   }
-  nav {
-    top: 75px;
-  }
-
-
 }
 
 /* Mobile */

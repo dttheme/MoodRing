@@ -79,7 +79,7 @@ function deletePreviousEntries(data) {
       headers: {
         Authorization: `Bearer ${token}`
       },
-      success: function(data){console.log(`Su// add emoticon face based on Ratingccessfully deleted post ${postId}`)},
+      success: function(data){console.log(`Successfully deleted post ${postId}`)},
       error: function(jqXHR, exception) {
         console.log(jqXHR);
         console.log(exception);}
@@ -100,4 +100,22 @@ function convertDate(post) {
   let date = new Date(post.createdAt).toString();
   let parsedDate = date.slice(0,21);
   return parsedDate;
+}
+
+function putPreviousEntry(data) {
+  const token = localStorage.getItem('authToken');
+  const postId = $(this).closest('div').attr('id');
+  $.ajax({
+    url: `/posts/${postId}`,
+    type: 'PUT',
+    dataType: 'json',
+    headers: {
+      Authorization: 'Bearer ${token}'
+    },
+    success: function(data) {console.log(`Successfully edited post ${postId}`)}
+  })
+}
+
+function editEntry() {
+  //change words to inputs
 }

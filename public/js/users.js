@@ -94,3 +94,21 @@ function logoutUser() {
   localStorage.removeItem('authToken');
   window.location.href = '/';
 }
+
+// Show links for authenticated users
+ $(() => {
+   showLinks()
+ })
+
+function showLinks() {
+  let clientToken = localStorage.getItem('authToken');
+  if (!clientToken) {
+    $('.dashboard_link').hide();
+    $('.logout_button').hide();
+    $('.login_link').show();
+  } else {
+    $('.dashboard_link').show();
+    $('.logout_button').show();
+    $('.login_link').hide();
+  }
+}
