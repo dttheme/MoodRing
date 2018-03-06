@@ -9,10 +9,13 @@ const path = require('path');
 const passport = require('passport');
 
 const { PORT, DATABASE_URL } = require('./config');
-const { Post } = require('./models');
+
+const { Post } = require('./posts/models');
 const { User } = require('./users/models');
+
 const {router: userRouter} = require('./users/userRouter');
-const postRouter = require('./postRouter');
+const postRouter = require('./posts/postRouter');
+
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 
 const app = express();
