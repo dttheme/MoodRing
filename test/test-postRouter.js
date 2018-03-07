@@ -3,6 +3,7 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const should = require('chai').should();
+const expect = chai.expect;
 const mongoose = require('mongoose');
 const faker = require('faker');
 const jwt = require('jsonwebtoken');
@@ -14,8 +15,7 @@ const { app , runServer, closeServer } = require('../server');
 const { TEST_DATABASE_URL, JWT_SECRET } = require('../config.js');
 const { sendAllDataToDb, createTestUser, createTestUserAndPost, generateUserData, generatePostData, tearDownDb } = require('./test-functions')
 
-chai.should();
-const expect = chai.expect;
+
 
 chai.use(chaiHttp);
 
