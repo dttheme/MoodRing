@@ -158,6 +158,7 @@ function submitEdit() {
     const mood = $(this).parent().parent().find('.mood_edit_input').val();
     const activity = $(this).parent().parent().find('.activity_edit_input').val();
     const note = $(this).parent().parent().find('.note_edit_input').val();
+    const token = localStorage.getItem('authToken');
     $.ajax({
       url: '/posts/${postId}',
       method: 'PUT',
@@ -166,8 +167,11 @@ function submitEdit() {
         activity: activity,
         note: note
       },
+      headers: {
+        Authorization: 'Bearer ${token}'
+      },
       success: () => {
-        console.log('Edit successful!')
+        console.log(`Successfully edited post ${postId}`)
       },
       error: () => {
         console.log('Edit not successful!')
@@ -175,22 +179,4 @@ function submitEdit() {
     })
 
   })
-}
-
-function putPreviousEntry(data) {
-  const token = localStorage.getItem('authToken');
-  const postId = $(this).closest('div').attr('id');
-  $.ajax({
-    url: `/posts/${postId}`,
-    type: 'PUT',
-    dataType: 'json',
-    headers: {
-      Authorization: 'Bearer ${token}'
-    },
-    success: function(data) {console.log(`Successfully edited post ${postId}`)}
-  })
-}
-
-function editEntry() {
-  //change words to inputs
 }

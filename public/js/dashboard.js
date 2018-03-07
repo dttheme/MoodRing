@@ -3,14 +3,16 @@
 //Global variables
 let fieldCount = 1;
 
-//Call functions
-addMoodInput();
-addActivityInput();
-removeInput('#mood_input_wrap');
-removeInput('#activity_input_wrap');
-
 //On page load, check for auth token
 $(() => {
+  authorizeUser();
+  addMoodInput();
+  addActivityInput();
+  removeInput('#mood_input_wrap');
+  removeInput('#activity_input_wrap');
+})
+
+function authorizeUser() {
   const token = localStorage.getItem('authToken');
   if (!token) {
     window.location.href = '/login.html';
@@ -30,7 +32,7 @@ $(() => {
       window.location.href = '/login.html';
     }
   })
-})
+}
 
 //Post the form with sumbitted inputs
 $('#new_post_form').submit(function(event) {

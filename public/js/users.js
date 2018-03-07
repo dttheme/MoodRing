@@ -97,7 +97,11 @@ function logoutUser() {
 
 // Show links for authenticated users
  $(() => {
-   showLinks()
+   showLinks();
+   let token = localStorage.getItem('authToken');
+   let userObject = parseJwt(token);
+   $('.greeting').append((userObject.user.firstName) + '!');
+   console.log(userObject.user.firstName);
  })
 
 function showLinks() {
@@ -112,3 +116,9 @@ function showLinks() {
     $('.login_link').hide();
   }
 }
+
+function parseJwt (token) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace('-', '+').replace('_', '/');
+    return JSON.parse(window.atob(base64));
+};
