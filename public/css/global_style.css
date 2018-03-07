@@ -45,7 +45,7 @@ h2 {
 nav {
   position: absolute;
   top: 70px;
-  right: 50px;
+  right: 70px;
 }
 nav ul {
   list-style-type: none;
@@ -77,6 +77,7 @@ nav a:focus {
   outline: #7fe8bc 2px dotted;
 }
 .dashboard_link,
+.archive_link,
 .logout_button,
 .login_link {
   display: inline;

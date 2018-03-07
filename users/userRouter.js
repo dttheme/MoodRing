@@ -12,8 +12,10 @@ const router = express.Router();
 // const jsonParser = bodyParser.json();
 
 router.post('/', (req, res) => {
-  const requiredFields = ['username', 'password'];
-  const missingField = requiredFields.find(field => !(field in req.body));
+  const requiredFields = ['username', 'password', 'firstName'];
+  const missingField = requiredFields.find(
+    field => !(field in req.body)
+  );
   if(missingField) {
     return res.status(422).json({
       code: 422,
@@ -27,7 +29,6 @@ router.post('/', (req, res) => {
   const nonStringField = stringFields.find(
     field => field in req.body && typeof req.body[field] !== 'string'
   );
-
   if(nonStringField) {
     return res.status(422).json({
       code: 422,
@@ -41,7 +42,6 @@ router.post('/', (req, res) => {
   const nonTrimmedField = trimmedFields.find(
     field => req.body[field].trim() !== req.body[field]
   );
-
   if (nonTrimmedField) {
     return res.status(422).json({
       code: 422,
@@ -53,7 +53,7 @@ router.post('/', (req, res) => {
 
   const sizeFields = {
     username: {
-      min: 1
+      min: 5
     },
     password: {
       min: 8,
@@ -97,14 +97,12 @@ router.post('/', (req, res) => {
     return User.hashPassword(password);
   })
   .then(hash => {
-    console.log(hash);
     return User.create({
       username,
       password: hash,
       firstName
     })
     .then(user => {
-      console.log(user);
       return res.status(201).json(user.serialize());
     })
     .catch(err => {

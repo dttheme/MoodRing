@@ -1,5 +1,5 @@
 {
-  "name": "self-care-app",
+  "name": "MoodRing",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -31,6 +31,6 @@
   "scripts": {
     "test": "mocha --exit"
   },
-  "author": "",
+  "author": "Dyanna Turner",
   "license": "ISC"
 }

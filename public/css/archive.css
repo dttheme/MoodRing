@@ -10,13 +10,13 @@
 }
 .post {
   padding: 0;
-  margin-top: 40px;
+  margin-top: 60px;
 
 }
 .post_wrapper {
   position: relative;
   width: 50%;
-  border: 2px solid transparent;
+  border: 7px solid transparent;
   border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
   border-image-slice: 2;
   padding: 40px;

@@ -134,7 +134,7 @@ legend {
   transition: border-color 600ms;
 }
 .emoticon_label > input[id="great"]:hover + img,
-.emoticon_label > input[id="great"]:focus + img,{
+.emoticon_label > input[id="great"]:focus + img {
   border: 2px solid #7FE8BC;
 }
 .emoticon_label > input[id="good"]:hover + img,

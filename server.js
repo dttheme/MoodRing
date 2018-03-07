@@ -14,8 +14,7 @@ const { Post } = require('./posts/models');
 const { User } = require('./users/models');
 
 const {router: userRouter} = require('./users/userRouter');
-const postRouter = require('./posts/postRouter');
-
+const {router: postRouter} = require('./posts/postRouter');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 
 const app = express();
