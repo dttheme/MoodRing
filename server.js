@@ -20,6 +20,7 @@ const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 const app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(morgan('common'));
 app.use(express.static('public'));
 

@@ -17,6 +17,9 @@ const { sendAllDataToDb, createTestUser, createTestUserAndPost, generateUserData
 
 chai.use(chaiHttp);
 
+let testUserData;
+let testUser;
+
 describe('/users API Resource', function() {
   before(function() {
     return runServer(TEST_DATABASE_URL);
@@ -52,13 +55,15 @@ describe('/users API Resource', function() {
         .post('/users')
         .send(newUser)
         .then(function(res) {
-          res.should.have.status(200);
+          res.should.have.status(201);
           res.should.be.json;
         });
       });
     });
 
   describe('GET request to /login', function() {
+    console.log(testUser);
+    console.log(testUserData);
     it('should login a user', function() {
       let loginUser = {
         username: testUserData.username,

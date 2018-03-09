@@ -88,7 +88,7 @@ describe('/posts API Resource', function() {
         res = _res;
         res.should.have.status(200);
         res.should.be.json;
-        res.body.should.be.an('object');
+        // res.body.should.be.an('object');
       })
     });
   });
@@ -104,8 +104,8 @@ describe('/posts API Resource', function() {
         .then(function(res) {
           expect(res).to.have.status(201);
           expect(res).to.be.json;
-          expect(res.body.mood).to.equal(newPost.mood);
-          expect(res.body.activity).to.equal(newPost.activity);
+          expect(res.body.mood).to.equal([newPost.mood]);
+          expect(res.body.activity).to.equal([newPost.activity]);
           expect(res.body.note).to.equal(newPost.note);
       });
     });
@@ -131,13 +131,13 @@ describe('/posts API Resource', function() {
         })
         .then(res => {
           res.should.have.status(204);
-          res.should.be.an('object');
+          // res.should.be.an("object");
           return Post.findById(updateData._id);
         })
         .then(post => {
           post.rating.should.equal(updateData.rating);
-          post.mood.should.equal(updateData.mood);
-          post.activity.should.equal(updateData.activity);
+          post.mood.should.equal([updateData.mood]);
+          post.activity.should.equal([updateData.activity]);
           post.note.should.equal(updateData.note);
         });
       });
@@ -152,7 +152,7 @@ describe('/posts API Resource', function() {
         .then(_post => {
           deletedPost = _post._id;
           return chai.request(app)
-            .delete(`/posts/${post.id}`)
+            .delete(`/posts/${deletedPost}`)
             .set('Authorization', `Bearer ${token}`)
         })
         .then(res => {

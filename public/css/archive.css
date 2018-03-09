@@ -51,6 +51,9 @@
   width: 120px;
   float: right;
 }
+.edit_controls {
+  display: none;
+}
 
 .rating1 {
   background-color: rgba(127, 232, 188, 0.5);

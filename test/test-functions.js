@@ -7,8 +7,7 @@ const { User } = require('../users/models')
 function sendAllDataToDb() {
   console.info('Sending data to database...');
   const testData = [];
-  for (let i=1; i<=3; i++) {
-    // console.log(generateTestData());
+  for (let i=1; i<=2; i++) {
     testData.push(createTestUserAndPost());
   }
   return Post.insertMany(testData);
@@ -39,20 +38,17 @@ function createTestUser() {
 }
 
 function createTestUserAndPost(i) {
-  // console.log(`Creating user ${i+1}`);
   return User.create(generateUserData())
     .then(user => {
       let userId = user._id;
       let username = user.username;
       const data = [];
-      for(let x = 0; x <= 3; x++) {
-        // console.log(`Generating post ${x+1} for user ${username}`);
+      for(let x = 0; x <= 2; x++) {
         let newPost = generatePostData();
         newPost.author = userId;
         data.push(Post.create(newPost));
       }
       console.log(`Generated posts`);
-      console.log(data);
       return Promise.all(data);
     })
 }

@@ -2,7 +2,6 @@
 
 $(() => {
   authorizeUser();
-  $('.edit_controls').hide();
   editClick();
   resetClick();
   submitEdit();
@@ -114,26 +113,27 @@ function convertDate(post) {
 }
 
 function editClick() {
-  $('.edit_post_button').on('click', function(event) {
+  $('.post_group').on('click', '.edit_post_button', function(event) {
     console.log('Listening to edit!');
     event.preventDefault();
     $(this).hide();
     $(this).parent().find('.edit_controls').show();
+    console.log($(this));
 
     //Mood
     const $mood = $(this).parent().find('.mood_string');
-    $mood.replaceWith(`<input type='text' value='${$mood.text()}' data-original='${$mood.text()}' name='mood' class='mood_edit_input'`);
+    $mood.replaceWith(`<input type='text' value='${$mood.text()}' data-original='${$mood.text()}' name='mood' class='mood_edit_input'>`);
     //Activity
     const $activity = $(this).parent().find('.activity_string');
-    $activity.replaceWith(`<input type='text' value='${$activity.text()}' data-original='${$activity.text()}' name='activity' class='activity_edit_input'`);
+    $activity.replaceWith(`<input type='text' value='${$activity.text()}' data-original='${$activity.text()}' name='activity' class='activity_edit_input'>`);
     //Note
     const $note = $(this).parent().find('.note_string');
-    $note.replaceWith(`<textarea name='note' class='note_edit_input' data-original='${$note.text()}' value='${$note.text()}'`)
+    $note.replaceWith(`<textarea name='note' class='note_edit_input' data-original='${$note.text()}'>${$note.text()}</textarea>`)
   })
 }
 
 function resetClick() {
-  $('.reset_post_button').on('click', function(event) {
+  $('.post_group').on('click', '.reset_post_button',function(event) {
     console.log('Listening to reset!');
     event.preventDefault();
     $(this).parent().parent().find('.edit_post_button').show();
@@ -152,7 +152,7 @@ function resetClick() {
 }
 
 function submitEdit() {
-  $('.submit_edit_button').on('click', function(event) {
+  $('.post_group').on('click', '.submit_edit_button', function(event) {
     event.preventDefault();
     const postId = $(this).parent().parent().attr('id');
     const mood = $(this).parent().parent().find('.mood_edit_input').val();
@@ -160,15 +160,15 @@ function submitEdit() {
     const note = $(this).parent().parent().find('.note_edit_input').val();
     const token = localStorage.getItem('authToken');
     $.ajax({
-      url: '/posts/${postId}',
+      url: `/posts/${postId}`,
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
       method: 'PUT',
       data: {
         mood: mood,
         activity: activity,
         note: note
-      },
-      headers: {
-        Authorization: 'Bearer ${token}'
       },
       success: () => {
         console.log(`Successfully edited post ${postId}`)

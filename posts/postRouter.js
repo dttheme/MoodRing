@@ -41,13 +41,13 @@ router.post('/', jwtAuth, (req, res) => {
 
 router.put('/:id', jwtAuth, (req, res) => {
   const toUpdate = {};
-  const updateableFields = ['rating', 'mood', 'activity', 'note'];
+  const updateableFields = ["rating", "mood", "activity", "note"];
   updateableFields.forEach(field => {
     if (field in req.body) {
       toUpdate[field] = req.body[field];
     }
   });
-
+  console.log(req.body);
   Post
   .findByIdAndUpdate(req.params.id, {$set: toUpdate})
   .then(updatedPost => res.status(204).end())
