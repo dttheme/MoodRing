@@ -30,6 +30,8 @@ describe('/users API Resource', function() {
     User.create(testUserData)
       .then(user => {
         testUser = user;
+        console.log(testUserData.username);
+        console.log(testUserData.password);
         sendAllDataToDb()
         .then(() => done());
       })
@@ -62,8 +64,6 @@ describe('/users API Resource', function() {
     });
 
   describe('GET request to /login', function() {
-    console.log(testUser);
-    console.log(testUserData);
     it('should login a user', function() {
       let loginUser = {
         username: testUserData.username,

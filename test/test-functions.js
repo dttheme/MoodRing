@@ -17,7 +17,7 @@ function generatePostData() {
   console.log(`Generating post data...`);
   return {
     rating: faker.random.number(),
-    mood: faker.random.word(),
+    mood: [faker.random.word()],
     activity: [faker.random.word()],
     note: faker.lorem.sentence(),
     publishedAt: faker.date.recent()
@@ -43,7 +43,7 @@ function createTestUserAndPost(i) {
       let userId = user._id;
       let username = user.username;
       const data = [];
-      for(let x = 0; x <= 2; x++) {
+      for(let x = 0; x <= 1; x++) {
         let newPost = generatePostData();
         newPost.author = userId;
         data.push(Post.create(newPost));
