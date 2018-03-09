@@ -100,7 +100,7 @@ function logoutUser() {
    showLinks();
    let token = localStorage.getItem('authToken');
    let userObject = parseJwt(token);
-   $('.greeting').append((userObject.user.firstName) + '!');
+   $('.greeting').show().append((userObject.user.firstName) + '!');
    console.log(userObject.user.firstName);
  })
 

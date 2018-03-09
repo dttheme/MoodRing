@@ -2,7 +2,7 @@
 
 ## Introduction
 
-MoodRing is an application is intended to allow the user to reflect on their day and then later look back at that information to gain a better understanding of how they are feeling from day to day. The user can then look through previous entries to get a better understanding of which activities associate with which mood.
+MoodRing is an application that allows the user to reflect on their day and then later look back at that information to gain a better understanding of how they are feeling from day to day, as well as which activities or thoughts associate with which moods.
 
 
 ## Screenshots

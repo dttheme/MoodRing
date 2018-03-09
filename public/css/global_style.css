@@ -76,6 +76,10 @@ nav button:hover {
 nav a:focus {
   outline: #7fe8bc 2px dotted;
 }
+.greeting {
+  display: none;
+  padding-bottom: 20px;
+}
 .dashboard_link,
 .archive_link,
 .logout_button,
