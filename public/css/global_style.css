@@ -34,6 +34,9 @@ h1 {
 a h1:hover {
   color: #2F5746;
 }
+a:focus {
+  outline: red 2px dotted;
+}
 
 h2 {
   font-family: 'Bungee', sans-serif;
@@ -73,13 +76,25 @@ nav button:hover {
    color: #7fe8bc;
    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
-nav a:focus {
+nav a:focus,
+nav button:focus {
   outline: #7fe8bc 2px dotted;
 }
 .greeting {
   display: none;
+  font-family: 'Bungee', sans-serif;
   padding-bottom: 20px;
 }
+.auth_greet {
+ text-align: left;
+ font-size: 20px;
+ padding-left: 70px;
+ /* border-bottom: 10px solid transparent;
+ border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
+ border-image-slice: 2; */
+}
+
+
 .dashboard_link,
 .archive_link,
 .logout_button,
@@ -191,12 +206,18 @@ label {
 
 /* Tablet Portrait */
 @media screen and (max-width: 900px) {
-  header {
-    height:
-  }
   h1 {
     font-size: 65px;
-    padding-left: 5px;
+    padding-left: 25px;
+  }
+  nav li {
+    padding-right: 20px;
+  }
+  li a {
+    font-size: 17px;
+  }
+  li button {
+    font-size: 17px;
   }
 }
 
@@ -211,8 +232,8 @@ label {
     right: 5px;
     top: 60px;
   }
-  nav li {
-
+  .auth_greet {
+    padding-left: 15px;
   }
 }
 
@@ -225,5 +246,15 @@ label {
     margin-top: 10px;
     right: 5px;
     top: 60px;
+  }
+  nav li {
+    padding-right: 10px;
+  }
+  li a {
+    font-size: 15px;
+    text-align: left;
+  }
+  li button {
+    font-size: 15px;
   }
 }

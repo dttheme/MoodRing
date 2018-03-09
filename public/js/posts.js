@@ -118,7 +118,6 @@ function editClick() {
     event.preventDefault();
     $(this).hide();
     $(this).parent().find('.edit_controls').show();
-    console.log($(this));
 
     //Mood
     const $mood = $(this).parent().find('.mood_string');
@@ -155,10 +154,12 @@ function submitEdit() {
   $('.post_group').on('click', '.submit_edit_button', function(event) {
     event.preventDefault();
     const postId = $(this).parent().parent().attr('id');
-    const mood = $(this).parent().parent().find('.mood_edit_input').val();
-    const activity = $(this).parent().parent().find('.activity_edit_input').val();
+    const mood = $(this).parent().parent().find('.mood_edit_input').val().split(',');
+    const activity = $(this).parent().parent().find('.activity_edit_input').val().split(',');
     const note = $(this).parent().parent().find('.note_edit_input').val();
     const token = localStorage.getItem('authToken');
+    console.log(mood);
+    console.log(activity);
     $.ajax({
       url: `/posts/${postId}`,
       headers: {
@@ -177,6 +178,8 @@ function submitEdit() {
         console.log('Edit not successful!')
       }
     })
-
+    setTimeout(function() {
+      location.reload(true);
+    }, 700);
   })
 }

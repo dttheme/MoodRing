@@ -99,9 +99,10 @@ function logoutUser() {
  $(() => {
    showLinks();
    let token = localStorage.getItem('authToken');
-   let userObject = parseJwt(token);
-   $('.greeting').show().append((userObject.user.firstName) + '!');
-   console.log(userObject.user.firstName);
+   if(token != null) {
+     let userObject = parseJwt(token);
+     $('.greeting').show().append((userObject.user.firstName) + '!');
+   }
  })
 
 function showLinks() {
@@ -109,10 +110,12 @@ function showLinks() {
   if (!clientToken) {
     $('.dashboard_link').hide();
     $('.logout_button').hide();
+    $('.archive_link').hide();
     $('.login_link').show();
   } else {
     $('.dashboard_link').show();
     $('.logout_button').show();
+    $('.archive_link').show();
     $('.login_link').hide();
   }
 }

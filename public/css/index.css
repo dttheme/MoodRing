@@ -31,7 +31,7 @@
   font-size: 32px;
   font-weight: 200;
   color: black;
-  padding-top: 30%
+  padding-top: 30%;
 }
 
 #sign_up_wrap {
@@ -93,7 +93,11 @@
     left: 40%;
   }
   .intro_text {
+    padding-top: 20%;
     font-size: 25px;
+  }
+  .greeting {
+    font-size: 20px;
   }
 }
 
@@ -110,7 +114,11 @@
     left: 28%;
   }
   .intro_text {
+    padding-top: 15%;
     font-size: 20px;
+  }
+  .greeting {
+    font-size: 17px;
   }
   #sign_up_title {
     display: block;

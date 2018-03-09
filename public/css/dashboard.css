@@ -4,7 +4,7 @@
 }
 
 #new_post_section {
-  margin-top: 200px;
+  margin-top: 120px;
 }
 
 #new_post_form {
@@ -175,9 +175,6 @@ legend {
 }
 
 @media screen and (max-width: 1200px) {
-  #new_post_section {
-    margin-top: 180px;
-  }
   #new_post_form {
     width: 70%;
     margin-top: 15px;
@@ -185,9 +182,6 @@ legend {
 }
 
 @media screen and (max-width: 900px) {
-  #new_post_section {
-    margin-top: 160px;
-  }
   .emoticons {
     height: 90px;
     width: 90px;
@@ -203,9 +197,7 @@ legend {
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
-  #new_post_section {
-    margin-top: 140px;
-  }
+
   .emoticons {
     height: 50px;
     width: 50px;
@@ -235,7 +227,5 @@ legend {
 }
 
 @media only screen and (max-width: 400px) {
-  #new_post_section {
-    margin-top: 120px;
-  }
+
 }

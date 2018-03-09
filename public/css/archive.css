@@ -3,7 +3,7 @@
 }
 
 #previous_post_section {
-  margin-top: 200px;
+  margin-top: 120px;
   position: relative;
   z-index: 1;
   margin-bottom: 40px;
@@ -30,8 +30,7 @@
   font-family: 'Bungee', sans-serif;
   font-size: 20px;
 }
-.delete_post_button,
-.edit_post_button {
+.post_wrapper button {
   font-family: 'Bungee', sans-serif;
   cursor: pointer;
   border: none;
@@ -39,11 +38,28 @@
   position: absolute;
   bottom: 10px;
 }
+.edit_controls {
+  display: none;
+}
 .delete_post_button {
   left: 90%;
 }
 .edit_post_button {
   left: 80%;
+}
+.reset_post_button {
+  left: 10%;
+}
+.submit_edit_button {
+  left: 30%;
+}
+.post_wrapper input {
+  height: 23px;
+  width: 250px;
+}
+.post_wrapper textarea {
+  height: 23px;
+  width: 250px;
 }
 
 .emoticon {
@@ -51,10 +67,6 @@
   width: 120px;
   float: right;
 }
-.edit_controls {
-  display: none;
-}
-
 .rating1 {
   background-color: rgba(127, 232, 188, 0.5);
 }
@@ -88,18 +100,12 @@
 
 
 @media screen and (max-width: 1200px) {
-  #previous_post_section {
-    margin-top: 180px;
-  }
   .post_wrapper {
     width: 70%;
   }
 }
 
 @media screen and (max-width: 900px) {
-  #previous_post_section {
-    margin-top: 160px;
-  }
   .post_wrapper {
     font-size: 15px;
   }
@@ -113,9 +119,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-  #previous_post_section {
-    margin-top: 140px;
-  }
   .post_wrapper {
     width: 90%;
     font-size: 15px;
@@ -142,7 +145,13 @@
     left: 30%;
   }
   .delete_post_button {
-    left: 50%;
+    left: 60%;
+  }
+  .post_wrapper input {
+    width: 200px;
+  }
+  .post_wrapper textarea {
+    width: 200px;
   }
   .emoticon {
     margin-top: 20px;
