@@ -27,16 +27,24 @@
   text-align: left;
 }
 .post_date {
+  font-family: 'Bungee Hairline', sans-serif;
+  font-size: 17px;
+  font-weight: 900;
+}
+.mood_string {
   font-family: 'Bungee', sans-serif;
   font-size: 20px;
+  font-weight: 100;
+  letter-spacing: 2px;
 }
 .post_wrapper button {
-  font-family: 'Bungee', sans-serif;
+  font-family: 'Bungee Hairline', sans-serif;
   cursor: pointer;
   border: none;
   background: transparent;
   position: absolute;
   bottom: 10px;
+  font-weight: 900;
 }
 .edit_controls {
   display: none;
@@ -66,6 +74,23 @@
   height: 120px;
   width: 120px;
   float: right;
+}
+.no_results {
+    height: 300px;
+    border: 10px solid transparent;
+    border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
+    border-image-slice: 2;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 70px;
+    box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
+}
+.no_results p, .no_results a {
+    font-family: 'Bungee', sans-serif;
+    font-size: 30px;
 }
 .rating1 {
   background-color: rgba(127, 232, 188, 0.5);

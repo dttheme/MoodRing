@@ -30,7 +30,10 @@ function postNewUser(firstName, username, password) {
   ),
     success: (data) => {
       if(data) {
-        console.log(data);
+        $('#sign_up_form').prepend(
+          `
+          <div class='sign_up_success'><span style='vertical-align: middle;'>Hurray! You have successfully signed up! Now you can <a href='/login'>login</a>!<span></div>
+          `)
       }
     },
     error: (jqXHR, exception) => {}

@@ -55,8 +55,9 @@ input[type="radio"] {
 }
 
 legend {
-  font-size: 25px;
-  font-family: 'Bungee', sans-serif;
+  font-size: 30px;
+  font-family: 'Bungee Hairline', sans-serif;
+  font-weight: 900;
   margin-top: 30px;
 }
 .input {

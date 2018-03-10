@@ -50,18 +50,18 @@ function getPreviousEntries(callback) {
 
 function displayPreviousEntries(data) {
   if (data.length === 0) {
-    $('.post_group').append(`<p class='no results'> You don't have any posts yet! Click 'Dashboard' to get started.</p>`)
+    $('.post_group').append(`<p class='no_results'> You don't have any posts yet! Click 'Dashboard' to get started.</p>`)
   } else {
     data.forEach(function(post) {
       let postDate = convertDate(post);
-      let moodAsAString = (post.mood).join(', ').toLowerCase();
-      let activityAsAString = (post.activity).join(', ').toLowerCase();
+      let moodAsAString = (post.mood).join(',  ');
+      let activityAsAString = (post.activity).join(',  ');
       $('.post_group').append(
         `<div class='post'>
             <div class='post_wrapper rating${post.rating}' id=${post._id}>
+            <p><span class='mood_string'>${moodAsAString}</span></p><br>
               <p class="post_date">${postDate}</p>
               <span class='emoticon'></span><br><br>
-              <p><b>I felt:</b> <span class='mood_string'>${moodAsAString}</span></p><br>
               <p><b>I accomplished:</b><span class='activity_string'> ${activityAsAString}</span></p><br>
               <p><b>I noted:</b><span class='note_string'> ${post.note}</span></p><br><br>
               <button type='button' class='delete_post_button'>Delete</button>
@@ -154,8 +154,8 @@ function submitEdit() {
   $('.post_group').on('click', '.submit_edit_button', function(event) {
     event.preventDefault();
     const postId = $(this).parent().parent().attr('id');
-    const mood = $(this).parent().parent().find('.mood_edit_input').val().split(',');
-    const activity = $(this).parent().parent().find('.activity_edit_input').val().split(',');
+    const mood = $(this).parent().parent().find('.mood_edit_input').val().split(', ');
+    const activity = $(this).parent().parent().find('.activity_edit_input').val().split(', ');
     const note = $(this).parent().parent().find('.note_edit_input').val();
     const token = localStorage.getItem('authToken');
     console.log(mood);
