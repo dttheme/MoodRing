@@ -28,7 +28,7 @@
 }
 .post_date {
   font-family: 'Bungee Hairline', sans-serif;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 900;
 }
 .mood_string {
@@ -87,11 +87,10 @@
     background: rgba(255, 255, 255, 0.9);
     padding: 70px;
     box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
-}
-.no_results p, .no_results a {
     font-family: 'Bungee', sans-serif;
     font-size: 30px;
 }
+
 .rating1 {
   background-color: rgba(127, 232, 188, 0.5);
 }

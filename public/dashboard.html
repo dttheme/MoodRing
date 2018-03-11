@@ -22,11 +22,10 @@
       <nav>
         <ul>
           <li><a href="/archive.html">Archive</a></li>
-          <li><button class="logout_button">Logout</a></li>
+          <li><button class="logout_button">Logout</button></li>
         </ul>
       </nav>
     </header>
-    </section>
     <section id="new_post_section" role="main">
       <p class="greeting auth_greet">Welcome, </p>
       <h2>Dashboard</h2>
@@ -45,7 +44,7 @@
             <input type="radio" id="okay" name="emoticons" value="3" title="okay" tabindex="0">
             <img src="/images/emoticons/okay.svg" alt="Okay emoticon" class="emoticons">
           </label>
-          <label for="bad" class="emoticon_label tooltip"><span class="tooltiptext">&nbspBad</span>
+          <label for="bad" class="emoticon_label tooltip"><span class="tooltiptext">&nbsp;Bad</span>
             <input type="radio" id="bad" name="emoticons" value="4" title="bad" tabindex="0">
             <img src="/images/emoticons/bad.svg" alt="Bad emoticon" class="emoticons">
           </label>
@@ -74,7 +73,7 @@
         <br>
         <div id="notes_input_wrapper">
           <label for="note_input">Notes:</label><br>
-          <textarea type="text" id="note_input" class="input" placeholder="Enter any additional thoughts here"></textarea><br><br>
+          <textarea id="note_input" class="input" placeholder="Enter any additional thoughts here"></textarea><br><br>
         </div>
         <button form="new_post_form" class="submit">Submit</button>
       </form>

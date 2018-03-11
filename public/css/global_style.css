@@ -81,6 +81,11 @@ nav a:focus,
 nav button:focus {
   outline: #7fe8bc 2px dotted;
 }
+form label {
+  font-family: 'Bungee Hairline', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+}
 .greeting {
   display: none;
   font-family: 'Bungee Hairline', sans-serif;
@@ -132,10 +137,6 @@ nav button:focus {
 }
 .submit:focus {
   outline: #5D398F 3px dotted;
-}
-label {
-  font-size: 17px;
-  font-weight: 700;
 }
 /* Color bars */
 .bar {
