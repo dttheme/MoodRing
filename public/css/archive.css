@@ -159,6 +159,10 @@
     height: 110px;
     width: 110px;
   }
+  .no_results {
+    width: 80%;
+    font-size: 25px;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -181,5 +185,8 @@
     margin-top: 20px;
     height: 100px;
     width: 100px;
+  }
+  .no_results {
+    width: 90%;
   }
 }

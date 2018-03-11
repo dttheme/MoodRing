@@ -8,13 +8,13 @@ MoodRing is an application that allows the user to reflect on their day and then
 ## Screenshots
 
 ### Landing page
-![alt text](/images/screenshots/home_screeshot.png "Logo Title Text 1")
+![alt text](images/screenshots/home_screeshot.png "Home")
 
 ### Dashboard
-![alt text](/images/screenshots/dash_screeshot.png "Logo Title Text 1")
+![alt text](images/screenshots/dash_screeshot.png "Dashboard")
 
 ### Archive
-![alt text](/images/screenshots/archive_screeshot.png "Logo Title Text 1")
+![alt text](images/screenshots/archive_screeshot.png "Archive")
 
 
 ## Technical

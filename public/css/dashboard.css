@@ -225,8 +225,16 @@ legend {
    padding-top: 15px;
    padding-left: 5px;
   }
+  #success_box {
+    width: 80%;
+  }
+  #success_box p, #success_box a {
+    font-size: 25px;
+  }
 }
 
 @media only screen and (max-width: 400px) {
-
+#success_box {
+  width: 90%;
+}
 }
