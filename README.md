@@ -8,13 +8,13 @@ MoodRing is an application that allows the user to reflect on their day and then
 ## Screenshots
 
 ### Landing page
-![alt text](images/screenshots/home_screeshot.png "Home")
+![Home](http://tinypic.com/r/s4cmd2/9 "Home")
 
 ### Dashboard
-![alt text](images/screenshots/dash_screeshot.png "Dashboard")
+![Dashboard](http://tinypic.com/r/2ziofnb/9 "Dashboard")
 
 ### Archive
-![alt text](images/screenshots/archive_screeshot.png "Archive")
+![Archive](http://tinypic.com/r/syxftd/9 "Archive")
 
 
 ## Technical
