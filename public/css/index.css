@@ -9,6 +9,9 @@
   height: 70vh;
   z-index: -99999;
 }
+.background::before {
+  background: url('/images/landing_photo.jpg') no-repeat top center;
+}
 .intro_div {
   position: absolute;
   border-radius: 50%;

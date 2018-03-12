@@ -19,7 +19,6 @@
   padding: 10px;
   box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
 }
-
 .emoticons {
   height: 120px;
   width: 120px;
@@ -27,25 +26,21 @@
   padding-top: 20px;;
   margin: 5px;
 }
-
 input[type="radio"] {
   opacity: 0;
   position: absolute;
 }
-
 #mood_input_wrap,
 #activity_input_wrap,
 #notes_input_wrapper {
   margin-top: 40px;
 }
-
 .add_button {
   margin-top: 10px;
   cursor: pointer;
   background: transparent;
   border: none;
 }
-
 #note_input {
   height: 100px;
   width: 70%;
@@ -53,7 +48,6 @@ input[type="radio"] {
   font-size: 15px;
   text-align: left;
 }
-
 legend {
   font-size: 30px;
   font-family: 'Bungee Hairline', sans-serif;
@@ -65,7 +59,6 @@ legend {
   width: 70%;
   max-width: 400px;
 }
-
 .remove_field {
  position: absolute;
  padding-top: 27px;
@@ -75,7 +68,6 @@ legend {
   text-decoration: none;
   color: red;
 }
-
 .tooltip {
   position: relative;
   display: inline-block;
@@ -96,7 +88,6 @@ legend {
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
-
 #success_box {
   height: 300px;
   border: 10px solid transparent;
@@ -110,7 +101,6 @@ legend {
   padding: 70px;
   box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
 }
-
 #success_box p, #success_box a {
   font-family: 'Bungee', sans-serif;
   font-size: 30px;
@@ -123,8 +113,6 @@ legend {
 #success_box a:hover {
   color: #7FE8BC;
 }
-
-
 
 /* EMOTICON RADIO BUTTONS */
 
@@ -175,6 +163,9 @@ legend {
   background-color: rgba(93, 57, 143, 0.3);
 }
 
+/* MEDIA QUERIES */
+
+/* Tablet Landscape */
 @media screen and (max-width: 1200px) {
   #new_post_form {
     width: 70%;
@@ -182,6 +173,7 @@ legend {
   }
 }
 
+/* Tablet Portrait */
 @media screen and (max-width: 900px) {
   .emoticons {
     height: 90px;
@@ -198,7 +190,6 @@ legend {
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
-
   .emoticons {
     height: 50px;
     width: 50px;

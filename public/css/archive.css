@@ -11,7 +11,6 @@
 .post {
   padding: 0;
   margin-top: 60px;
-
 }
 .post_wrapper {
   position: relative;
@@ -46,6 +45,9 @@
   bottom: 10px;
   font-weight: 900;
 }
+.post_wrapper button:focus {
+  border-color: red;
+}
 .edit_controls {
   display: none;
 }
@@ -69,66 +71,67 @@
   height: 23px;
   width: 250px;
 }
-
 .emoticon {
-  height: 120px;
-  width: 120px;
+  width: 100px;
+  height: 100px;
   float: right;
 }
 .no_results {
-    height: 300px;
-    border: 10px solid transparent;
-    border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
-    border-image-slice: 2;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    margin-top: 40px;
-    width: 50%;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 70px;
-    box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
-    font-family: 'Bungee', sans-serif;
-    font-size: 30px;
+  height: 300px;
+  border: 10px solid transparent;
+  border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
+  border-image-slice: 2;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 40px;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 70px;
+  box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
+  font-family: 'Bungee', sans-serif;
+  font-size: 30px;
 }
-
 .rating1 {
   background-color: rgba(127, 232, 188, 0.5);
 }
-.rating1 .emoticon {
+.rating1 .emoticon:before {
   content: url('../images/emoticons/great.svg')
 }
 .rating2 {
   background-color: rgba(101, 194, 201, 0.5);
 }
-.rating2 .emoticon {
+.rating2 .emoticon:before {
   content: url('../images/emoticons/good.svg')
 }
 .rating3 {
   background-color: rgba(85, 131, 176, 0.5);
 }
-.rating3 .emoticon {
+.rating3 .emoticon:before {
   content: url('../images/emoticons/okay.svg')
 }
 .rating4 {
   background-color: rgba(82, 86, 176, 0.5);
 }
-.rating4 .emoticon {
+.rating4 .emoticon:before {
   content: url('../images/emoticons/bad.svg')
 }
 .rating5 {
   background-color: rgba(93, 57, 143, 0.5);
 }
-.rating5 .emoticon {
+.rating5 .emoticon:before {
   content: url('../images/emoticons/terrible.svg')
 }
 
+/* MEDIA QUERIES */
 
+/* Tablet Landscape */
 @media screen and (max-width: 1200px) {
   .post_wrapper {
     width: 70%;
   }
 }
 
+/* Tablet Portrait */
 @media screen and (max-width: 900px) {
   .post_wrapper {
     font-size: 15px;
@@ -139,9 +142,9 @@
   .delete_post_button {
     left: 80%;
   }
-
 }
 
+/* Mobile */
 @media only screen and (max-width: 600px) {
   .post_wrapper {
     width: 90%;

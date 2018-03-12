@@ -58,20 +58,20 @@ function displayPreviousEntries(data) {
       let activityAsAString = (post.activity).join(',  ');
       $('.post_group').append(
         `<div class='post'>
-            <div class='post_wrapper rating${post.rating}' id=${post._id}>
-            <p><span class='mood_string'>${moodAsAString}</span></p><br>
-              <p class="post_date">${postDate}</p>
-              <span class='emoticon'></span><br><br>
-              <p><b>I accomplished:</b><span class='activity_string'> ${activityAsAString}</span></p><br>
-              <p><b>I noted:</b><span class='note_string'> ${post.note}</span></p><br><br>
-              <button type='button' class='delete_post_button'>Delete</button>
-              <button type='button' class='edit_post_button'>Edit</button>
-              <div class='edit_controls'>
-                <button type='button' class='reset_post_button'>Reset</button>
-                <button type='button' class='submit_edit_button'>Submit</button>
-              </div>
-            </div>
-          </div>
+        <div class='post_wrapper rating${post.rating}' id=${post._id}>
+        <p><span class='mood_string'>${moodAsAString}</span></p><br>
+        <p class="post_date">${postDate}</p>
+        <span class='emoticon'></span><br><br>
+        <p><b>I accomplished:</b><span class='activity_string'> ${activityAsAString}</span></p><br>
+        <p><b>I noted:</b><span class='note_string'> ${post.note}</span></p><br><br>
+        <button type='button' class='delete_post_button'>Delete</button>
+        <button type='button' class='edit_post_button'>Edit</button>
+        <div class='edit_controls'>
+        <button type='button' class='reset_post_button'>Reset</button>
+        <button type='button' class='submit_edit_button'>Submit</button>
+        </div>
+        </div>
+        </div>
         `
       );
       deletePreviousEntries(data);
@@ -94,92 +94,92 @@ function deletePreviousEntries(data) {
       error: function(jqXHR, exception) {
         console.log(jqXHR);
         console.log(exception);}
+      });
+      setTimeout(function() {
+        location.reload(true);
+      }, 700);
     });
-    setTimeout(function() {
-      location.reload(true);
-    }, 700);
-  });
-}
+  }
 
-function getAndDisplayPreviousEntries() {
-  getPreviousEntries(displayPreviousEntries);
-}
+  function getAndDisplayPreviousEntries() {
+    getPreviousEntries(displayPreviousEntries);
+  }
 
-//covert the ISO date to human readable Date
-function convertDate(post) {
-  let date = new Date(post.createdAt).toString();
-  let parsedDate = date.slice(0,21);
-  return parsedDate;
-}
+  //covert the ISO date to human readable Date
+  function convertDate(post) {
+    let date = new Date(post.createdAt).toString();
+    let parsedDate = date.slice(0,21);
+    return parsedDate;
+  }
 
-function editClick() {
-  $('.post_group').on('click', '.edit_post_button', function(event) {
-    console.log('Listening to edit!');
-    event.preventDefault();
-    $(this).hide();
-    $(this).parent().find('.edit_controls').show();
+  function editClick() {
+    $('.post_group').on('click', '.edit_post_button', function(event) {
+      console.log('Listening to edit!');
+      event.preventDefault();
+      $(this).hide();
+      $(this).parent().find('.edit_controls').show();
 
-    //Mood
-    const $mood = $(this).parent().find('.mood_string');
-    $mood.replaceWith(`<input type='text' value='${$mood.text()}' data-original='${$mood.text()}' name='mood' class='mood_edit_input'>`);
-    //Activity
-    const $activity = $(this).parent().find('.activity_string');
-    $activity.replaceWith(`<input type='text' value='${$activity.text()}' data-original='${$activity.text()}' name='activity' class='activity_edit_input'>`);
-    //Note
-    const $note = $(this).parent().find('.note_string');
-    $note.replaceWith(`<textarea name='note' class='note_edit_input' data-original='${$note.text()}'>${$note.text()}</textarea>`)
-  })
-}
-
-function resetClick() {
-  $('.post_group').on('click', '.reset_post_button',function(event) {
-    console.log('Listening to reset!');
-    event.preventDefault();
-    $(this).parent().parent().find('.edit_post_button').show();
-    $(this).parent().parent().find('.edit_controls').hide();
-
-    //Mood
-    const $mood = $(this).parent().parent().find('.mood_edit_input');
-    $mood.replaceWith(`<span class='mood_string'>${$mood.data('original')}</span>`);
-    //Activity
-    const $activity = $(this).parent().parent().find('.activity_edit_input');
-    $activity.replaceWith(`<span class='activity_string'>${$activity.data('original')}</span>`);
-    //Note
-    const $note = $(this).parent().parent().find('.note_edit_input');
-    $note.replaceWith(`<span class='note_string'> ${$note.data('original')}</span>`)
-  })
-}
-
-function submitEdit() {
-  $('.post_group').on('click', '.submit_edit_button', function(event) {
-    event.preventDefault();
-    const postId = $(this).parent().parent().attr('id');
-    const mood = $(this).parent().parent().find('.mood_edit_input').val().split(', ');
-    const activity = $(this).parent().parent().find('.activity_edit_input').val().split(', ');
-    const note = $(this).parent().parent().find('.note_edit_input').val();
-    const token = localStorage.getItem('authToken');
-    console.log(mood);
-    console.log(activity);
-    $.ajax({
-      url: `/posts/${postId}`,
-      headers: {
-        Authorization: `Bearer ${token}`
-      },
-      method: 'PUT',
-      data: {
-        mood: mood,
-        activity: activity,
-        note: note
-      },
-      success: () => {
-        console.log(`Successfully edited post ${postId}`)
-      },
-      error: () => {
-        console.log('Edit not successful!')
-      }
+      //Mood
+      const $mood = $(this).parent().find('.mood_string');
+      $mood.replaceWith(`<input type='text' value='${$mood.text()}' data-original='${$mood.text()}' name='mood' class='mood_edit_input'>`);
+      //Activity
+      const $activity = $(this).parent().find('.activity_string');
+      $activity.replaceWith(`<input type='text' value='${$activity.text()}' data-original='${$activity.text()}' name='activity' class='activity_edit_input'>`);
+      //Note
+      const $note = $(this).parent().find('.note_string');
+      $note.replaceWith(`<textarea name='note' class='note_edit_input' data-original='${$note.text()}'>${$note.text()}</textarea>`)
     })
-    setTimeout(function() {
-      location.reload(true);
-    }, 700);
-  })
-}
+  }
+
+  function resetClick() {
+    $('.post_group').on('click', '.reset_post_button',function(event) {
+      console.log('Listening to reset!');
+      event.preventDefault();
+      $(this).parent().parent().find('.edit_post_button').show();
+      $(this).parent().parent().find('.edit_controls').hide();
+
+      //Mood
+      const $mood = $(this).parent().parent().find('.mood_edit_input');
+      $mood.replaceWith(`<span class='mood_string'>${$mood.data('original')}</span>`);
+      //Activity
+      const $activity = $(this).parent().parent().find('.activity_edit_input');
+      $activity.replaceWith(`<span class='activity_string'>${$activity.data('original')}</span>`);
+      //Note
+      const $note = $(this).parent().parent().find('.note_edit_input');
+      $note.replaceWith(`<span class='note_string'> ${$note.data('original')}</span>`)
+    })
+  }
+
+  function submitEdit() {
+    $('.post_group').on('click', '.submit_edit_button', function(event) {
+      event.preventDefault();
+      const postId = $(this).parent().parent().attr('id');
+      const mood = $(this).parent().parent().find('.mood_edit_input').val().split(', ');
+      const activity = $(this).parent().parent().find('.activity_edit_input').val().split(', ');
+      const note = $(this).parent().parent().find('.note_edit_input').val();
+      const token = localStorage.getItem('authToken');
+      console.log(mood);
+      console.log(activity);
+      $.ajax({
+        url: `/posts/${postId}`,
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+        method: 'PUT',
+        data: {
+          mood: mood,
+          activity: activity,
+          note: note
+        },
+        success: () => {
+          console.log(`Successfully edited post ${postId}`)
+        },
+        error: () => {
+          console.log('Edit not successful!')
+        }
+      })
+      setTimeout(function() {
+        location.reload(true);
+      }, 700);
+    })
+  }

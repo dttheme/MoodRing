@@ -7,7 +7,6 @@
 * {
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
-  /* color: */
   text-align: center;
   margin: 0;
   padding: 0;
@@ -96,9 +95,6 @@ form label {
  text-align: left;
  font-size: 20px;
  padding-left: 70px;
- /* border-bottom: 10px solid transparent;
- border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
- border-image-slice: 2; */
 }
 .dashboard_link,
 .archive_link,
