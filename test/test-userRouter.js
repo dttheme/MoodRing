@@ -62,21 +62,4 @@ describe('/users API Resource', function() {
         });
       });
     });
-
-  // describe('GET request to /login', function() {
-  //   it('should login a user', function() {
-  //     let loginUser = {
-  //       username: testUserData.username,
-  //       password: testUserData.password
-  //     }
-  //     return chai.request(app)
-  //       .get('/dashboard')
-  //       .auth(loginUser)
-  //       .then(function(res) {
-  //         res.should.have.status(200);
-  //         res.should.be.json;
-  //       });
-  //     });
-  //   });
-
 });

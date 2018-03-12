@@ -190,6 +190,17 @@ form label {
   font-family: 'Bungee', sans-serif;
   font-size: 25px;
 }
+footer {
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+footer a {
+  text-decoration: none;
+  color: #5D398F;
+}
+footer a:hover {
+  text-decoration: underline;
+}
 
 /* MEDIA QUERIES */
 

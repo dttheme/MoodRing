@@ -20,12 +20,12 @@
   left: 35%;
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.8);
-  height: 500px;;
-  width: 500px;;
+  height: 500px;
+  width: 500px;
   padding: 30px;
 }
 #sign_up_section {
-  height: 28vh;
+  height: 30vh;
 }
 .intro_text {
   font-size: 32px;
@@ -36,6 +36,7 @@
 #sign_up_wrap {
   margin: 1vh auto;
   width: 90%;
+  height: 92%;
   border: 2px solid transparent;
   border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
   border-image-slice: 2;
@@ -44,6 +45,7 @@
 #sign_up_title {
   display: inline-block;
   width: 40%;
+  margin-bottom: 30px;
   margin-right: 20%;
 }
 #sign_up_title h2 {
@@ -70,11 +72,13 @@
   margin-bottom: 20px;
   color: red;
 }
-.sign_up_success a {
+.sign_up_success a,
+#sign_up_title a {
   text-decoration: none;
   color: #5D398F;
 }
-.sign_up_success a:hover {
+.sign_up_success a:hover,
+#sign_up_title a:hover {
   text-decoration: underline;
 }
 
@@ -83,12 +87,6 @@
 }
 
 /* MEDIA QUERIES */
-
-/* Tablet Landscape */
-@media screen and (max-width: 1200px) {
-
-
-}
 
 /* Tablet Portrait */
 @media screen and (max-width: 900px) {

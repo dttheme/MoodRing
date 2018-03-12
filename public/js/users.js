@@ -38,6 +38,7 @@ function postNewUser(firstName, username, password) {
         }
       },
       error: (jqXHR, exception) => {
+        $('.sign_up_failure').remove()
         $('#sign_up_form').prepend(
           `
           <div class='sign_up_failure'><span>Whoops! Please fill out all of the fields before submitting the form!</span></div>
@@ -122,11 +123,14 @@ function postNewUser(firstName, username, password) {
       $('.logout_button').hide();
       $('.archive_link').hide();
       $('.login_link').show();
+      $('#sign_up_form').show();
     } else {
       $('.dashboard_link').show();
       $('.logout_button').show();
       $('.archive_link').show();
       $('.login_link').hide();
+      $('#sign_up_form').hide();
+      $('#sign_up_title').css({'margin-right': '0', 'width': '70%'}).append(`<p>Visit your <a href='/dashboard.html'>dashboard</a> to get started.</p>`);
     }
   }
 

@@ -68,6 +68,9 @@ legend {
   text-decoration: none;
   color: red;
 }
+form button:focus {
+  outline: red 2px dotted;
+}
 .tooltip {
   position: relative;
   display: inline-block;

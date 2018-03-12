@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
+  <!-- FontAwesome -->
+  <script src="https://use.fontawesome.com/7f641b72ff.js"></script>
   <!-- CSS/Styling -->
   <link rel="stylesheet" type="text/css" href="css/global_style.css">
   <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -12,9 +14,9 @@
   <title>MoodRing</title>
 </head>
 <body>
-  <header>
+  <header role="banner">
     <a href="/"><h1>MoodRing</h1></a>
-    <nav>
+    <nav role="navigation">
       <ul>
         <li><div class="dashboard_link"><a href="/dashboard.html">Dashboard</a></div></li>
         <li><div class="archive_link"><a href="/archive.html">Archive</a></div></li>
@@ -51,7 +53,7 @@
         <p>All of our lives are packed with stimuli. Why not take a moment to reflect?</p>
       </div>
       <div id="sign_up_form">
-        <form name="login_form">
+        <form name="sign_up_form">
           <label for="firstName">First name:<br>
             <input name="firstName" placeholder="First name" id="firstName" class="input" required>
           </label><br>
@@ -66,6 +68,9 @@
       </div>
     </div>
   </section>
+  <footer role="contentinfo">
+    <span>Copyright &copy; 2018 <a href="https://github.com/dttheme">Dyanna Turner</a> All Rights Reserved. &nbsp;&nbsp;&nbsp;&nbsp;Credit for emoticons goes to <a href="https://thenounproject.com/xinhstudio/">Xinh Studio</a> at The Noun Project.</span>
+  </footer>
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

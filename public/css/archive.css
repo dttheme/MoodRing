@@ -46,7 +46,7 @@
   font-weight: 900;
 }
 .post_wrapper button:focus {
-  border-color: red;
+  outline: red 2px dotted;
 }
 .edit_controls {
   display: none;

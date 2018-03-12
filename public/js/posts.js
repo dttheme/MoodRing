@@ -114,7 +114,6 @@ function deletePreviousEntries(data) {
 
   function editClick() {
     $('.post_group').on('click', '.edit_post_button', function(event) {
-      console.log('Listening to edit!');
       event.preventDefault();
       $(this).hide();
       $(this).parent().find('.edit_controls').show();
@@ -133,7 +132,6 @@ function deletePreviousEntries(data) {
 
   function resetClick() {
     $('.post_group').on('click', '.reset_post_button',function(event) {
-      console.log('Listening to reset!');
       event.preventDefault();
       $(this).parent().parent().find('.edit_post_button').show();
       $(this).parent().parent().find('.edit_controls').hide();
@@ -154,12 +152,10 @@ function deletePreviousEntries(data) {
     $('.post_group').on('click', '.submit_edit_button', function(event) {
       event.preventDefault();
       const postId = $(this).parent().parent().attr('id');
-      const mood = $(this).parent().parent().find('.mood_edit_input').val().split(', ');
-      const activity = $(this).parent().parent().find('.activity_edit_input').val().split(', ');
+      const mood = $(this).parent().parent().find('.mood_edit_input').val();
+      const activity = $(this).parent().parent().find('.activity_edit_input').val();
       const note = $(this).parent().parent().find('.note_edit_input').val();
       const token = localStorage.getItem('authToken');
-      console.log(mood);
-      console.log(activity);
       $.ajax({
         url: `/posts/${postId}`,
         headers: {

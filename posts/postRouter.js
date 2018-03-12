@@ -25,18 +25,6 @@ router.get('/', jwtAuth, (req, res) => {
 
 router.post('/', jwtAuth, (req, res) => {
   const requiredFields = ['rating', 'mood', 'activity'];
-  // const missingField = requiredFields.find(
-  //   field => !(field in req.body)
-  // );
-  // if(missingField) {
-  //   $('#new_post_form').append(`<p>Please complete ${missingField} to submit form.</p>`);
-  //   return res.status(422).json({
-  //     code: 422,
-  //     reason: 'ValidationError',
-  //     message: 'Missing field',
-  //     location: missingField
-  //   })
-  // } else {
       Post
         .create({
           rating: req.body.rating,
@@ -50,7 +38,6 @@ router.post('/', jwtAuth, (req, res) => {
           console.error(err);
           res.status(500).json({ message: 'Internal server error' })
         })
-    // }
 })
 
 router.put('/:id', jwtAuth, (req, res) => {
