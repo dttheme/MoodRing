@@ -30,13 +30,20 @@ function postNewUser(firstName, username, password) {
   ),
     success: (data) => {
       if(data) {
+        $('.sign_up_failure').remove();
         $('#sign_up_form').prepend(
           `
-          <div class='sign_up_success'><span style='vertical-align: middle;'>Hurray! You have successfully signed up! Now you can <a href='/login'>login</a>!<span></div>
-          `)
+          <div class='sign_up_success'><span style='vertical-align: middle;'>Hurray! You have successfully signed up! Now you can <a href='/login.html'>login</a>!<span></div>
+          `);
       }
     },
-    error: (jqXHR, exception) => {}
+    error: (jqXHR, exception) => {
+      $('#sign_up_form').prepend(
+        `
+        <div class='sign_up_failure'><span>Whoops! Please fill out all of the fields before submitting the form!</span></div>
+        `
+      )
+    }
   })
 }
 

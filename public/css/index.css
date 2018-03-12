@@ -2,7 +2,6 @@
   position: relative;
   z-index: -2;
 }
-
 .background {
   position: relative;
   background: url('/images/landing_photo.jpg') no-repeat top center;
@@ -22,28 +21,23 @@
   width: 500px;;
   padding: 30px;
 }
-
 #sign_up_section {
-  height: 30vh;
+  height: 28vh;
 }
-
 .intro_text {
   font-size: 32px;
   font-weight: 200;
   color: black;
   padding-top: 30%;
 }
-
 #sign_up_wrap {
   margin: 1vh auto;
-  padding-top: 10px;
   width: 90%;
   border: 2px solid transparent;
   border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
   border-image-slice: 2;
   box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
 }
-
 #sign_up_title {
   display: inline-block;
   width: 40%;
@@ -54,23 +48,31 @@
   font-size: 30px;
   padding-bottom: 10px;
 }
-
 #sign_up_form {
+  padding-top: 10px;
   display: inline-block;
   height: 100%;
 }
-
 #sign_up_form input {
   width: 100%;
   margin-bottom: 10px;
 }
-
-.sign_up_success {
+.sign_up_success,
+.sign_up_failure {
   height: 100%;
   font-size: 15px;
   width: 300px;
   margin: 0 auto;
+  margin-top: 20px;
   margin-bottom: 20px;
+  color: red;
+}
+.sign_up_success a {
+  text-decoration: none;
+  color: #5D398F;
+}
+.sign_up_success a:hover {
+  text-decoration: underline;
 }
 
 .sign_up_submit {

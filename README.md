@@ -32,7 +32,7 @@ This application was built using mobile-first development. It is fully-responsiv
 - MongoDB
 - Bcrypt
 - JSON Web Tokens
-- passport
+- Passport
 
 ### Testing and Deployment
 - Mocha

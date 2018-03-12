@@ -24,19 +24,33 @@ router.get('/', jwtAuth, (req, res) => {
 });
 
 router.post('/', jwtAuth, (req, res) => {
-  Post
-    .create({
-      rating: req.body.rating,
-      mood: req.body.mood,
-      activity: req.body.activity,
-      note: req.body.note,
-      author: req.user._id
-    })
-    .then(post => res.status(201).json(post))
-    .catch(err => {
-      console.error(err);
-      res.status(500).json({ message: 'Internal server error' })
-    })
+  const requiredFields = ['rating', 'mood', 'activity'];
+  // const missingField = requiredFields.find(
+  //   field => !(field in req.body)
+  // );
+  // if(missingField) {
+  //   $('#new_post_form').append(`<p>Please complete ${missingField} to submit form.</p>`);
+  //   return res.status(422).json({
+  //     code: 422,
+  //     reason: 'ValidationError',
+  //     message: 'Missing field',
+  //     location: missingField
+  //   })
+  // } else {
+      Post
+        .create({
+          rating: req.body.rating,
+          mood: req.body.mood,
+          activity: req.body.activity,
+          note: req.body.note,
+          author: req.user._id
+        })
+        .then(post => res.status(201).json(post))
+        .catch(err => {
+          console.error(err);
+          res.status(500).json({ message: 'Internal server error' })
+        })
+    // }
 })
 
 router.put('/:id', jwtAuth, (req, res) => {

@@ -43,29 +43,28 @@ $('#new_post_form').submit(function(event) {
 //
 function addNewPostRequest(rating, moodArray, activityArray, note) {
   const token = localStorage.getItem('authToken');
-  $.ajax({
-    url: '/posts',
-    type: 'POST',
-    dataType: 'json',
-    contentType: 'application/json',
-    headers: {
-      Authorization: `Bearer ${token}`
-    },
-    data: JSON.stringify(
-      {
-        rating: rating,
-        mood: moodArray,
-        activity: activityArray,
-        note: note
+    $.ajax({
+      url: '/posts',
+      type: 'POST',
+      dataType: 'json',
+      contentType: 'application/json',
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+      data: JSON.stringify(
+        {
+          rating: rating,
+          mood: moodArray,
+          activity: activityArray,
+          note: note
+        }
+      ),
+      success: function(data) {
+        console.log(`Successfully created post ${data._id}`)
+        successfulPostMessage();
       }
-    ),
-    success: function(data) {
-      console.log(`Successfully created post ${data._id}`)
-      console.log(activityArray);
-      successfulPostMessage();
-    }
-    // error: function(jqXHR, exception) {}
-  });
+      // error: function(jqXHR, exception) {}
+    });
 }
 
 function addNewPost() {

@@ -100,8 +100,6 @@ form label {
  border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
  border-image-slice: 2; */
 }
-
-
 .dashboard_link,
 .archive_link,
 .logout_button,
@@ -123,6 +121,7 @@ form label {
   height: 50px;
   width: 200px;
   margin: 30px;
+  margin-bottom: 15px;
   border: none;
   font-family: 'Bungee', sans-serif;
   font-size: 20px;
