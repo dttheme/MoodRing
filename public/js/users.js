@@ -3,7 +3,7 @@
 
 // SIGN UP
 
-$('.sign_up_submit').click(function(event) {
+$('#form_for_sign_up').submit(function(event) {
   event.preventDefault();
   newUser();
 })
@@ -16,6 +16,7 @@ function newUser() {
 }
 
 function postNewUser(firstName, username, password) {
+  $('.sign_up_failure').remove()
   $.ajax({
     url: '/users',
     type: 'POST',
@@ -30,20 +31,20 @@ function postNewUser(firstName, username, password) {
     ),
     success: (data) => {
       if(data) {
-        $('.sign_up_failure').remove();
         $('#sign_up_form').prepend(
           `
           <div class='sign_up_success'><span style='vertical-align: middle;'>Hurray! You have successfully signed up! Now you can <a href='/login.html'>login</a>!<span></div>
-          `);
+          `
+        );
         }
       },
-      error: (jqXHR, exception) => {
-        $('.sign_up_failure').remove()
+      error: (...rest) => {
+        console.log(rest);
         $('#sign_up_form').prepend(
           `
           <div class='sign_up_failure'><span>Whoops! Please fill out all of the fields before submitting the form!</span></div>
           `
-        )
+        );
       }
     })
   }
@@ -130,7 +131,7 @@ function postNewUser(firstName, username, password) {
       $('.archive_link').show();
       $('.login_link').hide();
       $('#sign_up_form').hide();
-      $('#sign_up_title').css({'margin-right': '0', 'width': '70%'}).append(`<p>Visit your <a href='/dashboard.html'>dashboard</a> to get started.</p>`);
+      $('#sign_up_title').css({'margin-right': '0', 'width': '90%'}).append(`<p>Visit your <a href='/dashboard.html'>dashboard</a> to get started.</p>`);
     }
   }
 
