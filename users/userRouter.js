@@ -15,7 +15,7 @@ const router = express.Router();
 
 router.route('/')
   .post(disableWithToken, requiredFields('firstName', 'username', 'password'), (req, res) => {
-    User.find({username})
+    User.find({username: req.body.username})
     .count()
     .then(count => {
       if (count > 0) {
@@ -26,7 +26,7 @@ router.route('/')
           location: 'Username'
         });
       }
-      return User.hashPassword(password);
+      return User.hashPassword(req.body.password);
     })
     .then(hash => {
       return User.create({
