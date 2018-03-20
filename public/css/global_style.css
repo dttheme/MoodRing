@@ -269,4 +269,7 @@ footer a:hover {
   li button {
     font-size: 15px;
   }
+  footer {
+    font-size: 13px;
+  }
 }

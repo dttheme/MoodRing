@@ -9,7 +9,7 @@ $('#form_for_sign_up').submit(function(event) {
 })
 
 function newUser() {
-  let firstName = $('input[id="firstName"]').val();
+  let firstName = $('input[id="firstName"]').val() || null;
   let username = $('input[id="username"]').val();
   let password = $('input[id="password"]').val();
   postNewUser(firstName, username, password);
@@ -42,7 +42,7 @@ function postNewUser(firstName, username, password) {
         console.log(rest);
         $('#sign_up_form').prepend(
           `
-          <div class='sign_up_failure'><span>Whoops! Please fill out all of the fields before submitting the form!</span></div>
+          <div class='sign_up_failure'><span>Whoops! </span></div>
           `
         );
       }

@@ -15,6 +15,7 @@ const router = express.Router();
 
 router.route('/')
   .post(disableWithToken, requiredFields('firstName', 'username', 'password'), (req, res) => {
+    console.log(req.body);
     User.find({username: req.body.username})
     .count()
     .then(count => {
