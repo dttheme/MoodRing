@@ -1,3 +1,4 @@
+
 module.exports = (...fields) => (req, res, next) => {
   for (let i=0; i< fields.length; i++) {
     const field = fields[i];

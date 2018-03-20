@@ -1,24 +1,17 @@
 #landing_section {
   position: relative;
   z-index: -2;
-}
-.background {
-  position: relative;
-  background: url('/images/landing_photo.jpg') no-repeat top center;
+  background: url('/images/landing_photo.jpg') no-repeat top;
   background-size: cover;
+  overflow: hidden;
   height: 70vh;
   z-index: -99999;
 }
-.background::before {
-  background: url('/images/landing_photo.jpg') no-repeat top center;
-}
 .intro_div {
-  position: absolute;
+  margin-top: 120px;
+  display: inline-block;
   border-radius: 50%;
   border: 2px solid rgba(127, 232, 188, 0.4);
-  top: 15%;
-  left: 35%;
-  z-index: 10;
   background-color: rgba(255, 255, 255, 0.8);
   height: 500px;
   width: 500px;
@@ -36,7 +29,6 @@
 #sign_up_wrap {
   margin: 1vh auto;
   width: 90%;
-
   border: 2px solid transparent;
   border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
   border-image-slice: 2;
@@ -89,20 +81,15 @@
 /* MEDIA QUERIES */
 
 /* Tablet Portrait */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px), screen and (max-height: 900px) {
   #landing_section {
     width: 100%;
-    overflow: hidden;
-  }
-  .background {
-    background-position: 30% 60%;
+    background-position: 40% 60%;
     height: 100vh;
   }
   .intro_div {
     height: 330px;
     width: 330px;
-    top: 25%;
-    left: 40%;
   }
   .intro_text {
     padding-top: 20%;
@@ -118,16 +105,13 @@
 }
 
 /* Mobile */
-@media screen and (max-width: 600px) {
-  .background {
-    background-size: cover;
-    background-position: 35% 65%;
+@media screen and (max-width: 600px), screen and (max-height: 450px) {
+  .intro_div {
+    margin-top: 110px;
   }
   .intro_div {
     height: 275px;
     width: 275px;
-    top: 20%;
-    left: 28%;
   }
   .intro_text {
     padding-top: 15%;
@@ -149,4 +133,15 @@
     margin: 5%;
     margin-bottom: 30px;
   }
+}
+
+@media screen and (max-height: 375px) {
+  .intro_div {
+    height: 250px;
+    width: 250px;
+  }
+  .intro_text {
+    font-size: 18px;
+  }
+
 }

@@ -39,10 +39,9 @@ function postNewUser(firstName, username, password) {
         }
       },
       error: (...rest) => {
-        console.log(rest);
         $('#sign_up_form').prepend(
           `
-          <div class='sign_up_failure'><span>Whoops! </span></div>
+          <div class='sign_up_failure'><span>Whoops! This username is already taken. </span></div>
           `
         );
       }
@@ -52,7 +51,7 @@ function postNewUser(firstName, username, password) {
 
   // LOGIN
 
-  $('.login_submit').click(function(event) {
+  $('#login_form').submit(function(event) {
     event.preventDefault();
     returningUser();
   })

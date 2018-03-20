@@ -90,14 +90,15 @@ function deletePreviousEntries(data) {
       headers: {
         Authorization: `Bearer ${token}`
       },
-      success: function(data){console.log(`Successfully deleted post ${postId}`)},
-      error: function(jqXHR, exception) {
-        console.log(jqXHR);
-        console.log(exception);}
+      success: function(data){
+        console.log(`Successfully deleted post ${postId}`);
+        $(`#${postId}`).replaceWith(`<p>Deleting post...</p>`)
+      },
+      error: function(jqXHR, exception) {}
       });
       setTimeout(function() {
         location.reload(true);
-      }, 700);
+      }, 1500);
     });
   }
 

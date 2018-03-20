@@ -137,7 +137,7 @@ form label {
 .bar {
   background-image: linear-gradient(to right, #7fe8bc, #5d398f);
   position: absolute;
-  z-index: 1;
+  z-index: -1;
   width: 100%;
 }
 .bar1 {
@@ -183,7 +183,6 @@ form label {
   text-align: center;
   margin: auto;
   z-index: 1000;
-  font-family: FontAwesome;
 }
 .loader_text {
   margin-top: 20%;
@@ -210,10 +209,14 @@ footer a:hover {
 /* Tablet Landscape */
 @media screen and (max-width: 1200px) {
   li a {
-    font-size: 20px;
+    font-size: 18px;
+    padding-top: 5px;
     text-align: left;
   }
-
+  li button {
+    font-size: 18px;
+    padding-top: 5px;
+  }
 }
 
 /* Tablet Portrait */
@@ -226,10 +229,13 @@ footer a:hover {
     padding-right: 20px;
   }
   li a {
-    font-size: 17px;
+    font-size: 16px;
   }
   li button {
-    font-size: 17px;
+    font-size: 16px;
+  }
+  footer {
+    font-size: 13px;
   }
 }
 
@@ -268,8 +274,5 @@ footer a:hover {
   }
   li button {
     font-size: 15px;
-  }
-  footer {
-    font-size: 13px;
   }
 }

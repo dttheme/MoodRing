@@ -1,7 +1,3 @@
-#landing_section {
-  height: auto;
-}
-
 #previous_post_section {
   margin-top: 120px;
   position: relative;
@@ -74,6 +70,7 @@
 .emoticon {
   width: 100px;
   height: 100px;
+  display: block;
   float: right;
 }
 .no_results {
@@ -148,6 +145,7 @@
 @media only screen and (max-width: 600px) {
   .post_wrapper {
     width: 90%;
+    padding: 20px;
     font-size: 15px;
   }
   .edit_post_button {
@@ -156,8 +154,9 @@
   .delete_post_button {
     left: 70%;
   }
-  .emoticon {
+  .emoticon:before {
     float: none;
+    padding: 10px;
     margin-top: 20px;
     height: 110px;
     width: 110px;
@@ -184,7 +183,7 @@
   .post_wrapper textarea {
     width: 200px;
   }
-  .emoticon {
+  .emoticon:before {
     margin-top: 20px;
     height: 100px;
     width: 100px;
