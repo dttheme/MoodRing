@@ -39,7 +39,6 @@ function postNewUser(firstName, username, password) {
         }
       },
       error: (...rest) => {
-        console.log(rest);
         $('#sign_up_form').prepend(
           `
           <div class='sign_up_failure'><span>Whoops! This email has already been used for signup. </span></div>
