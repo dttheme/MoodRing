@@ -19,14 +19,14 @@ MoodRing is an application that is part survey, part journal and part mirror. It
 
 
 ## User Experience
-This application allows users to create a private account. Once logged in to their account, they are presented with a survey that asks them to rate their day on a 5 point scale, describe how they feel, what they did, and to include any notable details. The user can do this as many times as they would like. Once submitted, the user can then see their posts in the archive. Once they have a few posts, the user can look back at how they've felt on average and what activities or thoughts they associated with that day.
+This application allows users to create a private account. Once logged in to their account, they are presented with a survey that asks them to rate their day on a 5 point scale, describe how they feel, what they did, and to include any notable details. The user can do this as many times as they would like. Once submitted, the user can then see their posts in the archive. Once they have several posts written, the user can look back at how they've felt on average and what activities or thoughts they associated with that day.
 
 
 ## Technical
 
 This application was built using mobile-first development. It is fully-responsive, adapting to mobile, tablet and desktop views.
 
-### Front-end
+### Front-End
 - HTML5
 - CSS3
 - JQuery
@@ -52,5 +52,5 @@ This application was built using mobile-first development. It is fully-responsiv
 
 - Use Charts.js to create visuals based on user data
 - Add word cloud capabilities
-- Add a bar of different mood colors to archive page that summarizes the feelings of the month
+- Add a bar of different mood colors to archive page that summarizes the feelings of the month/week
 - Pagination/organization of previous entries
