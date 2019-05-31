@@ -1,10 +1,7 @@
-#login_section {
-
-}
-#login_div {
+.login {
   position: absolute;
   margin: auto;
-  margin-top: 20%;
+  margin-top: 13%;
   height: auto;
   width: 50%;
   min-width: 300px;
@@ -17,19 +14,16 @@
   border-image-slice: 10;
   z-index: 101;
 }
-
-#login_div h2 {
-  font-family: 'Bungee', sans-serif;
+.login__title {
+  font-family: "Bungee", sans-serif;
   font-size: 30px;
-  padding-bottom: 10px;
-  margin-top: 30px;
-  margin-bottom: 10px;
 }
-
+.login__form {
+  margin-bottom: 20px;
+}
 .input {
-  width: 70%;
+  width: 90%;
   max-width: 400px;
-  margin-bottom: 30px;
 }
 .alert {
   font-weight: 700;
@@ -42,21 +36,14 @@
 }
 
 @media only screen and (max-width: 900px) {
-  #login_div {
+  .login {
     width: 70%;
     margin-top: 30%;
     margin-bottom: 10%;
   }
 }
-
 @media only screen and (max-width: 600px) {
-  #login_div {
-    width: 80%;
-
-  }
-}
-@media only screen and (max-width: 400px) {
-  #login_div {
+  .login {
     width: 90%;
   }
 }

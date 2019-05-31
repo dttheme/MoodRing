@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MoodRing is an application that is part survey, part journal and part mirror.">
-  <!-- FontAwesome -->
-  <script src="https://use.fontawesome.com/7f641b72ff.js"></script>
-  <!-- CSS/Styling -->
-  <link rel="stylesheet" type="text/css" href="css/global_style.css">
-  <link rel="stylesheet" type="text/css" href="css/archive.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Shade|Bungee|Nunito:300" rel="stylesheet">
-  <title>MoodRing | Archive</title>
-</head>
-<body>
-  <div class="loader">
-    <p class="loader_text">Loading... <i class="fa fa-circle-notch fa-spin"></i></p>
-  </div>
-  <header role="banner">
-    <a href="/"><h1>MoodRing</h1></a>
-    <nav role="navigation">
-      <ul>
-        <li><a href="/dashboard.html">Dashboard</a></li>
-        <li><button class="logout_button">Logout</button></li>
-      </ul>
-    </nav>
-  </header>
-<section id="previous_post_section" role="main">
-  <p class="greeting auth_greet">Welcome, </p>
-  <h2>Archive</h2>
-  <div class='post_group'></div>
-</section>
-<footer role="contentinfo">
-  <span>Copyright &copy; 2018 <a href="https://github.com/dttheme" target="_blank">Dyanna Turner</a> All Rights Reserved.&nbsp;&nbsp;Credit for emoticons goes to <a href="https://thenounproject.com/xinhstudio/" target="_blank">Xinh Studio</a> at The Noun Project.</span>
-  </footer>
-<script
-src="https://code.jquery.com/jquery-3.3.1.min.js"
-integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-crossorigin="anonymous"></script>
-<script src="/js/posts.js" type="text/javascript"></script>
-<script src="js/users.js" type="text/javascript"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="MoodRing is an application that is part survey, part journal and part mirror."
+    />
+    <!-- FontAwesome -->
+    <script src="https://use.fontawesome.com/7f641b72ff.js"></script>
+    <!-- CSS/Styling -->
+    <link rel="stylesheet" type="text/css" href="css/global_style.css" />
+    <link rel="stylesheet" type="text/css" href="css/archive.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Shade|Bungee|Nunito:300"
+      rel="stylesheet"
+    />
+    <title>MoodRing | Archive</title>
+  </head>
+  <body>
+    <div class="loader">
+      <p class="loader_text">
+        Loading... <i class="fa fa-circle-notch fa-spin"></i>
+      </p>
+    </div>
+    <header role="banner" class="header">
+      <a href="/">
+        <h1 class="header__title">MoodRing</h1>
+      </a>
+
+      <nav role="navigation">
+        <ul>
+          <li><a href="/dashboard.html">Dashboard</a></li>
+          <li><button class="logout_button">Logout</button></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="previous_post_section" role="main">
+      <p class="greeting auth_greet">Welcome,&nbsp;</p>
+      <h2 class="previouspost__title">Archive</h2>
+      <div class="post_group"></div>
+    </section>
+    <footer role="contentinfo">
+      <span
+        >Copyright &copy; 2018
+        <a href="https://github.com/dttheme" target="_blank">Dyanna Turner</a>
+        All Rights Reserved.&nbsp;&nbsp;Credit for emoticons goes to
+        <a href="https://thenounproject.com/xinhstudio/" target="_blank"
+          >Xinh Studio</a
+        >
+        at The Noun Project.</span
+      >
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/posts.js" type="text/javascript"></script>
+    <script src="js/users.js" type="text/javascript"></script>
+  </body>
 </html>

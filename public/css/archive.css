@@ -4,6 +4,10 @@
   z-index: 1;
   margin-bottom: 40px;
 }
+.previouspost__title {
+  font-family: "Bungee", sans-serif;
+  font-size: 30px;
+}
 .post {
   padding: 0;
   margin-top: 60px;
@@ -21,19 +25,24 @@
 .post_wrapper p {
   text-align: left;
 }
+.post_header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
 .post_date {
-  font-family: 'Bungee Hairline', sans-serif;
+  font-family: "Bungee Hairline", sans-serif;
   font-size: 20px;
   font-weight: 900;
 }
 .mood_string {
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   font-size: 20px;
   font-weight: 100;
   letter-spacing: 2px;
 }
 .post_wrapper button {
-  font-family: 'Bungee Hairline', sans-serif;
+  font-family: "Bungee Hairline", sans-serif;
   cursor: pointer;
   border: none;
   background: transparent;
@@ -85,38 +94,38 @@
   background: rgba(255, 255, 255, 0.9);
   padding: 70px;
   box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   font-size: 30px;
 }
 .rating1 {
   background-color: rgba(127, 232, 188, 0.5);
 }
 .rating1 .emoticon:before {
-  content: url('../images/emoticons/great.svg')
+  content: url("../images/emoticons/great.svg");
 }
 .rating2 {
   background-color: rgba(101, 194, 201, 0.5);
 }
 .rating2 .emoticon:before {
-  content: url('../images/emoticons/good.svg')
+  content: url("../images/emoticons/good.svg");
 }
 .rating3 {
   background-color: rgba(85, 131, 176, 0.5);
 }
 .rating3 .emoticon:before {
-  content: url('../images/emoticons/okay.svg')
+  content: url("../images/emoticons/okay.svg");
 }
 .rating4 {
   background-color: rgba(82, 86, 176, 0.5);
 }
 .rating4 .emoticon:before {
-  content: url('../images/emoticons/bad.svg')
+  content: url("../images/emoticons/bad.svg");
 }
 .rating5 {
   background-color: rgba(93, 57, 143, 0.5);
 }
 .rating5 .emoticon:before {
-  content: url('../images/emoticons/terrible.svg')
+  content: url("../images/emoticons/terrible.svg");
 }
 
 /* MEDIA QUERIES */
@@ -143,6 +152,10 @@
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
+  .post_header {
+    flex-direction: column;
+    margin: 0;
+  }
   .post_wrapper {
     width: 90%;
     padding: 20px;

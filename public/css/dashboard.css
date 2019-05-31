@@ -2,11 +2,13 @@
   position: relative;
   z-index: -2;
 }
-
 #new_post_section {
   margin-top: 120px;
 }
-
+.newpost__title {
+  font-family: "Bungee", sans-serif;
+  font-size: 30px;
+}
 #new_post_form {
   border: 10px solid transparent;
   border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
@@ -23,7 +25,7 @@
   height: 120px;
   width: 120px;
   padding: 10px;
-  padding-top: 20px;;
+  padding-top: 20px;
   margin: 5px;
 }
 input[type="radio"] {
@@ -50,7 +52,7 @@ input[type="radio"] {
 }
 legend {
   font-size: 30px;
-  font-family: 'Bungee Hairline', sans-serif;
+  font-family: "Bungee Hairline", sans-serif;
   font-weight: 900;
   margin-top: 30px;
 }
@@ -60,9 +62,9 @@ legend {
   max-width: 400px;
 }
 .remove_field {
- position: absolute;
- padding-top: 27px;
- padding-left: 5px;
+  position: absolute;
+  padding-top: 27px;
+  padding-left: 5px;
 }
 .remove_field {
   text-decoration: none;
@@ -76,10 +78,10 @@ form button:focus {
   display: inline-block;
 }
 .tooltip .tooltiptext {
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   visibility: hidden;
   width: 100%;
-  color: rgba(25, 38, 51, 0.7);;
+  color: rgba(25, 38, 51, 0.7);
   text-align: center;
   padding: 5px;
   position: absolute;
@@ -89,7 +91,7 @@ form button:focus {
   z-index: 10;
 }
 .tooltip:hover .tooltiptext {
-    visibility: visible;
+  visibility: visible;
 }
 #success_box {
   height: 300px;
@@ -104,17 +106,18 @@ form button:focus {
   padding: 70px;
   box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
 }
-#success_box p, #success_box a {
-  font-family: 'Bungee', sans-serif;
+#success_box p,
+#success_box a {
+  font-family: "Bungee", sans-serif;
   font-size: 30px;
 }
 #success_box a {
-  color: #5D398F;
+  color: #5d398f;
   text-decoration: none;
   transition: color 600ms;
 }
 #success_box a:hover {
-  color: #7FE8BC;
+  color: #7fe8bc;
 }
 
 /* EMOTICON RADIO BUTTONS */
@@ -127,42 +130,42 @@ form button:focus {
 }
 .emoticon_label > input[id="great"]:hover + img,
 .emoticon_label > input[id="great"]:focus + img {
-  border: 2px solid #7FE8BC;
+  border: 2px solid #7fe8bc;
 }
 .emoticon_label > input[id="good"]:hover + img,
 .emoticon_label > input[id="good"]:focus + img {
-  border: 2px solid #65C2C9;
+  border: 2px solid #65c2c9;
 }
 .emoticon_label > input[id="okay"]:hover + img,
 .emoticon_label > input[id="okay"]:focus + img {
-  border: 2px solid #5583B0;
+  border: 2px solid #5583b0;
 }
 .emoticon_label > input[id="bad"]:hover + img,
 .emoticon_label > input[id="bad"]:focus + img {
-  border: 2px solid #5256B0;
+  border: 2px solid #5256b0;
 }
 .emoticon_label > input[id="terrible"]:hover + img,
 .emoticon_label > input[id="terrible"]:focus + img {
-  border: 2px solid #5D398F;
+  border: 2px solid #5d398f;
 }
 .emoticon_label > input[id="great"]:checked + img {
-  border: 2px solid #7FE8BC;
+  border: 2px solid #7fe8bc;
   background-color: rgba(127, 232, 188, 0.3);
 }
 .emoticon_label > input[id="good"]:checked + img {
-  border: 2px solid #65C2C9;
+  border: 2px solid #65c2c9;
   background-color: rgba(101, 194, 201, 0.3);
 }
 .emoticon_label > input[id="okay"]:checked + img {
-  border: 2px solid #5583B0;
+  border: 2px solid #5583b0;
   background-color: rgba(85, 131, 176, 0.3);
 }
 .emoticon_label > input[id="bad"]:checked + img {
-  border: 2px solid #5256B0;
+  border: 2px solid #5256b0;
   background-color: rgba(82, 86, 176, 0.3);
 }
 .emoticon_label > input[id="terrible"]:checked + img {
-  border: 2px solid #5D398F;
+  border: 2px solid #5d398f;
   background-color: rgba(93, 57, 143, 0.3);
 }
 
@@ -182,8 +185,8 @@ form button:focus {
     height: 90px;
     width: 90px;
     padding: 5px;
-    padding-top: 15px;;
-    margin: .5%;
+    padding-top: 15px;
+    margin: 0.5%;
   }
   #new_post_form {
     width: 80%;
@@ -196,7 +199,7 @@ form button:focus {
   .emoticons {
     height: 50px;
     width: 50px;
-    margin: .5%;
+    margin: 0.5%;
     padding: 0;
     padding-top: 7px;
   }
@@ -216,19 +219,20 @@ form button:focus {
     margin-top: 7px;
   }
   .remove_field {
-   padding-top: 15px;
-   padding-left: 5px;
+    padding-top: 15px;
+    padding-left: 5px;
   }
   #success_box {
     width: 80%;
   }
-  #success_box p, #success_box a {
+  #success_box p,
+  #success_box a {
     font-size: 25px;
   }
 }
 
 @media only screen and (max-width: 400px) {
-#success_box {
-  width: 90%;
-}
+  #success_box {
+    width: 90%;
+  }
 }

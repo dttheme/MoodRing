@@ -1,7 +1,7 @@
-#landing_section {
+.landing_section {
   position: relative;
   z-index: -2;
-  background: url('/images/landing_photo.jpg') no-repeat top;
+  background: url("/images/landing_photo.jpg") no-repeat top;
   background-size: cover;
   overflow: hidden;
   height: 70vh;
@@ -17,33 +17,30 @@
   width: 500px;
   padding: 30px;
 }
-#sign_up_section {
-  height: 100%;
-}
 .intro_text {
   font-size: 32px;
   font-weight: 200;
   color: black;
   padding-top: 30%;
 }
-#sign_up_wrap {
+.signup {
   margin: 1vh auto;
   width: 90%;
   border: 2px solid transparent;
   border-image: linear-gradient(to right, #7fe8bc 0%, #5d398f 100%);
   border-image-slice: 2;
   box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
+  display: flex;
+  justify-content: space-around;
 }
-#sign_up_title {
-  display: inline-block;
-  width: 40%;
-  margin-bottom: 30px;
-  margin-right: 20%;
+.signup__intro {
+  width: 50%;
+  align-self: center;
+  padding: 30px;
 }
-#sign_up_title h2 {
-  font-family: 'Bungee', sans-serif;
+.signup__title {
+  font-family: "Bungee", sans-serif;
   font-size: 30px;
-  padding-bottom: 10px;
 }
 #sign_up_form {
   padding-top: 10px;
@@ -67,7 +64,7 @@
 .sign_up_success a,
 #sign_up_title a {
   text-decoration: none;
-  color: #5D398F;
+  color: #5d398f;
 }
 .sign_up_success a:hover,
 #sign_up_title a:hover {
@@ -108,14 +105,19 @@
 @media screen and (max-width: 600px), screen and (max-height: 450px) {
   .intro_div {
     margin-top: 110px;
-  }
-  .intro_div {
     height: 275px;
     width: 275px;
   }
   .intro_text {
     padding-top: 15%;
     font-size: 20px;
+  }
+  .signup {
+    flex-direction: column;
+  }
+  .signup__intro {
+    width: 90%;
+    padding-bottom: 20px;
   }
   .greeting {
     font-size: 17px;
@@ -143,5 +145,4 @@
   .intro_text {
     font-size: 18px;
   }
-
 }

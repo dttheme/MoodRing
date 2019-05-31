@@ -1,57 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MoodRing is an application that is part survey, part journal and part mirror.">
-  <!-- CSS/Styling -->
-  <link rel="stylesheet" type="text/css" href="css/global_style.css">
-  <link rel="stylesheet" type="text/css" href="css/login.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Shade|Bungee|Nunito:300" rel="stylesheet">
-  <title>MoodRing | Login</title>
-</head>
-<body>
-  <header role="banner">
-    <a href="/"><h1>MoodRing</h1></a>
-    <nav role="navigation">
-      <ul>
-        <li><a href="/">Home</a></li>
-      </ul>
-    </nav>
-  </header>
-  <section id="landing_section">
-    <div class="background">
-      <div class="bar bar1"></div>
-      <div class="bar bar2"></div>
-      <div class="bar bar3"></div>
-      <div class="bar bar4"></div>
-      <div class="bar bar5"></div>
-      <div class="bar bar6"></div>
-      <div class="bar bar7"></div>
-    </div>
-  </section>
-  <section id="login_section">
-    <div id="login_div">
-      <form name="login_form" id="login_form">
-        <h2>Login</h2>
-        <div class="alert hidden" aria-hidden="true"><p> You have entered an incorrect username or password. </p></div>
-        <label for="username">Email: <br>
-          <input type="email" name="username" placeholder="Email Address" id="username" class="input username_input" required><br>
-        </label>
-        <label>Password: <br>
-          <input type="password" name="password" placeholder="Password" id="password" class="input password_input" required>
-        </label><br>
-        <button type="submit" class="submit login_submit">Submit</button>
-      </form>
-      <p>If you are interested in testing MoodRing, please use the demo account.</p><br>
-      <p> Username: demo@email.com; Password: demouser</p>
-    </div>
-  </section>
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script src="js/users.js" type="text/javascript"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="MoodRing is an application that is part survey, part journal and part mirror."
+    />
+    <!-- CSS/Styling -->
+    <link rel="stylesheet" type="text/css" href="css/global_style.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Shade|Bungee|Nunito:300"
+      rel="stylesheet"
+    />
+    <title>MoodRing | Login</title>
+  </head>
+  <body>
+    <header role="banner" class="header">
+      <a href="/">
+        <h1 class="header__title">MoodRing</h1>
+      </a>
+    </header>
+    <section id="landing_section">
+      <div class="background">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+        <div class="bar bar4"></div>
+        <div class="bar bar5"></div>
+        <div class="bar bar6"></div>
+        <div class="bar bar7"></div>
+      </div>
+    </section>
+    <section>
+      <div class="login">
+        <form id="login_form">
+          <h2 class="login__title">Login</h2>
+          <div class="alert hidden" aria-hidden="true">
+            <p>You have entered an incorrect username or password.</p>
+          </div>
+          <label for="username"
+            >Email: <br />
+            <input
+              type="email"
+              name="username"
+              placeholder="Email Address"
+              id="username"
+              class="input username_input"
+              required
+            /><br />
+          </label>
+          <label
+            >Password: <br />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              id="password"
+              class="input password_input"
+              required
+            /> </label
+          ><br />
+          <button type="submit" class="submit login_submit">Submit</button>
+        </form>
+        <p>
+          If you are interested in testing MoodRing, please use the demo
+          account.
+        </p>
+        <br />
+        <p>Username: demo@email.com; Password: demouser</p>
+      </div>
+    </section>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/users.js" type="text/javascript"></script>
+  </body>
 </html>
