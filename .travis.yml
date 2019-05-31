@@ -4,7 +4,7 @@ services: mongodb
 deploy:
   provider: heroku
   api_key:
-    secure: cSQ33BEwVjP0JmooVoTDEL39uJFYmegpUUbdv8tSuxOof39SdAHsHspYRVZD4gTl9u28/ucZdGA8WD4VU79HqSYtoGdk9x6qUjRmVi4E8l/mTvWBroG6IVti2XTRaUsjg1g514rgYeTQ71HCyJ5XqX5VxjpA3q7+khgznrDLPlCDwtLQHxtfF18LwlKB/7e8JObWdGq592VcwIAyIE+CUlZMDeNzyJy9N6i0selQljzcqaUTAvhlmYeyO3jVa4R0rX9OYco2fc3t7njQzpL+IZFAXrZRRtlJE9UyBJdGXYVgVNXPnwvKblPgqa8s0vSKZNCmHzpibaxs1ZtohYkqwFupZhESnA60wP/a4yL7MwqmmSfry4m/rsBrSh3v+f7Gvml1p6IQMYPzW6Z3ETTc3eOU9nita/ZXHQKV+T/WL640Q5V3Tfj5p88rFjUz3USui9iBDphB2LGvGf0fdR7NgHj6a5bx0rnOeKkBpo76+pERKIP/6kfTD6FFsKjs+LhGVvvd9OmdDJEvkQIItSE9/BuwjhX48u0rlzm+qV86xCAP9xGZi2iY3YCvAQaGMSteB1rL4P9W1/66uqIVYVluUd7aBUDr+U2HTcdl+66D/YWs3gCuIGmHid12AlbHYyaB4UYY6YSKJy28NEnB2452AvARnDj2ioT4frOKYkEixZY=
+    secure: aad6d727-5462-4325-9420-a54cd1ab6dff
   app: vast-everglades-57515
   on:
     repo: dttheme/MoodRing

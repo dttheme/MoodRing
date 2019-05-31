@@ -1,7 +1,6 @@
 "use strict";
 
 // SIGN UP
-
 $("#form_for_sign_up").submit(function(event) {
   event.preventDefault();
   newUser();
