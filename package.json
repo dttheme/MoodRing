@@ -7,7 +7,7 @@
     "bcrypt": "^3.0.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
-    "chart.js": "^2.7.1",
+    "chart.js": "^2.9.4",
     "express": "^4.16.2",
     "faker": "^4.1.0",
     "jsonwebtoken": "^8.1.1",
